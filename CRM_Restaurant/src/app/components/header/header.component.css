@@ -1,0 +1,16 @@
+#navbar {
+    background: linear-gradient(to bottom, #ede9e1, #a89b80);
+}
+
+#navbarNav ul {
+    margin-left: auto;
+}
+
+#btn {
+    border-radius: 5px;
+    margin: 10px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: #c6b799;
+}
