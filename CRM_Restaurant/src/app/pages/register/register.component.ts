@@ -14,12 +14,12 @@ export class RegisterComponent {
   
   constructor() {
     this.registerForm = new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.email]),
+      email: new FormControl('', [Validators.required, Validators.email, Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$')]),
       password: new FormControl('', [Validators.required, Validators.minLength(8)]),
       confirmPassword: new FormControl('', [Validators.required, Validators.minLength(8)]),
       name: new FormControl('', [Validators.required, Validators.minLength(3)]),
       lastname: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      phone: new FormControl('', [Validators.required, Validators.minLength(9)]),
+      phone: new FormControl('', [Validators.required, Validators.minLength(9), Validators.pattern('^[0-9]*$')]),
     });
   }
 
