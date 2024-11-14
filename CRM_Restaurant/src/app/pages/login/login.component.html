@@ -6,58 +6,71 @@
           <div class="row g-0">
             
             <!-- Login Form Section -->
-            <div class="col-lg-6">
+            <form [formGroup]="loginForm" class="col-lg-6" (ngSubmit)="onSubmit()">
               <div class="card-body p-md-5 mx-md-4">
 
                 <!-- Logo and Title -->
                 <div class="text-center">
                   <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
-                    style="width: 185px;" alt="logo">
+                       style="width: 185px;" 
+                       alt="logo">
                   <h4 class="mt-1 mb-5 pb-1">Paco's Restaurant</h4>
                 </div>
 
-                <!-- Login Form -->
-                <form>
-                  <p>Please login to your account</p>
+                <p>Please login to your account</p>
 
-                  <!-- Username Input -->
-                  <div class="form-outline mb-4">
-                    <input type="email" 
-                           id="form2Example11" 
-                           class="form-control"
-                           placeholder="Email address" />
-                    <label class="form-label" for="form2Example11">Email</label>
-                  </div>
+                <!-- Email Input -->
+                <div class="form-outline mb-4">
+                  <input type="email" 
+                         formControlName="email"
+                         id="form2Example11" 
+                         class="form-control"
+                         placeholder="Email address">
+                                    
+                  <!-- Email Validation Messages -->
+                  @if (checkValidation('email')) {
+                    <div class="text-danger">
+                      <small>El email es requerido</small>
+                    </div>
+                  }
+                </div>
 
-                  <!-- Password Input -->
-                  <div class="form-outline mb-4">
-                    <input type="password" 
-                           id="form2Example22" 
-                           class="form-control" />
-                    <label class="form-label" for="form2Example22">Password</label>
-                  </div>
+                <!-- Password Input -->
+                <div class="form-outline mb-4">
+                  <input type="password" 
+                         formControlName="password"
+                         id="form2Example22" 
+                         class="form-control"
+                         placeholder="Password">
+                  
+                  
+                  <!-- Password Validation Message -->
+                  @if (checkValidation('password')) {
+                    <div class="text-danger">
+                      <small>La contraseña debe tener al menos 8 caracteres</small>
+                    </div>
+                  }
+                </div>
 
-                  <!-- Login Button and Forgot Password -->
-                  <div class="text-center pt-1 mb-5 pb-1 d-grid gap-2">
-                    <button class="btn btn-primary btn-block fa-lg mb-3" 
-                            type="button">
-                      Log in
-                    </button>
-                  </div>
+                <!-- Login Button -->
+                <div class="text-center pt-1 mb-5 pb-1 d-grid gap-2">
+                  <button class="btn btn-primary btn-block fa-lg mb-3" 
+                          type="submit"
+                          [disabled]="loginForm.invalid">
+                    Log in
+                  </button>
+                </div>
 
-                  <!-- Register Section -->
-                  <div class="d-flex align-items-center justify-content-center pb-4">
-                    <p class="mb-0 me-2">Don't have an account?</p>
-                    <button type="button" 
-                            class="btn btn-outline-danger">
-                      Create new
-                    </button>
-                  </div>
-
-                </form>
+                <!-- Register Section -->
+                <div class="d-flex align-items-center justify-content-center pb-4">
+                  <p class="mb-0 me-2">Don't have an account?</p>
+                  <button type="button" class="btn btn-outline-danger">
+                    Create new
+                  </button>
+                </div>
 
               </div>
-            </div>
+            </form>
 
             <!-- Info Section -->
             <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
