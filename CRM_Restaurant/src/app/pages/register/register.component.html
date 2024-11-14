@@ -6,26 +6,50 @@
             <div class="row g-0">
               
               <!-- Login Form Section -->
-              <form [formGroup]="registerForm" class="col-lg-6" (ngSubmit)="onSubmit()">
-                <div class="card-body p-md-5 mx-md-4">
-  
-                  <!-- Logo and Title -->
-                  <div class="text-center">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
-                         style="width: 185px;" 
-                         alt="logo">
-                    <h4 class="mt-1 mb-5 pb-1">Paco's Restaurant</h4>
+              <form [formGroup]="registerForm" class="col-lg-8" (ngSubmit)="onSubmit()">
+                <div class="card-body p-md-5 mx-md-4">  
+                  <p>
+                    Registrate para crear tu cuenta
+                  </p>
+
+                  <!-- Name Input -->
+                  <div class="form-outline mb-4">
+                    <input type="text" 
+                           formControlName="name"
+                           id="name" 
+                           class="form-control"
+                           [class.border-danger]="checkValidation('name')"
+                           placeholder="*Name">
                   </div>
-  
-                  <p>Please login to your account</p>
-  
+
+                  <!-- Lastname Input -->
+                  <div class="form-outline mb-4">
+                    <input type="text" 
+                           formControlName="lastname"
+                           id="lastname" 
+                           class="form-control"
+                           [class.border-danger]="checkValidation('lastname')"
+                           placeholder="*Lastname">
+                  </div>
+
+                  <!-- Phone Input -->
+                  <div class="form-outline mb-4">
+                    <input type="tel" 
+                           formControlName="phone"
+                           id="phone" 
+                           class="form-control"
+                           [class.border-danger]="checkValidation('phone')"
+                           placeholder="*Phone">
+                  </div>
+
                   <!-- Email Input -->
                   <div class="form-outline mb-4">
                     <input type="email" 
                            formControlName="email"
-                           id="form2Example11" 
+                           id="email" 
                            class="form-control"
-                           placeholder="Email address">
+                           [class.border-danger]="checkValidation('email')"
+                           placeholder="*Email address">
                                       
                     <!-- Email Validation Messages -->
                     @if (checkValidation('email')) {
@@ -39,15 +63,32 @@
                   <div class="form-outline mb-4">
                     <input type="password" 
                            formControlName="password"
-                           id="form2Example22" 
+                           id="password" 
                            class="form-control"
-                           placeholder="Password">
-                    
+                           [class.border-danger]="checkValidation('password')"
+                           placeholder="*Password">
                     
                     <!-- Password Validation Message -->
                     @if (checkValidation('password')) {
                       <div class="text-danger">
                         <small>La contraseña debe tener al menos 8 caracteres</small>
+                      </div>
+                    }
+                  </div>
+
+                  <!-- Confirm Password Input -->
+                  <div class="form-outline mb-4">
+                    <input type="password" 
+                           formControlName="confirmPassword"
+                           id="confirmPassword" 
+                           class="form-control"
+                           [class.border-danger]="checkValidation('confirmPassword')"
+                           placeholder="*Confirm Password">
+                    
+                    <!-- Confirm Password Validation Message -->
+                    @if (!passwordsMatch() && checkValidation('confirmPassword')) {
+                      <div class="text-danger">
+                        <small>Las contraseñas no coinciden</small>
                       </div>
                     }
                   </div>
@@ -63,24 +104,19 @@
   
                   <!-- Register Section -->
                   <div class="d-flex align-items-center justify-content-center pb-4">
-                    <p class="mb-0 me-2">Don't have an account?</p>
-                    <button type="button" class="btn btn-outline-danger">
-                      Create new
-                    </button>
+                    <p class="mb-0 me-2">¿Ya tienes una cuenta?</p>
+                    <a class="btn btn-outline-danger" routerLink="/login">
+                      Ingresar
+                    </a>
                   </div>
   
                 </div>
               </form>
   
               <!-- Info Section -->
-              <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
-                <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                  <h4 class="mb-4">We are more than just a company</h4>
-                  <p class="small mb-0">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                  </p>
+              <div class="col-lg-4 d-flex align-items-center gradient-custom-2 rounded-3">
+                <div class="text-white px-3 py-4 p-md-5 mx-md-4 w-100">
+                  <h4 class="text-center">We are more than just a company</h4>
                 </div>
               </div>
   
