@@ -1,10 +1,8 @@
-<app-header />
 <div class="body">
     <!-- Seccion Titulo -->
     <div class="row">
         <div class="col-12 position-relative">
-            <img src="./images/tasty-smoke-cooked-food.jpg" class="img-fluid w-100" alt="Restaurant"
-                style="max-height: 500px; object-fit: cover;">
+            <img src="./images/tasty-smoke-cooked-food.jpg" class="img-fluid w-100" alt="Restaurant" style="max-height: 500px; object-fit: cover;">
             <h1 class="position-absolute top-50 start-50 translate-middle text-white">¡Bienvenido a NAFAC!
             </h1>
         </div>
@@ -15,9 +13,9 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-6">
-                <img src="./images/meal-5589928_1280.jpg" class="img-fluid w-100" alt="Imagen gastronomia">
+                <img src="./images/meal-5589928_1280.jpg" class="img-fluid w-100 rounded" alt="Imagen gastronomia">
             </div>
-            <div class="col-md-6 d-flex flex-column justify-content-center">
+            <div class="col-md-6 d-flex flex-column justify-content-center" id="gastronomia">
                 <h2>Gastronomia</h2>
                 <p>En Nafac, te invitamos a sumergirte en una travesía culinaria que despierta los
                     sentidos. Nuestra
@@ -46,7 +44,7 @@
                     tu memoria.
                     Ven y descubre por qué somos más que un restaurante; somos una experiencia. ¡Te esperamos!
                 </p>
-                <button id="btnReserva" class="btn btn-primary" [routerLink]="['/menu']">Ver
+                <button id="btnReserva" class="btn" [routerLink]="['/menu']">Ver
                     menú
                 </button>
             </div>
@@ -57,7 +55,7 @@
     <!-- Seccion Registrate -->
     <div class="container mt-5">
         <div class="row">
-            <div class="col-md-6 d-flex flex-column justify-content-center">
+            <div class="col-md-6 d-flex flex-column justify-content-center" id="registrate">
                 <h2>Únete a Nuestra Familia Gastronómica</h2>
                 <p>En Nafac, no solo reservamos una mesa para ti, te damos la bienvenida a nuestra
                     familia. Regístrate y
@@ -69,19 +67,17 @@
                     Forma parte de esta experiencia única y asegura tu lugar en nuestro espacio diseñado para compartir,
                     disfrutar y crear
                     recuerdos inolvidables. ¡Te esperamos con los brazos abiertos!</p>
-                <button class="btn btn-primary mb-3" [routerLink]="['/register']">Registrate para reservar</button>
+                <button class="btn mb-3" [routerLink]="['/register']">Registrate para reservar</button>
             </div>
             <div class="col-md-6">
-                <img src="./images/thai-food-green-curry-chicken-ai-generated-image.jpg" class="img-fluid w-100"
-                    alt="Imagen plato">
+                <img src="./images/thai-food-green-curry-chicken-ai-generated-image.jpg" class="img-fluid w-100 rounded" alt="Imagen plato">
             </div>
         </div>
     </div>
     <!-- Fin Registrate -->
 
     <!-- Seccion Reserva -->
-    <div class="container-fluid mt-5 p-5 position-relative"
-        style="background-image: url('./images/interior.jpg'); background-size: cover; background-position: center;">
+    <div class="container-fluid mt-5 p-5 position-relative" style="background-image: url('./images/interior.jpg'); background-size: cover; background-position: center;">
         <div class="row">
             <div class="col-12 text-center text-white">
                 <div class="reserva-text">
@@ -97,11 +93,9 @@
                         para recibirte.
                         ¡Reserva ahora y forma parte de nuestra historia!</p>
                 </div>
-                <button class="btn btn-lg btn-primary mt-3" [routerLink]="['/reservations']">Reservar Ahora</button>
+                <button class="btn mt-3" [routerLink]="['/reservations']">Reservar Ahora</button>
             </div>
         </div>
         <!-- Fin Reserva -->
     </div>
 </div>
-
-<app-footer />

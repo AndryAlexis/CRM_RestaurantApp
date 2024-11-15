@@ -1,13 +1,65 @@
 /* Custom gradient background for login form */
 .gradient-custom-2 {
     /* Default background color for older browsers */
-    background: #4c4eaf;
+    background-image: url('../../../../public/images/register.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+}
+
+p {
+    font-family: 'Gowun Dodum', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+#name:focus,
+#lastname:focus,
+#phone:focus,
+#email:focus,
+#password:focus,
+#confirmPassword:focus {
+    border-color: #D6C3A1;
+    box-shadow: 0 0 0 0.3rem rgba(255, 132, 104, 0.25);
+}
+
+#loginButton {
+    button {
+        font-family: 'Poiret One', cursive;
+        font-weight: 600;
+        font-size: 18px;
+        background-color: #D6C3A1;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    }
+}
+
+#registerSection {
+    a {
+        font-family: 'Poiret One', cursive;
+        font-weight: 600;
+        font-size: 18px;
+        margin: 5px 10px;
+        background-color: #D6C3A1;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    }
+}
+
+#infoSection {
+    div {
+
+        font-family: 'Poiret One', cursive;
+        font-weight: 600;
+        font-size: 20px;
+        border-radius: 15px;
+        background-color: rgb(227, 203, 166, 0.2);
+    }
+
 }
 
 /* Make form take full viewport height on tablets and larger */
 @media (min-width: 768px) {
     .gradient-form {
-        height: 100vh !important;
+        height: 100vh;
     }
 }
 

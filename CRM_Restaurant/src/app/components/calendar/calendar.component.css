@@ -1,7 +1,9 @@
 label {
     display: flex;
     flex-direction: column;
-    font: 1rem 'Fira Sans', sans-serif;
+    font-family: 'Poiret One', cursive;
+    font-weight: 700;
+    font-size: 18px;
 }
 
 

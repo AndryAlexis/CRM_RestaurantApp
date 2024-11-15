@@ -1,128 +1,96 @@
 <section class="h-100 gradient-form" style="background-color: #eee;">
-    <div class="container py-5 h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-xl-10">
-          <div class="card rounded-3 text-black">
-            <div class="row g-0">
-              
-              <!-- Login Form Section -->
-              <form [formGroup]="registerForm" class="col-lg-8" (ngSubmit)="onSubmit()">
-                <div class="card-body p-md-5 mx-md-4">  
-                  <p>
-                    Registrate para crear tu cuenta
-                  </p>
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-10">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0">
 
-                  <!-- Name Input -->
-                  <div class="form-outline mb-4">
-                    <input type="text" 
-                           formControlName="name"
-                           id="name" 
-                           class="form-control"
-                           [class.border-danger]="checkValidation('name')"
-                           placeholder="*Name">
-                  </div>
+            <!-- Login Form Section -->
+            <form [formGroup]="registerForm" class="col-lg-8" (ngSubmit)="onSubmit()">
+              <div class="card-body p-md-5 mx-md-4">
+                <p>
+                  Registrate para crear tu cuenta
+                </p>
 
-                  <!-- Lastname Input -->
-                  <div class="form-outline mb-4">
-                    <input type="text" 
-                           formControlName="lastname"
-                           id="lastname" 
-                           class="form-control"
-                           [class.border-danger]="checkValidation('lastname')"
-                           placeholder="*Lastname">
-                  </div>
-
-                  <!-- Phone Input -->
-                  <div class="form-outline mb-4">
-                    <input type="tel" 
-                           formControlName="phone"
-                           id="phone" 
-                           class="form-control"
-                           [class.border-danger]="checkValidation('phone')"
-                           placeholder="*Phone">
-                  </div>
-
-                  <!-- Email Input -->
-                  <div class="form-outline mb-4">
-                    <input type="email" 
-                           formControlName="email"
-                           id="email" 
-                           class="form-control"
-                           [class.border-danger]="checkValidation('email')"
-                           placeholder="*Email address">
-                                      
-                    <!-- Email Validation Messages -->
-                    @if (checkValidation('email')) {
-                      <div class="text-danger">
-                        <small>El email es requerido</small>
-                      </div>
-                    }
-                  </div>
-  
-                  <!-- Password Input -->
-                  <div class="form-outline mb-4">
-                    <input type="password" 
-                           formControlName="password"
-                           id="password" 
-                           class="form-control"
-                           [class.border-danger]="checkValidation('password')"
-                           placeholder="*Password">
-                    
-                    <!-- Password Validation Message -->
-                    @if (checkValidation('password')) {
-                      <div class="text-danger">
-                        <small>La contraseña debe tener al menos 8 caracteres</small>
-                      </div>
-                    }
-                  </div>
-
-                  <!-- Confirm Password Input -->
-                  <div class="form-outline mb-4">
-                    <input type="password" 
-                           formControlName="confirmPassword"
-                           id="confirmPassword" 
-                           class="form-control"
-                           [class.border-danger]="checkValidation('confirmPassword')"
-                           placeholder="*Confirm Password">
-                    
-                    <!-- Confirm Password Validation Message -->
-                    @if (!passwordsMatch() && checkValidation('confirmPassword')) {
-                      <div class="text-danger">
-                        <small>Las contraseñas no coinciden</small>
-                      </div>
-                    }
-                  </div>
-  
-                  <!-- Login Button -->
-                  <div class="text-center pt-1 mb-5 pb-1 d-grid gap-2">
-                    <button class="btn btn-primary btn-block fa-lg mb-3" 
-                            type="submit"
-                            [disabled]="registerForm.invalid">
-                      Log in
-                    </button>
-                  </div>
-  
-                  <!-- Register Section -->
-                  <div class="d-flex align-items-center justify-content-center pb-4">
-                    <p class="mb-0 me-2">¿Ya tienes una cuenta?</p>
-                    <a class="btn btn-outline-danger" routerLink="/login">
-                      Ingresar
-                    </a>
-                  </div>
-  
+                <!-- Name Input -->
+                <div class="form-outline mb-4">
+                  <input type="text" formControlName="name" id="name" class="form-control" [class.border-danger]="checkValidation('name')" placeholder="*Name">
                 </div>
-              </form>
-  
-              <!-- Info Section -->
-              <div class="col-lg-4 d-flex align-items-center gradient-custom-2 rounded-3">
-                <div class="text-white px-3 py-4 p-md-5 mx-md-4 w-100">
-                  <h4 class="text-center">We are more than just a company</h4>
+
+                <!-- Lastname Input -->
+                <div class="form-outline mb-4">
+                  <input type="text" formControlName="lastname" id="lastname" class="form-control" [class.border-danger]="checkValidation('lastname')" placeholder="*Lastname">
                 </div>
+
+                <!-- Phone Input -->
+                <div class="form-outline mb-4">
+                  <input type="tel" formControlName="phone" id="phone" class="form-control" [class.border-danger]="checkValidation('phone')" placeholder="*Phone">
+                </div>
+
+                <!-- Email Input -->
+                <div class="form-outline mb-4">
+                  <input type="email" formControlName="email" id="email" class="form-control" [class.border-danger]="checkValidation('email')" placeholder="*Email address">
+
+                  <!-- Email Validation Messages -->
+                  @if (checkValidation('email')) {
+                  <div class="text-danger">
+                    <small>El email es requerido</small>
+                  </div>
+                  }
+                </div>
+
+                <!-- Password Input -->
+                <div class="form-outline mb-4">
+                  <input type="password" formControlName="password" id="password" class="form-control" [class.border-danger]="checkValidation('password')" placeholder="*Password">
+
+                  <!-- Password Validation Message -->
+                  @if (checkValidation('password')) {
+                  <div class="text-danger">
+                    <small>La contraseña debe tener al menos 8 caracteres</small>
+                  </div>
+                  }
+                </div>
+
+                <!-- Confirm Password Input -->
+                <div class="form-outline mb-4">
+                  <input type="password" formControlName="confirmPassword" id="confirmPassword" class="form-control" [class.border-danger]="checkValidation('confirmPassword')" placeholder="*Confirm Password">
+
+                  <!-- Confirm Password Validation Message -->
+                  @if (!passwordsMatch() && checkValidation('confirmPassword')) {
+                  <div class="text-danger">
+                    <small>Las contraseñas no coinciden</small>
+                  </div>
+                  }
+                </div>
+
+                <!-- Login Button -->
+                <div class="text-center pt-1 mb-5 pb-1 d-grid gap-2" id="loginButton">
+                  <button class="btn btn-block fa-lg mb-3" type="submit" [disabled]="registerForm.invalid">
+                    Log in
+                  </button>
+                </div>
+
+                <!-- Register Section -->
+                <div class="d-flex align-items-center justify-content-center pb-4" id="registerSection">
+                  <p class="mb-0 me-2">¿Ya tienes una cuenta?</p>
+                  <a class="btn" routerLink="/login">
+                    Ingresar
+                  </a>
+                </div>
+
               </div>
-  
+            </form>
+
+            <!-- Info Section -->
+            <div class="col-lg-4 d-flex align-items-center gradient-custom-2 rounded-3" id="infoSection">
+              <div class="text-white px-3 py-4 p-md-5 mx-md-4 w-100">
+                <h4 class="text-center">Expertos en calidad y experiencia.</h4>
+              </div>
             </div>
+
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>

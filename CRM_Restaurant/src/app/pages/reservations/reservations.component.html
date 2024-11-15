@@ -1,12 +1,8 @@
-<app-header />
 <div class="img">
     <figure>
         <img src="./images/interior.jpg" alt="interior">
     </figure>
 </div>
-
-
-
 
 <div class="container">
     <div class="container-title">
@@ -44,7 +40,7 @@
 <form [formGroup]="form" (ngSubmit)="ngSubmit()">
     <div class="reservations">
         <div class="calendar-container">
-            <app-calendar class="calendar" (dateSelected)="onDateSelected($event)"></app-calendar> <!-- Escucha el evento -->
+            <app-calendar class="calendar" (dateSelected)="onDateSelected($event)"></app-calendar>
             <div class="form-group mb-3">
                 <label class="my-2" for="horario">Selecciona un horario</label>
                 <select formControlName="horario" class="form-control" id="horario">
@@ -55,21 +51,26 @@
             </div>
         </div>
 
-
-
         <div class="reservation-container">
             <div class="form-group mb-3">
-                <input type="number" formControlName="comensales" class="form-control" placeholder="*Comensales" min="0">
+                <input type="number" formControlName="comensales" class="form-control" placeholder="*Comensales" min="1">
+
+                <!-- Validación de comensales -->
+                @if (checkValidation('comensales')) {
+                <div class="text-danger">
+                    <small>Introduce un número de comensales.</small>
+                </div>
+                }
             </div>
             <div class="form-group mb-3">
                 <label class="mb-3" for="ubicacion">Selecciona ubicación</label>
                 <select formControlName="ubicacion" class="form-control" id="ubicacion">
-                    <option value="" disabled selected>Selecciona ubicación</option>
                     <option value="Terraza">Terraza</option>
                     <option value="Salón">Salón</option>
                 </select>
+
             </div>
-            <input type="submit" class="btn" value="Reservar">
+            <input type="submit" class="btn" value="Reservar" [disabled]="form.invalid">
         </div>
     </div>
 </form>

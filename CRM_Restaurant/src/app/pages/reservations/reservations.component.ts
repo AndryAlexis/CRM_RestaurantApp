@@ -1,12 +1,11 @@
 import { Component } from '@angular/core';
 import { CalendarComponent } from "../../components/calendar/calendar.component";
-import { HeaderComponent } from "../../components/header/header.component";
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-reservations',
   standalone: true,
-  imports: [CalendarComponent, HeaderComponent, ReactiveFormsModule],
+  imports: [CalendarComponent, ReactiveFormsModule],
   templateUrl: './reservations.component.html',
   styleUrl: './reservations.component.css'
 })
@@ -37,5 +36,10 @@ export class ReservationsComponent {
     this.form.patchValue({ fecha: date });
   }
 
+  // Método para verificar si un campo tiene errores
+  checkValidation(controlName: string): boolean {
+    const control = this.form.get(controlName);
+    return control ? control.invalid && control.touched : false;
+  }
 
 }

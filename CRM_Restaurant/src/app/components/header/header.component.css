@@ -1,5 +1,5 @@
 #navbar {
-    background: linear-gradient(to bottom, #ede9e1, #a89b80);
+    background: linear-gradient(to left, #cabb94, #c1af91);
 }
 
 #navbarNav ul {
@@ -12,5 +12,7 @@
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;
-    background-color: #c6b799;
+    background-color: #D6C3A1;
+    border: 1px solid #867a66;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
