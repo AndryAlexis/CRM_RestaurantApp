@@ -1,4 +1,89 @@
 <app-header />
 
+<!-- Seccion Titulo -->
+<div class="row">
+    <div class="col-12 position-relative">
+        <img src="./images/tasty-smoke-cooked-food.jpg" class="img-fluid w-100" alt="Restaurant"
+            style="max-height: 500px; object-fit: cover;">
+        <h1 class="position-absolute top-50 start-50 translate-middle text-white">Título del Restaurante</h1>
+    </div>
+</div>
+<!-- Fin Titulo -->
 
-<p>home works!</p>
+<!-- Seccion Gastronmia -->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="./images/meal-5589928_1280.jpg" class="img-fluid w-100" alt="Imagen gastronomia">
+        </div>
+        <div class="col-md-6 d-flex flex-column justify-content-center">
+            <h2>Gastronomia</h2>
+            <p>En [Nombre del Restaurante], te invitamos a sumergirte en una travesía culinaria que despierta los
+                sentidos. Nuestra
+                propuesta combina lo mejor de la cocina tradicional y contemporánea, con ingredientes frescos y de
+                calidad,
+                cuidadosamente seleccionados para cada plato.
+
+                Desde el momento en que entras, te recibirán aromas que evocan recuerdos y sabores que sorprenden con
+                cada bocado.
+                Nuestros chefs, apasionados por la excelencia, trabajan con creatividad y dedicación para transformar
+                recetas en obras
+                de arte, presentadas con el máximo cuidado en cada detalle.
+
+                Acompaña tu experiencia con nuestra exclusiva selección de vinos y cócteles, diseñados para maridar a la
+                perfección con
+                nuestra carta. El ambiente cálido y acogedor, junto con un servicio atento y personalizado, harán que
+                cada visita sea
+                inolvidable.
+
+                En [Nombre del Restaurante], no solo comes, disfrutas, celebras y compartes momentos que quedarán en tu
+                memoria. Ven y
+                descubre por qué somos más que un restaurante; somos una experiencia. ¡Te esperamos!</p>
+            <a class="btn btn-primary" [routerLink]="['/menu']">Ver
+                menú</a>
+        </div>
+    </div>
+</div>
+<!-- Fin Gastronmia -->
+
+<!-- Seccion Registrate -->
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 d-flex flex-column justify-content-center">
+            <h2>Únete a Nuestra Familia Gastronómica</h2>
+            <p>En [Nombre del Restaurante], no solo reservamos una mesa para ti, te damos la bienvenida a nuestra
+                familia. Regístrate y
+                sé parte de nuestra comunidad, donde cada visita es un momento especial y cada cliente, un miembro más
+                de nuestro hogar.
+
+                Forma parte de esta experiencia única y asegura tu lugar en nuestro espacio diseñado para compartir,
+                disfrutar y crear
+                recuerdos inolvidables. ¡Te esperamos con los brazos abiertos!</p>
+            <button class="btn btn-primary" [routerLink]="['/register']">Ver más</button>
+        </div>
+        <div class="col-md-6">
+            <img src="./images/thai-food-green-curry-chicken-ai-generated-image.jpg" class="img-fluid w-100"
+                alt="Imagen plato">
+        </div>
+    </div>
+</div>
+<!-- Fin Registrate -->
+
+<!-- Seccion Reserva -->
+<div class="container-fluid mt-5 p-5 position-relative"
+    style="background-image: url('./images/interior.jpg'); background-size: cover; background-position: center;">
+    <div class="row">
+        <div class="col-12 text-center text-white">
+            <h2>Tu Momento, Tu Mesa</h2>
+            <p>Es hora de vivir la experiencia que mereces. Haz tu reserva ahora y prepárate para disfrutar de una
+                velada única en
+                [Nombre del Restaurante]. Selecciona tu fecha, horario y déjanos encargarnos del resto.
+
+                Cada detalle está pensado para que tu visita sea inolvidable. Porque aquí, tu lugar siempre estará listo
+                para recibirte.
+                ¡Reserva ahora y forma parte de nuestra historia!</p>
+            <button class="btn btn-lg btn-primary" [routerLink]="['/reservations']">Reservar Ahora</button>
+        </div>
+    </div>
+    <!-- Fin Reserva -->
+</div>
