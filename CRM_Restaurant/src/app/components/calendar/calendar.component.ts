@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-calendar',
@@ -8,13 +8,14 @@ import { Component } from '@angular/core';
   styleUrl: './calendar.component.css'
 })
 export class CalendarComponent {
+  @Output() dateSelected = new EventEmitter<string>(); // Emisor para la fecha seleccionada
 
   selectedDate: string = '';
 
   dateChange(event: Event) {
     const input = event.target as HTMLInputElement;
     this.selectedDate = input.value;
-    console.log(this.selectedDate);
+    this.dateSelected.emit(this.selectedDate);
   }
 
 }

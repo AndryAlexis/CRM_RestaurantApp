@@ -17,12 +17,25 @@ export class ReservationsComponent {
   constructor() {
     this.form = new FormGroup({
       comensales: new FormControl('', [Validators.required, Validators.minLength(1)]),
-      otraCosa: new FormControl('', [Validators.required]),
+      horario: new FormControl('', [Validators.required]),
+      ubicacion: new FormControl('', [Validators.required]),
+      fecha: new FormControl('', [Validators.required]),
+
     })
   }
 
   ngSubmit() {
-    console.log(this.form.value);
+    if (this.form.valid) {
+      console.log(this.form.value);
+    } else {
+      console.log('Formulario inválido');
+    }
   }
+
+  // Actualiza que aparezca la fecha en el formulario
+  onDateSelected(date: string) {
+    this.form.patchValue({ fecha: date });
+  }
+
 
 }
