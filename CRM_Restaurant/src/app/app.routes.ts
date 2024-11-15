@@ -7,9 +7,9 @@ import { MenuComponent } from './pages/menu/menu.component';
 import { ReservationsComponent } from './pages/reservations/reservations.component';
 
 export const routes: Routes = [
-  { 
-    path: '', 
-    component: HomeComponent, 
+  {
+    path: '',
+    component: HomeComponent,
     title: 'Home',
     pathMatch: 'full'
   },
@@ -48,5 +48,5 @@ export const routes: Routes = [
     redirectTo: '',
     pathMatch: 'full'
   },
-  
+
 ];

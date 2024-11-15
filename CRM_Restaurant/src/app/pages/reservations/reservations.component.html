@@ -1,10 +1,12 @@
 <app-header />
-<div>
+<div class="img">
     <figure>
         <img src="./images/interior.jpg" alt="interior">
     </figure>
 
 </div>
+
+<!-- Calendario y selector de horario -->
 <div class="reservations">
     <div class="calendar-container">
         <app-calendar class="calendar"></app-calendar>
@@ -13,20 +15,24 @@
                 Selecciona un horario
             </button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item">Action</a></li>
-                <li><a class="dropdown-item">Another action</a></li>
-                <li><a class="dropdown-item">Something else here</a></li>
+                <li><a class="dropdown-item">Comida</a></li>
+                <li><a class="dropdown-item">Cena</a></li>
+                <li><a class="dropdown-item">Evento Especial</a></li>
             </ul>
         </div>
     </div>
-    <div class="reservation-container">
-        <div class="input-group mb-3">
-            <input type="number" class="form-control" placeholder="Comensales" aria-label="Username" aria-describedby="basic-addon1">
-        </div>
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="InpurParaOtraCosa" aria-label="Username" aria-describedby="basic-addon1">
-        </div>
 
-        <button class="btn">Reservar</button>
+    <!-- Formulario de reservas -->
+    <div class="reservation-container">
+        <form [formGroup]="form" (ngSubmit)="ngSubmit()">
+            <div class="form-group mb-3">
+                <input type="number" formControlName="comensales" class="form-control" placeholder="Comensales" min="0">
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" formControlName="otraCosa" placeholder="InpurParaOtraCosa">
+            </div>
+
+            <input type="submit" class="btn" value="Reservar">
+        </form>
     </div>
 </div>
