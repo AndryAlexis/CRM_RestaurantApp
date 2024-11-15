@@ -1,47 +1,118 @@
-figure img {
+.img figure img {
     width: 100%;
     max-height: 50vh;
     object-fit: cover;
 }
 
+/* Contenedor de título */
+.container-title {
+    font-family: 'Poiret One', sans-serif;
+    background-color: rgba(240, 222, 177, 0.2);
+    padding: 70px;
+    margin: 20px 0;
+    border-radius: 10px;
+    text-align: center;
 
+
+    h1 {
+        font-size: 32px;
+        font-weight: 600;
+        margin-bottom: 20px;
+
+    }
+
+    h5 {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 1.6;
+
+    }
+}
+
+
+/* Carrusel */
+#carouselExampleControls {
+    height: 80vh;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 2px 2px 10px 7px rgba(47, 39, 39, 0.1);
+
+}
+
+#carouselExampleControls .carousel-inner,
+#carouselExampleControls .carousel-item,
+#carouselExampleControls .carousel-item img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+
+/* Contenedor general reservas */
 .reservations {
     display: flex;
     justify-content: space-around;
     align-items: center;
     gap: 2rem;
     padding: 40px 0;
+    font-family: 'Poiret One', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
 }
 
+/* Contenedor de fecha y horario */
 .calendar-container {
     display: flex;
     flex-direction: column;
-}
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px 7px rgba(47, 39, 39, 0.1);
+    background-color: rgb(241, 236, 230, 0.2);
 
-
-
-.dropdown {
-    color: rgb(241, 236, 230);
-    display: flex;
-    justify-content: center;
-    padding: 5px 0;
-
-    button {
-        background-color: rgb(148, 138, 126);
-        box-shadow: 2px 2px 10px 5px rgba(167, 142, 142, 0.1);
+    .calendar {
+        font-size: 15px;
     }
 }
 
+
+
+/* Contenedor de comensales y ubicacion */
 .reservation-container {
     display: flex;
     flex-direction: column;
     width: 30%;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px 7px rgba(47, 39, 39, 0.1);
+    background-color: rgb(241, 236, 230, 0.2);
 
 
     .btn {
-        background-color: rgb(148, 138, 126);
+        background-color: #D6C3A1;
         box-shadow: 2px 2px 10px 5px rgba(47, 39, 39, 0.1);
         width: 100%;
-        font-family: 'Tomorrow', sans-serif;
+        font-weight: bold;
+        font-size: 18px;
+    }
+}
+
+/* Media queries */
+
+@media (max-width: 768px) {
+    .reservation-container {
+        width: 80%;
+        margin: 40px;
+    }
+
+    .calendar-container {
+        width: 80%;
+        margin: 40px;
+    }
+
+    .reservations {
+        flex-direction: column;
+        gap: 1rem;
     }
 }
