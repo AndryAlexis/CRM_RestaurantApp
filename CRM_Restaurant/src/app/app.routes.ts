@@ -5,6 +5,9 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { ReservationsComponent } from './pages/reservations/reservations.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { MenuDashboardComponent } from './pages/menu-dashboard/menu-dashboard.component';
+import { ViewUserDashboardComponent } from './pages/view-user-dashboard/view-user-dashboard.component';
 
 export const routes: Routes = [
   {
@@ -41,6 +44,24 @@ export const routes: Routes = [
     path: 'reservations',
     component: ReservationsComponent,
     title: 'Reservations',
+    pathMatch: 'full'
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    title: 'Dashboard',
+    pathMatch: 'full'
+  },
+  {
+    path: 'dashboard/users/:id',
+    component: ViewUserDashboardComponent,
+    title: 'User Detail',
+    pathMatch: 'full'
+  },
+  {
+    path: 'dashboard/menu',
+    component: MenuDashboardComponent,
+    title: 'Menu Dashboard',
     pathMatch: 'full'
   },
   {
