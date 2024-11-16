@@ -10,7 +10,6 @@
 .top-section {
     display: flex;
     gap: 20px;
-    /* Espacio entre las columnas */
 }
 
 /* Panel izquierdo y derecho */
@@ -59,17 +58,15 @@ button:hover {
     background-color: #0056b3;
 }
 
-/* Responsivo */
+
 @media (max-width: 768px) {
     .top-section {
         flex-direction: column;
-        /* Columnas en vez de filas */
     }
 
     .left-panel,
     .right-panel {
         flex: none;
         margin-bottom: 20px;
-        /* Espacio entre las secciones */
     }
 }
