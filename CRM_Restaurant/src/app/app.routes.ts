@@ -5,6 +5,10 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { ReservationsComponent } from './pages/reservations/reservations.component';
+import { MenuDashboardComponent } from './pages/menu-dashboard/menu-dashboard.component';
+import { UserComponent } from './pages/user/user.component';
+import { ViewUserDashboardComponent } from './pages/view-user-dashboard/view-user-dashboard.component';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 export const routes: Routes = [
   {
