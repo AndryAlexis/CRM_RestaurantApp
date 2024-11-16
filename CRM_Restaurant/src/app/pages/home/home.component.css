@@ -19,6 +19,11 @@ button {
     width: 200px;
 }
 
+button:hover {
+    background-color: rgb(196, 181, 144);
+    color: black;
+}
+
 /* Estilos contenedor gastronomia */
 #gastronomia {
     background-color: rgba(195, 180, 142, 0.2);

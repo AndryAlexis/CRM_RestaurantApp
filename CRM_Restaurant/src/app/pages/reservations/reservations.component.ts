@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { CalendarComponent } from "../../components/calendar/calendar.component";
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { HeaderComponent } from "../../components/header/header.component";
+import { FooterComponent } from "../../components/footer/footer.component";
 
 @Component({
   selector: 'app-reservations',
   standalone: true,
-  imports: [CalendarComponent, ReactiveFormsModule],
+  imports: [CalendarComponent, ReactiveFormsModule, HeaderComponent, FooterComponent],
   templateUrl: './reservations.component.html',
   styleUrl: './reservations.component.css'
 })

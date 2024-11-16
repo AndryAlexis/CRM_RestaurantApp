@@ -1,0 +1,49 @@
+<app-header-dashboard></app-header-dashboard>
+<section class="container p-5 m-auto">
+    <div class="row">
+        <!-- Cont. izquierdos -->
+        <div class="col-12 col-md-6 col-lg-5 d-flex flex-column gap-4">
+            <!-- Usuario -->
+            <div class="card" style="width: 100%;">
+                <div class="card-body p-4">
+                    <h5 class="card-title text-center border-bottom">Username</h5>
+                    <h6 class="card-subtitle mb-3">Name and surname</h6>
+                    <p class="card-text">Email: email&#64;email.com</p>
+                    <p class="card-text">Phone: 666 66 66 66</p>
+                    <p class="card-text">Role: Client</p>
+                </div>
+            </div>
+            <!-- Reservas usuario -->
+            <div class="card" style="width: 100%;">
+                <div class="card-body p-4">
+                    <h5 class="card-title text-center mb-4 border-bottom">Historial de reservas</h5>
+                    <h6 class="card-subtitle mb-3">Date: 16/11/2024</h6>
+                    <p class="card-text">Time: Comida</p>
+                    <p class="card-text">Comensales: 2</p>
+                    <p class="card-text">Estado: Confirmada</p>
+                </div>
+            </div>
+        </div>
+        <!-- Cont. derecho -->
+        <div class="col-12 col-md-6 col-lg-7">
+            <div class="card" style="width: 100%;">
+                <div class="card-body p-4">
+                    <h5 class="card-title text-center mb-4 border-bottom">Historial de reseñas</h5>
+                    <h6 class="card-subtitle mb-3">Rating: 4/5</h6>
+                    <p class="card-text">Comentario:</p>
+                    <p class="card-text">
+                        De aquí a la cola del INEM, Con suerte una empresa en Bangladesh nos hace un outsourcing bien rico.
+                        Aporreo el teclado como un mono con toda la zorra que tengo. Eternal becario, suicídenme.
+                        Vamos directos al paro, a programar debajo de un puente robando la luz de las farolas.
+                        Primo, dame algo suelto que este servidor no se paga solo.
+                        De aquí a la cola del INEM, Con suerte una empresa en Bangladesh nos hace un outsourcing bien rico.
+                        Aporreo el teclado como un mono con toda la zorra que tengo. Eternal becario, suicídenme.
+                        Vamos directos al paro, a programar debajo de un puente robando la luz de las farolas.
+                        Primo, dame algo suelto que este servidor no se paga solo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a [routerLink]="['/dashboard']" class="btn btn-dark m-3 w-25">Volver</a>
+</section>
