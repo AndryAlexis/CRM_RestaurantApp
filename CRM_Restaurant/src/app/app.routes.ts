@@ -5,6 +5,7 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { ReservationsComponent } from './pages/reservations/reservations.component';
+import { UserComponent } from './pages/user/user.component';
 
 export const routes: Routes = [
   {
@@ -44,9 +45,14 @@ export const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'user',
+    component: UserComponent,
+    title: 'User',
+    pathMatch: 'full'
+  },
+  {
     path: '**',
     redirectTo: '',
     pathMatch: 'full'
-  },
-
+  }
 ];

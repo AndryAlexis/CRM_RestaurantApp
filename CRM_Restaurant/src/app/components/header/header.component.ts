@@ -6,8 +6,11 @@ import { RouterLink, RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [RouterLink],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-
+  isCollapsed = true;
+  toggleNavbar() {
+    this.isCollapsed = !this.isCollapsed;
+  }
 }
