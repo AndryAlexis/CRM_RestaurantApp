@@ -5,9 +5,6 @@ import { RegisterComponent } from './pages/register/register.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { ReservationsComponent } from './pages/reservations/reservations.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { MenuDashboardComponent } from './pages/menu-dashboard/menu-dashboard.component';
-import { ViewUserDashboardComponent } from './pages/view-user-dashboard/view-user-dashboard.component';
 
 export const routes: Routes = [
   {
@@ -65,9 +62,14 @@ export const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'user',
+    component: UserComponent,
+    title: 'User',
+    pathMatch: 'full'
+  },
+  {
     path: '**',
     redirectTo: '',
     pathMatch: 'full'
-  },
-
+  }
 ];

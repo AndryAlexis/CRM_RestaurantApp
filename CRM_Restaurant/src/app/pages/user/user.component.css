@@ -1,0 +1,72 @@
+/* Contenedor principal */
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+/* Sección superior con dos columnas */
+.top-section {
+    display: flex;
+    gap: 20px;
+}
+
+/* Panel izquierdo y derecho */
+.left-panel,
+.right-panel {
+    flex: 1;
+    /* Ocupan el mismo espacio */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+/* Panel izquierdo */
+.left-panel {
+    background-color: #eef6ff;
+}
+
+/* Panel derecho */
+.right-panel {
+    background-color: #ffefe6;
+}
+
+/* Sección inferior */
+.bottom-section {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f6f6f6;
+}
+
+/* Botones */
+button {
+    margin-top: 10px;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+@media (max-width: 768px) {
+    .top-section {
+        flex-direction: column;
+    }
+
+    .left-panel,
+    .right-panel {
+        flex: none;
+        margin-bottom: 20px;
+    }
+}

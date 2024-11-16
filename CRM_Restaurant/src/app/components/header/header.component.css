@@ -16,3 +16,23 @@
     border: 1px solid #867a66;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
+
+@media (max-width: 61.99875rem) {
+    .navbar-collapse {
+        text-align: center;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+    }
+
+    .nav-item {
+        display: inline-block;
+        margin: 0 auto;
+        border-bottom: 1px solid #867a66;
+            padding-bottom: 10px;
+    }
+    .nav-item:last-child {
+        border-bottom: none;
+    }
+}
