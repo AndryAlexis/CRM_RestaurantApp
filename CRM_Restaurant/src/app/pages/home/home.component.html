@@ -2,8 +2,9 @@
     <!-- Seccion Titulo -->
     <div class="row">
         <div class="col-12 position-relative">
-            <img src="./images/tasty-smoke-cooked-food.jpg" class="img-fluid w-100" alt="Restaurant" style="max-height: 500px; object-fit: cover;">
-            <h1 class="position-absolute top-50 start-50 translate-middle text-white">¡Bienvenido a NAFAC!
+            <img src="./images/header-img.jpg" class="img-fluid w-100" alt="Restaurant"
+                style="max-height: 500px; object-fit: cover;">
+            <h1 class="position-absolute top-50 start-50 translate-middle text-white">¡Bienvenido a Frotend Feast!
             </h1>
         </div>
     </div>
@@ -13,7 +14,7 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-6">
-                <img src="./images/meal-5589928_1280.jpg" class="img-fluid w-100 rounded" alt="Imagen gastronomia">
+                <img src="./images/indian-food.jpg" class="img-fluid w-100 rounded" alt="Imagen gastronomia">
             </div>
             <div class="col-md-6 d-flex flex-column justify-content-center" id="gastronomia">
                 <h2>Gastronomia</h2>
@@ -70,14 +71,16 @@
                 <button class="btn mb-3" [routerLink]="['/register']">Registrate para reservar</button>
             </div>
             <div class="col-md-6">
-                <img src="./images/thai-food-green-curry-chicken-ai-generated-image.jpg" class="img-fluid w-100 rounded" alt="Imagen plato">
+                <img src="./images/thai-food-green-curry-chicken-ai-generated-image.jpg" class="img-fluid w-100 rounded"
+                    alt="Imagen plato">
             </div>
         </div>
     </div>
     <!-- Fin Registrate -->
 
     <!-- Seccion Reserva -->
-    <div class="container-fluid mt-5 p-5 position-relative" style="background-image: url('./images/interior.jpg'); background-size: cover; background-position: center;">
+    <section class="container-fluid mt-5 p-5 position-relative reserva"
+        style="background-image: url('./images/interior.jpg'); background-size: cover; background-position: center;">
         <div class="row">
             <div class="col-12 text-center text-white">
                 <div class="reserva-text">
@@ -96,6 +99,6 @@
                 <button class="btn mt-3" [routerLink]="['/reservations']">Reservar Ahora</button>
             </div>
         </div>
-        <!-- Fin Reserva -->
-    </div>
+    </section>
+    <!-- Fin Reserva -->
 </div>
