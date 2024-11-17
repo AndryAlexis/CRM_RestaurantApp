@@ -90,7 +90,7 @@
 
 
     .btn {
-        background-color: #D6C3A1;
+        background-color: var(--color-primary-dark);
         box-shadow: 2px 2px 10px 5px rgba(47, 39, 39, 0.1);
         width: 100%;
         font-weight: bold;

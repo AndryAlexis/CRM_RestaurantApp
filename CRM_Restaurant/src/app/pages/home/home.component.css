@@ -11,10 +11,10 @@
 
 
 button {
-    font-family: 'Poiret One', sans-serif;
-    font-weight: 700;
-    background-color: #D6C3A1;
-    color: black;
+    font-family: var(--font-secondary);
+    font-size: 17px;
+    background-color: var(--color-secondary-dark);
+    color: rgb(28, 28, 28);
     margin: 0 auto;
     width: 200px;
 }
@@ -26,41 +26,43 @@ button:hover {
 
 /* Estilos contenedor gastronomia */
 #gastronomia {
-    background-color: rgba(195, 180, 142, 0.2);
+    background-color: var(--color-primary-light);
     border-radius: 10px;
-
-
 }
 
 /* Estilos contenedor registrate */
 #registrate {
-    background-color: rgba(195, 180, 142, 0.2);
+    background-color: var(--color-primary-light);
     border-radius: 10px;
 
 }
 
+.reserva {
 
-.reserva-text {
-    background-color: rgba(130, 116, 96, 0.5);
-    padding: 20px;
-    border-radius: 10px;
+    .reserva-text {
+        background-color: var(--color-primary-light);
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    button {
+        background-color: var(--color-secondary-dark-no-trans);
+    }
+
 }
 
 
 h1 {
-    font-family: 'Poiret One', cursive;
-    font-weight: 700;
-    font-size: 60px;
+    font-family: var(--font-fancy);
+    font-size: 100px;
 }
 
 
 h2 {
-    font-family: 'Gowun Dodum', sans-serif;
+    font-family: var(--font-secondary)
 }
 
 p {
-    font-family: 'Poiret One', sans-serif;
-    font-weight: 700;
-    font-size: 17px;
+    font-family: var(--font-primary);
     color: black;
 }

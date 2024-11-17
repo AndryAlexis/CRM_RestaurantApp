@@ -1,5 +1,23 @@
 #navbar {
-    background: linear-gradient(to left, #cabb94, #c1af91);
+    background-color: var(--color-primary-light);
+
+
+    a {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        color: var(--color-tertiary);
+        padding: 0;
+
+        img {
+            width: 60px;
+        }
+
+        font-family: var(--font-fancy);
+        font-size: 50px;
+    }
+
+    border-bottom: 5px solid var(--color-tertiary);
 }
 
 #navbarNav ul {
@@ -12,8 +30,8 @@
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;
-    background-color: #D6C3A1;
-    border: 1px solid #867a66;
+    background-color: var(--color-primary-dark);
+    border: 1px solid #867a6610;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 
