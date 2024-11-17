@@ -19,7 +19,7 @@ p {
 #email:focus,
 #password:focus,
 #confirmPassword:focus {
-    border-color: #D6C3A1;
+    border-color: var(--color-primary-dark);
     box-shadow: 0 0 0 0.3rem rgba(255, 132, 104, 0.25);
 }
 
@@ -28,7 +28,7 @@ p {
         font-family: 'Poiret One', cursive;
         font-weight: 600;
         font-size: 18px;
-        background-color: #D6C3A1;
+        background-color: var(--color-primary-dark);
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     }
 }
@@ -39,7 +39,7 @@ p {
         font-weight: 600;
         font-size: 18px;
         margin: 5px 10px;
-        background-color: #D6C3A1;
+        background-color: var(--color-primary-dark);
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     }
 }
