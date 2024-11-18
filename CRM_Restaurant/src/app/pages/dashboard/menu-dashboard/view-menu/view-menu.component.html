@@ -1,1 +1,64 @@
-<p>view-menu works!</p>
+<app-header-dashboard />
+<div class="container-fluid p-3 mt-3 mb-3" id="menu-info">
+    <h1 class="text-center p-2 m-3 shadow-sm w-50 mx-auto">Nombre Menú | 12/12/2024</h1> <!-- Añadido mx-auto para centrar -->
+    <h5 class="text-center p-2 mt-5 shadow-sm w-50 mx-auto">Primeros platos</h5> <!-- Añadido mx-auto para centrar -->
+</div>
+
+<section class="card-container align-items-center row p-3 my-3 justify-content-center">
+    <div class="card m-3" style="max-width: 18rem;" id="menu-cards">
+        <img class="img-fluid rounded w-100" src="https://via.placeholder.com/150" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Nombre plato</h5>
+            <p class="card-text">Precio: 10€</p>
+            <p class="card-text">Descripción del plato</p>
+        </div>
+    </div>
+    <div class="card m-3" style="max-width: 18rem;" id="menu-cards">
+        <img class="img-fluid rounded w-100" src="https://via.placeholder.com/150" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Nombre plato</h5>
+            <p class="card-text">Precio: 10€</p>
+            <p class="card-text">Descripción del plato</p>
+        </div>
+    </div>
+    <div class="card m-3" style="max-width: 18rem;" id="menu-cards">
+        <img class="img-fluid rounded w-100" src="https://via.placeholder.com/150" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Nombre plato</h5>
+            <p class="card-text">Precio: 10€</p>
+            <p class="card-text">Descripción del plato</p>
+        </div>
+    </div>
+</section>
+
+<div class="container-fluid p-3 mt-3 mb-3" id="menu-info">
+    <h5 class="text-center p-2 mt-5 shadow-sm w-50 mx-auto">Segundos platos</h5> <!-- Añadido mx-auto para centrar -->
+</div>
+<section class="card-container align-items-center row p-3 my-3 justify-content-center">
+    <div class="card m-3" style="max-width: 18rem;" id="menu-cards">
+        <img class="img-fluid rounded w-100" src="https://via.placeholder.com/150" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Nombre plato</h5>
+            <p class="card-text">Precio: 10€</p>
+            <p class="card-text">Descripción del plato</p>
+        </div>
+    </div>
+    <div class="card m-3" style="max-width: 18rem;" id="menu-cards">
+        <img class="img-fluid rounded w-100" src="https://via.placeholder.com/150" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Nombre plato</h5>
+            <p class="card-text">Precio: 10€</p>
+            <p class="card-text">Descripción del plato</p>
+        </div>
+    </div>
+    <div class="card m-3" style="max-width: 18rem;" id="menu-cards">
+        <img class="img-fluid rounded w-100" src="https://via.placeholder.com/150" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Nombre plato</h5>
+            <p class="card-text">Precio: 10€</p>
+            <p class="card-text">Descripción del plato</p>
+        </div>
+    </div>
+
+    <a [routerLink]="['/dashboard/menu']" class="btn btn-dark w-25 mx-auto">Volver a menús</a>
+</section>
