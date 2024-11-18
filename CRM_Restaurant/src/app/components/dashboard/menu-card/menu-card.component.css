@@ -4,14 +4,5 @@
     font-size: 1.2rem;
     font-weight: 600;
     padding-left: 10px;
-    
-    .btn{
-        background-color: var(--color-tertiary);
-        color: white;
-        font-family: 'Gowun Dodum', cursive;
-        font-size: 1.2rem;
-        font-weight: 600;
-        
-    }
 
 }

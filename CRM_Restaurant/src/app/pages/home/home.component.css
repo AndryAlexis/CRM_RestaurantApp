@@ -1,13 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Gowun+Dodum&family=Poiret+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+
 .body {
     background-color: #f5f5f5;
     min-height: 100vh;
+    /* Había un scroll lateral raro que he quitado con esto, Fran */
     overflow-x: hidden;
-    color: rgb(28, 28, 28);
-    margin: 0 auto;
-    width: 100%;
+
 }
+
 
 button {
     font-family: var(--font-secondary);
@@ -19,8 +20,7 @@ button {
 }
 
 button:hover {
-    background-color: var(--color-primary-light);
-    border-radius: 10px;
+    background-color: rgb(196, 181, 144);
     color: black;
 }
 
@@ -34,11 +34,13 @@ button:hover {
 #registrate {
     background-color: var(--color-primary-light);
     border-radius: 10px;
+
 }
 
 .reserva {
+
     .reserva-text {
-        background-color: var(--color-secondary-dark);
+        background-color: var(--color-primary-light);
         padding: 20px;
         border-radius: 10px;
     }
@@ -46,62 +48,21 @@ button:hover {
     button {
         background-color: var(--color-secondary-dark-no-trans);
     }
+
 }
 
-h1, h2 {
-    font-family: var(--font-secondary);
+
+h1 {
+    font-family: var(--font-fancy);
+    font-size: 100px;
+}
+
+
+h2 {
+    font-family: var(--font-secondary)
 }
 
 p {
     font-family: var(--font-primary);
     color: black;
-}
-
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-}
-
-.col-md-6 {
-    display: flex;
-    flex-direction: column;
-}
-
-.col-md-6 img {
-    flex: 1;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-/* Media queries para dispositivos tamaño tablet */
-@media (min-width: 768px) and (max-width: 1024px) {
-
-    img.img-fluid {
-        width: 100%;
-        height: auto;
-    }
-    .row .col-12 img {
-        max-height: 400px;
-        object-fit: cover;
-    }
-    #gastronomia img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    #registrate img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .col-md-6 {
-        flex: 1;
-    }
-
-    .col-md-6 img {
-        max-height: none;
-    }
 }
