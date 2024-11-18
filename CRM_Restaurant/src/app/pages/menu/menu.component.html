@@ -1,7 +1,176 @@
 <header>
     <app-header />
 </header>
-<p>menu works!</p>
+
+<body>
+    <div id="body-menu" class=" container my-4">
+        <!-- Título del menú -->
+        <h2 class="text-center mb-4">Menú del Día</h2>
+        <p>Descubre una variedad de opciones pensadas para todos los gustos. Desde platos clásicos hasta especialidades
+            únicas,
+            hemos preparado todo con dedicación para que disfrutes de una experiencia deliciosa.
+
+            Elige lo que más te apetezca y déjanos sorprenderte. ¡Buen provecho!"</p>
+
+        <!-- Categorías -->
+        <div class="accordion" id="menuAccordion">
+            <!-- Categoría 1: Entrantes -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingEntrantes">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseEntrantes" aria-expanded="true" aria-controls="collapseEntrantes">
+                        Entrantes
+                    </button>
+                </h2>
+                <div id="collapseEntrantes" class="accordion-collapse collapse show" aria-labelledby="headingEntrantes"
+                    data-bs-parent="#menuAccordion">
+                    <div class="accordion-body">
+                        <!-- Platillos de la categoría -->
+                        <div class="row mb-3">
+                            <div class="col-10">
+                                <h5>Bruschetta</h5>
+                                <p class="text-muted">Tostadas con tomate fresco, albahaca y aceite de oliva.</p>
+                            </div>
+                            <div class="col-2 text-end">
+                                <span class="fw-bold text-danger">4,50 €</span>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-10">
+                                <h5>Sopa del día</h5>
+                                <p class="text-muted">Preparada con ingredientes frescos y naturales.</p>
+                            </div>
+                            <div class="col-2 text-end">
+                                <span class="fw-bold text-danger">3,50 €</span>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-10">
+                                <h5>Ensalada César</h5>
+                                <p class="text-muted">Lechuga, pollo, croutons y aderezo especial.</p>
+                            </div>
+                            <div class="col-2 text-end">
+                                <span class="fw-bold text-danger">5,00 €</span>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-10">
+                                <h5>Tabla de quesos</h5>
+                                <p class="text-muted">Selección de quesos artesanales con acompañamientos.</p>
+                            </div>
+                            <div class="col-2 text-end">
+                                <span class="fw-bold text-danger">8,00 €</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Categoría 2: Platos Principales -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingPlatosPrincipales">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapsePlatosPrincipales" aria-expanded="false"
+                        aria-controls="collapsePlatosPrincipales">
+                        Platos Principales
+                    </button>
+                </h2>
+                <div id="collapsePlatosPrincipales" class="accordion-collapse collapse"
+                    aria-labelledby="headingPlatosPrincipales" data-bs-parent="#menuAccordion">
+                    <div class="accordion-body">
+                        <!-- Platillos de la categoría -->
+                        <div class="row mb-3">
+                            <div class="col-10">
+                                <h5>Risotto de setas</h5>
+                                <p class="text-muted">Crema de arroz con setas y parmesano.</p>
+                            </div>
+                            <div class="col-2 text-end">
+                                <span class="fw-bold text-danger">12,00 €</span>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-10">
+                                <h5>Pollo al curry</h5>
+                                <p class="text-muted">Acompañado de arroz basmati y especias.</p>
+                            </div>
+                            <div class="col-2 text-end">
+                                <span class="fw-bold text-danger">10,00 €</span>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-10">
+                                <h5>Entrecot a la parrilla</h5>
+                                <p class="text-muted">Servido con guarnición de patatas y verduras.</p>
+                            </div>
+                            <div class="col-2 text-end">
+                                <span class="fw-bold text-danger">15,00 €</span>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-10">
+                                <h5>Paella mixta</h5>
+                                <p class="text-muted">Arroz con mariscos y pollo, cocinado al momento.</p>
+                            </div>
+                            <div class="col-2 text-end">
+                                <span class="fw-bold text-danger">14,00 €</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Categoría 3: Postres -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingPostres">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapsePostres" aria-expanded="false" aria-controls="collapsePostres">
+                        Postres
+                    </button>
+                </h2>
+                <div id="collapsePostres" class="accordion-collapse collapse" aria-labelledby="headingPostres"
+                    data-bs-parent="#menuAccordion">
+                    <div class="accordion-body">
+                        <!-- Platillos de la categoría -->
+                        <div class="row mb-3">
+                            <div class="col-10">
+                                <h5>Tarta de queso</h5>
+                                <p class="text-muted">Con cobertura de frutas del bosque.</p>
+                            </div>
+                            <div class="col-2 text-end">
+                                <span class="fw-bold text-danger">6,00 €</span>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-10">
+                                <h5>Flan casero</h5>
+                                <p class="text-muted">Con caramelo artesanal.</p>
+                            </div>
+                            <div class="col-2 text-end">
+                                <span class="fw-bold text-danger">4,00 €</span>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-10">
+                                <h5>Helado artesanal</h5>
+                                <p class="text-muted">Disponible en varios sabores.</p>
+                            </div>
+                            <div class="col-2 text-end">
+                                <span class="fw-bold text-danger">3,50 €</span>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-10">
+                                <h5>Brownie con helado</h5>
+                                <p class="text-muted">Brownie caliente con bola de helado de vainilla.</p>
+                            </div>
+                            <div class="col-2 text-end">
+                                <span class="fw-bold text-danger">5,50 €</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 
 <footer>
     <app-footer />
