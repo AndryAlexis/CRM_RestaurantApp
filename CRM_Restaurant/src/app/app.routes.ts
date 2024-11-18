@@ -2,7 +2,6 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
-import { ProfileComponent } from './pages/profile/profile.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { ReservationsComponent } from './pages/reservations/reservations.component';
 import { MenuDashboardComponent } from './pages/dashboard/menu-dashboard/menu-dashboard.component';
@@ -32,12 +31,6 @@ export const routes: Routes = [
     path: 'register',
     component: RegisterComponent,
     title: 'Register',
-    pathMatch: 'full'
-  },
-  {
-    path: 'profile',
-    component: ProfileComponent,
-    title: 'Profile',
     pathMatch: 'full'
   },
   {
