@@ -1,0 +1,199 @@
+<section class="h-100 gradient-form" style="background-color: #f8f9fa;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-10">
+                <div class="card rounded-3 text-black shadow">
+                    <div class="row g-0">
+
+                        <!-- Menu Creation Form Section -->
+                        <form [formGroup]="menuForm" class="col-lg-8 mx-auto" (ngSubmit)="onSubmit()">
+                            <div class="card-body p-md-5 mx-md-4 text-center">
+                                <p class="h4 mb-4">Crea tu menú</p>
+
+                                <!-- Menu Name Input -->
+                                <div class="form-outline mb-4">
+                                    <input type="text" formControlName="menuName" id="menuName" class="form-control" [class.border-danger]="checkValidation('menuName')" placeholder="*Nombre del Menú" required>
+                                </div>
+
+                                <!-- Date Input -->
+                                <div class="form-outline mb-4">
+                                    <input type="date" formControlName="date" id="date" class="form-control" [class.border-danger]="checkValidation('date')" placeholder="*Fecha" required>
+                                </div>
+
+                                <!-- Menu Price Input -->
+                                <div class="form-outline mb-4">
+                                    <input type="number" formControlName="menuPrice" class="form-control" placeholder="*Precio del Menú" min="1" required>
+                                </div>
+
+                                <h3 class="my-3">Platos Principales</h3>
+                                <div formArrayName="mainDishes">
+                                    <div [formGroupName]="0" class="mb-3">
+                                        <h4 class="my-3">Plato 1</h4>
+                                        <div class="form-outline mb-3">
+                                            <input type="text" formControlName="name" class="form-control" placeholder="*Nombre" required>
+                                        </div>
+                                        <div class="form-outline mb-3">
+                                            <textarea formControlName="description" class="form-control" placeholder="*Descripción" required></textarea>
+                                        </div>
+                                        <div class="form-outline mb-3">
+                                            <input type="text" formControlName="imageUrl" class="form-control" placeholder="*URL de la Imagen" required>
+                                        </div>
+                                    </div>
+                                    <div [formGroupName]="1" class="mb-3">
+                                        <h4 class="my-3">Plato 2</h4>
+                                        <div class="form-outline mb-3">
+                                            <input type="text" formControlName="name" class="form-control" placeholder="*Nombre" required>
+                                        </div>
+                                        <div class="form-outline mb-3">
+                                            <textarea formControlName="description" class="form-control" placeholder="*Descripción" required></textarea>
+                                        </div>
+                                        <div class="form-outline mb-3">
+                                            <input type="text" formControlName="imageUrl" class="form-control" placeholder="*URL de la Imagen" required>
+                                        </div>
+                                    </div>
+                                    <div [formGroupName]="2" class="mb-3">
+                                        <h4 class="my-3">Plato 3</h4>
+                                        <div class="form-outline mb-3">
+                                            <input type="text" formControlName="name" class="form-control" placeholder="*Nombre" required>
+                                        </div>
+                                        <div class="form-outline mb-3">
+                                            <textarea formControlName="description" class="form-control" placeholder="*Descripción" required></textarea>
+                                        </div>
+                                        <div class="form-outline mb-3">
+                                            <input type="text" formControlName="imageUrl" class="form-control" placeholder="*URL de la Imagen" required>
+                                        </div>
+                                    </div>
+                                    <div [formGroupName]="3" class="mb-3">
+                                        <h4 class="my-3">Plato 4</h4>
+                                        <div class="form-outline mb-3">
+                                            <input type="text" formControlName="name" class="form-control" placeholder="*Nombre" required>
+                                        </div>
+                                        <div class="form-outline mb-3">
+                                            <textarea formControlName="description" class="form-control" placeholder="*Descripción" required></textarea>
+                                        </div>
+                                        <div class="form-outline mb-3">
+                                            <input type="text" formControlName="imageUrl" class="form-control" placeholder="*URL de la Imagen" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h3 class="mt-4">Platos Secundarios</h3>
+                                <div formArrayName="secondDishes">
+                                    <div [formGroupName]="0" class="mb-3">
+                                        <h4 class="my-3">Plato 1</h4>
+                                        <div class="form-outline mb-3">
+                                            <input type="text" formControlName="name" class="form-control" placeholder="*Nombre" required>
+                                        </div>
+                                        <div class="form-outline mb-3">
+                                            <textarea formControlName="description" class="form-control" placeholder="*Descripción" required></textarea>
+                                        </div>
+                                        <div class="form-outline mb-3">
+                                            <input type="text" formControlName="imageUrl" class="form-control" placeholder="*URL de la Imagen" required>
+                                        </div>
+                                    </div>
+                                    <div [formGroupName]="1" class="mb-3">
+                                        <h4 class="my-3">Plato 2</h4>
+                                        <div class="form-outline mb-3">
+                                            <input type="text" formControlName="name" class="form-control" placeholder="*Nombre" required>
+                                        </div>
+                                        <div class="form-outline mb-3">
+                                            <textarea formControlName="description" class="form-control" placeholder="*Descripción" required></textarea>
+                                        </div>
+                                        <div class="form-outline mb-3">
+                                            <input type="text" formControlName="imageUrl" class="form-control" placeholder="*URL de la Imagen" required>
+                                        </div>
+                                    </div>
+                                    <div [formGroupName]="2" class="mb-3">
+                                        <h4 class="my-3">Plato 3</h4>
+                                        <div class="form-outline mb-3">
+                                            <input type="text" formControlName="name" class="form-control" placeholder="*Nombre" required>
+                                        </div>
+                                        <div class="form-outline mb-3">
+                                            <textarea formControlName="description" class="form-control" placeholder="*Descripción" required></textarea>
+                                        </div>
+                                        <div class="form-outline mb-3">
+                                            <input type="text" formControlName="imageUrl" class="form-control" placeholder="*URL de la Imagen" required>
+                                        </div>
+                                    </div>
+                                    <div [formGroupName]="3" class="mb-3">
+                                        <h4 class="my-3">Plato 4</h4>
+                                        <div class="form-outline mb-3">
+                                            <input type="text" formControlName="name" class="form-control" placeholder="*Nombre" required>
+                                        </div>
+                                        <div class="form-outline mb-3">
+                                            <textarea formControlName="description" class="form-control" placeholder="*Descripción" required></textarea>
+                                        </div>
+                                        <div class="form-outline mb-3">
+                                            <input type="text" formControlName="imageUrl" class="form-control" placeholder="*URL de la Imagen" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h3 class="mt-4">Postres</h3>
+                                <div formArrayName="desserts">
+                                    <div [formGroupName]="0" class="mb-3">
+                                        <h4 class="my-3">Postre 1</h4>
+                                        <div class="form-outline mb-3">
+                                            <input type="text" formControlName="name" class="form-control" placeholder="*Nombre" required>
+                                        </div>
+                                        <div class="form-outline mb-3">
+                                            <textarea formControlName="description" class="form-control" placeholder="*Descripción" required></textarea>
+                                        </div>
+                                        <div class="form-outline mb-3">
+                                            <input type="text" formControlName="imageUrl" class="form-control" placeholder="*URL de la Imagen" required>
+                                        </div>
+                                    </div>
+                                    <div [formGroupName]="1" class="mb-3">
+                                        <h4 class="my-3">Postre 2</h4>
+                                        <div class="form-outline mb-3">
+                                            <input type="text" formControlName="name" class="form-control" placeholder="*Nombre" required>
+                                        </div>
+                                        <div class="form-outline mb-3">
+                                            <textarea formControlName="description" class="form-control" placeholder="*Descripción" required></textarea>
+                                        </div>
+                                        <div class="form-outline mb-3">
+                                            <input type="text" formControlName="imageUrl" class="form-control" placeholder="*URL de la Imagen" required>
+                                        </div>
+                                    </div>
+                                    <div [formGroupName]="2" class="mb-3">
+                                        <h4 class="my-3">Postre 3</h4>
+                                        <div class="form-outline mb-3">
+                                            <input type="text" formControlName="name" class="form-control" placeholder="*Nombre" required>
+                                        </div>
+                                        <div class="form-outline mb-3">
+                                            <textarea formControlName="description" class="form-control" placeholder="*Descripción" required></textarea>
+                                        </div>
+                                        <div class="form-outline mb-3">
+                                            <input type="text" formControlName="imageUrl" class="form-control" placeholder="*URL de la Imagen" required>
+                                        </div>
+                                    </div>
+                                    <div [formGroupName]="3" class="mb-3">
+                                        <h4 class="my-3">Postre 4</h4>
+                                        <div class="form-outline mb-3">
+                                            <input type="text" formControlName="name" class="form-control" placeholder="*Nombre" required>
+                                        </div>
+                                        <div class="form-outline mb-3">
+                                            <textarea formControlName="description" class="form-control" placeholder="*Descripción" required></textarea>
+                                        </div>
+                                        <div class="form-outline mb-3">
+                                            <input type="text" formControlName="imageUrl" class="form-control" placeholder="*URL de la Imagen" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Submit Button -->
+                                <div class="text-center pt-1 mb-5 pb-1 d-grid gap-2" id="submitButton">
+                                    <button class="btn btn-primary btn-block fa-lg mb-3" type="submit" [disabled]="menuForm.invalid">
+                                        Crear Menú
+                                    </button>
+                                </div>
+
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,18 +1,14 @@
 .container-fluid {
     padding-left: 0;
-    /* Elimina padding izquierdo */
     padding-right: 0;
-    /* Elimina padding derecho */
 }
 
 .card {
     margin: 0;
-    /* Elimina márgenes de las tarjetas */
 }
 
 body {
     overflow-x: hidden;
-    /* Oculta el scroll horizontal si persiste */
 }
 
 

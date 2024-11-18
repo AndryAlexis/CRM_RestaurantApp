@@ -14,6 +14,7 @@ import { ViewMenuComponent } from './pages/dashboard/menu-dashboard/view-menu/vi
 import { DeleteComponent as DeleteMenuComponent } from './pages/dashboard/menu-dashboard/delete/delete.component';
 import { UpdateComponent as UpdateMenuComponent } from './pages/dashboard/menu-dashboard/update/update.component';
 import { HomeComponent as HomeMenuComponent } from './pages/dashboard/menu/home/home.component';
+import { NewMenuComponent } from './pages/dashboard/new-menu/new-menu.component';
 
 export const routes: Routes = [
   {
@@ -67,6 +68,11 @@ export const routes: Routes = [
         path: 'users/:id',
         component: ViewUserDashboardComponent,
         title: 'User Detail',
+      },
+      {
+        path: 'create-menu',
+        component: NewMenuComponent,
+        title: 'Create Menu',
       },
       {
         path: 'menu',
