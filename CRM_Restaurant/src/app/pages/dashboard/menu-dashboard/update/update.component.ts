@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HeaderDashboardComponent } from "../../../../components/dashboard/header-dashboard/header-dashboard.component";
 
 interface Menu {
   date: string;
@@ -11,7 +12,7 @@ interface Menu {
 @Component({
   selector: 'app-update',
   standalone: true,
-  imports: [],
+  imports: [HeaderDashboardComponent],
   templateUrl: './update.component.html',
   styleUrls: ['./update.component.css']
 })

@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { HeaderDashboardComponent } from "../../../components/dashboard/header-dashboard/header-dashboard.component";
 
 @Component({
   selector: 'app-new-menu',
   standalone: true,
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, HeaderDashboardComponent],
   templateUrl: './new-menu.component.html',
   styleUrls: ['./new-menu.component.css']
 })
