@@ -12,17 +12,12 @@
             <form [formGroup]="loginForm" class="col-lg-6" (ngSubmit)="onSubmit()">
               <div class="card-body p-md-5 mx-md-4">
 
-                <!-- Logo and Title -->
-                <div class="text-center" id="logoAndTitle">
-                  <img src="./images/Render(1).png" style="width: 200px;" alt="logo">
-                  <h4 class="mt-1 mb-5 pb-1">Paco's Restaurant</h4>
-                </div>
-
                 <p>Ingresa tus datos para continuar</p>
 
                 <!-- Email Input -->
                 <div class="form-outline mb-4">
-                  <input type="email" formControlName="email" id="form2Example11" class="form-control" placeholder="Email address">
+                  <input type="email" formControlName="email" id="form2Example11" class="form-control"
+                    placeholder="Email address">
 
                   <!-- Email Validation Messages -->
                   @if (checkValidation('email')) {
@@ -34,7 +29,8 @@
 
                 <!-- Password Input -->
                 <div class="form-outline mb-4">
-                  <input type="password" formControlName="password" id="form2Example22" class="form-control" placeholder="Password">
+                  <input type="password" formControlName="password" id="form2Example22" class="form-control"
+                    placeholder="Password">
 
 
                   <!-- Password Validation Message -->

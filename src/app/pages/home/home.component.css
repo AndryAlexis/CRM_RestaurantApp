@@ -40,7 +40,7 @@ button:hover {
 .reserva {
 
     .reserva-text {
-        background-color: var(--color-primary-light);
+        background-color: var(--color-secondary-dark);
         padding: 20px;
         border-radius: 10px;
     }
