@@ -1,0 +1,12 @@
+.nav {
+    background-color: var(--color-primary-dark);
+}
+
+.nav-item .btn {
+    color: var(--color-tertiary);
+}
+
+.nav-item .btn:hover {
+    color: black;
+    background-color: white;
+}
