@@ -1,21 +1,30 @@
 .card {
-    background-color: rgba(120, 120, 120, 0.162);
+    background-color: var(--color-primary-light);
     font-family: 'Montserrat', sans-serif;
     border-radius: 10px;
 }
 
 .form-outline {
-    border: 1px solid #ced4da;
+    border: 1px solid var(--color-secondary-dark);
     border-radius: 5px;
 }
 
 .form-control:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    border-color: var(--color-primary-dark);
+    box-shadow: 0 0 0 0.2rem var(--color-focus-shadow);
 }
 
 h3 {
     font-weight: 600;
-    border-bottom: 1px solid #3c3e40;
+    border-bottom: 1px solid var(--color-tertiary);
     padding-bottom: 10px;
+}
+
+#submitButton{
+
+    button{
+    background-color: var(--color-secondary-dark);
+    font-weight: 600;
+    }
+
 }

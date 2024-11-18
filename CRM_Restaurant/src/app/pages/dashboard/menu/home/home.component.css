@@ -3,9 +3,14 @@ section {
         font-family: 'Gowun Dodum', cursive;
         font-size: 2rem;
         font-weight: 600;
-        color: #333;
-        background-color: rgba(11, 38, 112, 0.1);
+        color: var(--color-title);
+        background-color: var(--color-primary-dark);
         padding: 10px;
         border-radius: 10px;
     }
+}
+
+app-menu-card {
+    margin: 5px;
+    background-color: var(--color-primary-dark);
 }

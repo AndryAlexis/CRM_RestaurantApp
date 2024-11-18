@@ -1,0 +1,12 @@
+ul.nav {
+    background-color: var(--color-primary-dark);
+    padding: 0.5rem;
+}
+
+.nav-link {
+    color: var(--primary-dark) !important;
+}
+
+.nav-link:hover {
+    color: var(--color-tertiary) !important;
+}
