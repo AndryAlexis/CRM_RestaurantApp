@@ -1,14 +1,14 @@
-#reservations-card {
+#menu-card {
     background-color: var(--color-primary-light);
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     font-weight: 600;
+    padding: 18px;
 
     h5 {
         font-weight: 500;
         border-bottom: 1px solid #333;
-        padding-bottom: 15px;
-    }
 
+    }
 }

@@ -3,12 +3,12 @@
     h1,
     h5 {
         font-family: 'Gowun Dodum', cursive;
-        font-size: 1.3rem;
+        font-size: 1.4rem;
         font-weight: 600;
         color: #333;
         background-color: var(--color-primary-light);
-        padding: 10px;
-        margin: 10px;
+        padding: 5px;
+        margin: 5px;
         border-radius: 10px;
     }
 }
@@ -17,6 +17,11 @@
     background-color: rgba(120, 120, 120, 0.162);
     font-family: 'Montserrat', sans-serif;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     h5 {
         font-weight: 500;
@@ -37,4 +42,10 @@ section {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     width: calc(100% - 20px);
     max-width: 300px;
+}
+
+@media (max-width: 768px) {
+    #menu-cards {
+        margin: 0 auto;
+    }
 }
