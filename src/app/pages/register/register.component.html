@@ -17,22 +17,26 @@
 
                 <!-- Name Input -->
                 <div class="form-outline mb-4">
-                  <input type="text" formControlName="name" id="name" class="form-control" [class.border-danger]="checkValidation('name')" placeholder="*Name">
+                  <input type="text" formControlName="name" id="name" class="form-control"
+                    [class.border-danger]="checkValidation('name')" placeholder="*Name">
                 </div>
 
                 <!-- Lastname Input -->
                 <div class="form-outline mb-4">
-                  <input type="text" formControlName="lastname" id="lastname" class="form-control" [class.border-danger]="checkValidation('lastname')" placeholder="*Lastname">
+                  <input type="text" formControlName="lastname" id="lastname" class="form-control"
+                    [class.border-danger]="checkValidation('lastname')" placeholder="*Lastname">
                 </div>
 
                 <!-- Phone Input -->
                 <div class="form-outline mb-4">
-                  <input type="tel" formControlName="phone" id="phone" class="form-control" [class.border-danger]="checkValidation('phone')" placeholder="*Phone">
+                  <input type="tel" formControlName="phone" id="phone" class="form-control"
+                    [class.border-danger]="checkValidation('phone')" placeholder="*Phone">
                 </div>
 
                 <!-- Email Input -->
                 <div class="form-outline mb-4">
-                  <input type="email" formControlName="email" id="email" class="form-control" [class.border-danger]="checkValidation('email')" placeholder="*Email address">
+                  <input type="email" formControlName="email" id="email" class="form-control"
+                    [class.border-danger]="checkValidation('email')" placeholder="*Email address">
 
                   <!-- Email Validation Messages -->
                   @if (checkValidation('email')) {
@@ -44,7 +48,8 @@
 
                 <!-- Password Input -->
                 <div class="form-outline mb-4">
-                  <input type="password" formControlName="password" id="password" class="form-control" [class.border-danger]="checkValidation('password')" placeholder="*Password">
+                  <input type="password" formControlName="password" id="password" class="form-control"
+                    [class.border-danger]="checkValidation('password')" placeholder="*Password">
 
                   <!-- Password Validation Message -->
                   @if (checkValidation('password')) {
@@ -56,7 +61,8 @@
 
                 <!-- Confirm Password Input -->
                 <div class="form-outline mb-4">
-                  <input type="password" formControlName="confirmPassword" id="confirmPassword" class="form-control" [class.border-danger]="checkValidation('confirmPassword')" placeholder="*Confirm Password">
+                  <input type="password" formControlName="confirmPassword" id="confirmPassword" class="form-control"
+                    [class.border-danger]="checkValidation('confirmPassword')" placeholder="*Confirm Password">
 
                   <!-- Confirm Password Validation Message -->
                   @if (!passwordsMatch() && checkValidation('confirmPassword')) {
@@ -67,16 +73,16 @@
                 </div>
 
                 <!-- Login Button -->
-                <div class="text-center pt-1 mb-5 pb-1 d-grid gap-2" id="loginButton">
+                <div class="text-center pt-1 mb-5 pb-1 d-grid gap-2" id="SignInButton">
                   <button class="btn btn-block fa-lg mb-3" type="submit" [disabled]="registerForm.invalid">
-                    Log in
+                    Sign in
                   </button>
                 </div>
 
                 <!-- Register Section -->
                 <div class="d-flex align-items-center justify-content-center pb-4" id="registerSection">
                   <p class="mb-0 me-2">¿Ya tienes una cuenta?</p>
-                  <a class="btn" routerLink="/login">
+                  <a class="btn" id="LogInBtn" routerLink="/login">
                     Ingresar
                   </a>
                 </div>
