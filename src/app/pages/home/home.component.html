@@ -60,17 +60,22 @@
     <section class="container mt-4 mb-4">
         <div class="row mt-4 mb-4">
             <div class="col-md-6 d-flex flex-column justify-content-center " id="registrate">
-                <h2>Únete a Nuestra Familia Gastronómica</h2>
-                <p>En Frontend Feast, no solo reservamos una mesa para ti, te damos la bienvenida a nuestra
-                    familia. Regístrate y
-                    sé parte de nuestra comunidad, donde cada visita es un momento especial y cada cliente, un miembro
-                    más
-                    de nuestro hogar.
-                </p>
-                <p>
-                    Forma parte de esta experiencia única y asegura tu lugar en nuestro espacio diseñado para compartir,
-                    disfrutar y crear
-                    recuerdos inolvidables. ¡Te esperamos con los brazos abiertos!</p>
+                <div class="
+                m-3">
+                    <h2>Únete a Nuestra Familia Gastronómica</h2>
+                    <p>En Frontend Feast, no solo reservamos una mesa para ti, te damos la bienvenida a nuestra
+                        familia. Regístrate y
+                        sé parte de nuestra comunidad, donde cada visita es un momento especial y cada cliente, un
+                        miembro
+                        más
+                        de nuestro hogar.
+                    </p>
+                    <p>
+                        Forma parte de esta experiencia única y asegura tu lugar en nuestro espacio diseñado para
+                        compartir,
+                        disfrutar y crear
+                        recuerdos inolvidables. ¡Te esperamos con los brazos abiertos!</p>
+                </div>
                 <button class="btn mb-3" [routerLink]="['/register']">Registrate para reservar</button>
             </div>
             <div class="col-md-6" id="imgRegistro">
@@ -80,7 +85,25 @@
         </div>
     </section>
     <!-- Fin Registrate -->
-
+    <!--Inicio Reseñas-->
+    <section class="container mt-4 mb-4" id="sectionReseñas">
+        <div class="row mt-4 mb-4">
+            <div class="col-md-6 d-flex flex-column justify-content-center" id="reseñas">
+                <h2>Reseñas</h2>
+                <p>En Frontend Feast, la satisfacción de nuestros clientes es nuestra mayor recompensa. Cada opinión
+                    cuenta y nos
+                    inspira a seguir mejorando, para ofrecerte una experiencia gastronómica inigualable. Descubre lo
+                    que
+                    dicen nuestros
+                    comensales y déjate llevar por sus historias. ¡Ven y vive tu propia experiencia en Frontend
+                    Feast!</p>
+                <button class="btn mb-4" [routerLink]="['/reviews']">Ver Reseñas</button>
+            </div>
+            <div class="col-md-6">
+                <app-review-card></app-review-card>
+            </div>
+        </div>
+    </section>
     <!-- Seccion Reserva -->
     <section class="container-fluid mt-5 p-5 position-relative reserva">
         <div class="row">
@@ -103,6 +126,7 @@
         </div>
     </section>
     <!-- Fin Reserva -->
+
 </div>
 <footer>
     <app-footer />
