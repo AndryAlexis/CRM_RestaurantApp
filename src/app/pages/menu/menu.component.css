@@ -1,42 +1,49 @@
 @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Gowun+Dodum&family=Poiret+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-header {
-    margin: 0;
-    padding: 0;
+
+.background-repeating {
+    background-image: url('../../../../public/images/header-img.jpg');
+    min-height: 100vh;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    background-image: url("../../../../public/images/interior.jpg");
-}
 #body-menu {
-    background-color: var(--color-primary-dark);
-    margin-top: 0;
-    padding-top: 0; 
+    background-color: var(--color-primary);
+    padding: 4rem;
+    border-radius: 5px;
+    position: relative;
+
+    img {
+        position: absolute;
+        width: 200px;
+        left: clamp(43%, 60vw, 48%);
+        top: 0%;
+        rotate: 40deg;
+        z-index: 1;
+    }
 }
 
-h2{
+
+h2 {
+    margin-top: -35px;
     font-family: var(--font-fancy);
     font-size: 4.5rem;
-    text-decoration: underline;
+    /* text-decoration: underline; */
     color: var(--color-tertiary);
     text-align: center;
 }
 
-h5{
-    font-family: var(--font-secondary);
-    font-size: 1.5rem;
-    text-decoration: underline;
-    color: var(--color-tertiary);
-    text-align: center;
-}
-
-p{
+h5 {
     font-family: var(--font-primary);
-    font-size: 1.2rem;
-    color: var(--color-tertiary);
-    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--color-black);
+    text-decoration: none;
+}
+
+p {
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    color: var(--color-black);
     margin-top: 1rem;
 }
 
@@ -45,4 +52,5 @@ button.accordion-button {
     font-family: var(--font-secondary);
     font-size: 1.5rem;
     color: var(--color-tertiary);
+    font-weight: 600;
 }
