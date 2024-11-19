@@ -17,13 +17,6 @@ section.container.row {
     border-radius: 10px;
 }
 
-#menu-card {
-    background-color: var(--color-primary-light);
-    font-family: 'Gowun Dodum', cursive;
-    font-size: 1.2rem;
-    font-weight: 600;
-    padding-left: 10px;
-}
 
 .btn {
     background-color: var(--color-secondary-dark);

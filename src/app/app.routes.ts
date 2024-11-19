@@ -15,6 +15,7 @@ import { UpdateComponent as UpdateMenuComponent } from './pages/dashboard/menu-d
 import { HomeComponent as HomeMenuComponent } from './pages/dashboard/menu/home/home.component';
 import { NewMenuComponent } from './pages/dashboard/new-menu/new-menu.component';
 import { UsuariosRegistradosComponent } from './pages/dashboard/usuarios-registrados/usuarios-registrados.component';
+import { ReviewsComponent } from './pages/dashboard/reviews/reviews.component';
 
 export const routes: Routes = [
   {
@@ -67,6 +68,11 @@ export const routes: Routes = [
         path: 'usuarios-registrados',
         component: UsuariosRegistradosComponent,
         title: 'Usuarios Registrados'
+      },
+      {
+        path: 'reviews',
+        component: ReviewsComponent,
+        title: 'Reviews Dashboard'
       },
       {
         path: 'create-menu',
