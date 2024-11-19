@@ -18,6 +18,6 @@
     bottom: 30px;
     right: 30px;
     z-index: 1000;
-    background-color: var(--color-secondary-dark);
+    background-color: var(--color-primary-dark);
     color: black;
 }
