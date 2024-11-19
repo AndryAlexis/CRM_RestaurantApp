@@ -6,47 +6,63 @@
     min-height: 100vh;
     /* Había un scroll lateral raro que he quitado con esto, Fran */
     overflow-x: hidden;
+    font-size: var(--font-size);
 
 }
 
-
 button {
     font-family: var(--font-secondary);
-    font-size: 17px;
-    background-color: var(--color-secondary-dark);
-    color: rgb(28, 28, 28);
+    font-size: 19px;
+    padding: 5px;
+    background-color: var(--color-secondary);
+    color: var(--color-black);
     margin: 0 auto;
     width: 200px;
 }
 
 button:hover {
-    background-color: rgb(196, 181, 144);
-    color: black;
+    background-color: var(--color-secondary);
+    color: var(--color-black);
 }
 
 /* Estilos contenedor gastronomia */
 #gastronomia {
-    background-color: var(--color-primary-light);
+    justify-content: scp;
+    background-color: var(--color-primary);
     border-radius: 10px;
 }
 
 /* Estilos contenedor registrate */
 #registrate {
-    background-color: var(--color-primary-light);
+    background-color: var(--color-primary);
     border-radius: 10px;
 
 }
 
 .reserva {
 
+    background-image: url('../../../../public/images/interior.jpg');
+    background-size: cover;
+    background-position: center;
+
+    padding-left: 500px;
+
     .reserva-text {
-        background-color: var(--color-secondary-dark);
+        background-color: var(--color-tertiary-light);
         padding: 20px;
         border-radius: 10px;
+
+        p {
+            color: white;
+        }
+
+        h2{
+            color: black;
+        }
     }
 
     button {
-        background-color: var(--color-secondary-dark-no-trans);
+        background-color: var(--color-secondary);
     }
 
 }
@@ -64,7 +80,7 @@ h2 {
 
 p {
     font-family: var(--font-primary);
-    color: black;
+    color: var(--color-black);
 }
 
 img {
@@ -115,8 +131,8 @@ img {
     .col-md-6 img {
         margin-bottom: 15px;
     }
-    
-    #imgRegistro{
+
+    #imgRegistro {
         margin-top: 20px;
     }
 }
