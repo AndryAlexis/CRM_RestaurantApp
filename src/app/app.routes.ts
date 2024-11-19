@@ -16,6 +16,7 @@ import { HomeComponent as HomeMenuComponent } from './pages/dashboard/menu/home/
 import { NewMenuComponent } from './pages/dashboard/new-menu/new-menu.component';
 import { UsuariosRegistradosComponent } from './pages/dashboard/usuarios-registrados/usuarios-registrados.component';
 import { ReviewsComponent } from './pages/dashboard/reviews/reviews.component';
+import { ProximasReservasComponent } from './pages/dashboard/proximas-reservas/proximas-reservas.component';
 
 export const routes: Routes = [
   {
@@ -73,6 +74,11 @@ export const routes: Routes = [
         path: 'reviews',
         component: ReviewsComponent,
         title: 'Reviews Dashboard'
+      },
+      {
+        path: 'proximas-reservas',
+        component: ProximasReservasComponent,
+        title: 'Proximas Reservas'
       },
       {
         path: 'create-menu',
