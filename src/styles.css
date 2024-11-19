@@ -26,13 +26,23 @@
 /* colores de home antiguos2: rgba(130, 116, 96, 0.5) */
 
 :root {
-    --color-primary-light: rgba(195, 180, 142, 0.20);
+    --color-primary: #f3f0e8;
     --color-primary-dark: #c7c18b;
-    --color-secondary-dark: #c2b32aa2;
-    --color-secondary-dark-no-trans: #C1B75C;
+
+    --color-secondary: #d4ca70;
+    --color-secondary-dark: #5f764f;
+
     --color-tertiary: #574c42;
+    --color-tertiary-light: #b78846;
+
+    --bg-white: #f5f5f5;
+    --color-black: rgb(28, 28, 28);
 
     --font-fancy: "Birthstone", cursive;
     --font-primary: "Noto Sans", sans-serif;
     --font-secondary: "Charm", cursive;
+}
+
+body {
+    background-color: var(--bg-white) !important;
 }
