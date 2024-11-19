@@ -57,6 +57,12 @@
     }
 }
 
+#loginButton:hover {
+    button {
+        background-color: var(--color-tertiary-light);
+    }
+}
+
 
 /* Input email */
 #form2Example22:focus,
