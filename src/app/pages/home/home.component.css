@@ -48,16 +48,16 @@ button:hover {
     padding-left: 500px;
 
     .reserva-text {
-<<<<<<< HEAD
-        background-color: var(--color-secondary-dark-no-trans);
-=======
-        background-color: rgba(0, 0, 0, 0.444);
->>>>>>> be0c0e8971f043cb8d16dc67d3b11a2f9a06c961
+        background-color: var(--color-tertiary-light);
         padding: 20px;
         border-radius: 10px;
 
         p {
             color: white;
+        }
+
+        h2{
+            color: black;
         }
     }
 
