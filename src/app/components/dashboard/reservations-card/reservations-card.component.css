@@ -1,7 +1,9 @@
-.card {
-    background-color: #f8f9fa;
+#reservations-card {
+    background-color: var(--color-primary-light);
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
 
     h5 {
         font-weight: 500;

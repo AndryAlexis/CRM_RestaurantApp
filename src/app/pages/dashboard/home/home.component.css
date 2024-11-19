@@ -4,7 +4,7 @@ section {
         font-size: 2rem;
         font-weight: 600;
         color: #333;
-        background-color: rgba(11, 38, 112, 0.1);
+        background-color: var(--color-primary-light);
         padding: 10px;
         width: 50%;
         margin: 0 auto;
@@ -12,6 +12,22 @@ section {
     }
 }
 
-section.container.row{
+section.container.row {
     background-color: var(--color-primary-light);
+    border-radius: 10px;
+}
+
+#menu-card {
+    background-color: var(--color-primary-light);
+    font-family: 'Gowun Dodum', cursive;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding-left: 10px;
+}
+
+.btn {
+    background-color: var(--color-secondary-dark);
+    color: black;
+    padding: 10px;
+    border: 1px solid #00000010;
 }
