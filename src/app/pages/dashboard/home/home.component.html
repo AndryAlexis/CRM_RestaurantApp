@@ -1,59 +1,71 @@
 <app-header-dashboard />
 
-<section class="container p-3 mt-3 mb-3">
-    <h1 class="text-center shadow-sm">Usuarios registrados</h1>
-</section>
-<!-- Nuevos usuarios -->
-<div class="container p-3">
+<div class="container p-3 mt-3 mb-3">
     <div class="row">
-        <div class="col-12 col-md-6 mb-3">
-            <app-new-users-card />
+        <!-- Usuarios registrados -->
+        <div class="col-12 col-md-6">
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h1 class="text-center">Usuarios registrados</h1>
+                    <!-- Nuevos usuarios -->
+                    <div class="row">
+                        <div class="col-12 col-md-6 mb-3">
+                            <app-new-users-card></app-new-users-card>
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                            <app-new-users-card></app-new-users-card>
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                            <app-new-users-card></app-new-users-card>
+                        </div>
+                        <div class="col-12 col-md-6 mb-3">
+                            <app-new-users-card></app-new-users-card>
+                        </div>
+                    </div>
+                    <div class="text-center mt-3">
+                        <a [routerLink]="['/dashboard', 'usuarios-registrados']" class="btn btn-primary">Ver todos los
+                            usuarios</a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-12 col-md-6 mb-3">
-            <app-new-users-card />
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <app-new-users-card />
-        </div>
-        <div class="col-12 col-md-6 mb-3">
-            <app-new-users-card />
+
+        <!-- Reseñas -->
+        <div class="col-12 col-md-6">
+            <div class="card shadow-sm mb-4">
+                <div class="card-body">
+                    <h1 class="text-center">Reseñas</h1>
+                    <div class="row">
+                        <div class="col-12 mb-2">
+                            <app-review-card></app-review-card>
+                        </div>
+                    </div>
+                    <div class="text-center mt-3">
+                        <a [routerLink]="['/dashboard', 'reviews']" class="btn btn-primary">Ver todas las reseñas</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-<div class="text-center mt-3">
-    <a [routerLink]="['/dashboard', 'usuarios-registrados']" class="btn">Ver todos los usuarios</a>
-</div>
 
-
-
-<!-- Próximas reservas -->
-<section class="container p-3 mt-3 mb-3">
-    <h1 class="text-center shadow-sm">Próximas reservas</h1>
-</section>
-
-<section class="container-fluid p-3">
-    <div class="row">
-        <div class="col-12 mb-2">
-            <app-reservations-card />
-        </div>
-        <div class="col-12 mb-2">
-            <app-reservations-card />
-        </div>
-        <div class="col-12 mb-2">
-            <app-reservations-card />
+    <!-- Próximas reservas -->
+    <div class="card shadow-sm m-4">
+        <div class="card-body">
+            <h1 class="text-center">Próximas reservas</h1>
+            <div class="row">
+                <div class="col-12 mb-2">
+                    <app-reservations-card></app-reservations-card>
+                </div>
+                <div class="col-12 mb-2">
+                    <app-reservations-card></app-reservations-card>
+                </div>
+                <div class="col-12 mb-2">
+                    <app-reservations-card></app-reservations-card>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <a [routerLink]="['/dashboard', 'proximas-reservas']" class="btn btn-primary">Ver todas las reservas</a>
+            </div>
         </div>
     </div>
-</section>
-<div class="text-center">
-    <a [routerLink]="['/dashboard', 'proximas-reservas']" class="btn">Ver todas las reservas</a>
-</div>
-
-<!-- Últimas reseñas -->
-<section class="container p-3 mt-3 mb-3">
-    <h1 class="text-center shadow-sm">Últimas reseñas</h1>
-</section>
-<app-review-card />
-<app-review-card />
-<div class="text-center m-4">
-    <a [routerLink]="['/dashboard', 'reviews']" class="btn">Ver todas las reseñas</a>
 </div>
