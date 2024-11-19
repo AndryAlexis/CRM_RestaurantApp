@@ -1,14 +1,40 @@
-<ul class="nav d-flex justify-content-end bg-opacity-75 p-2">
-    <li class="nav-item">
-        <a class="nav-link btn" [routerLink]="['/dashboard']">Dashboard</a>
-    </li>
-    <li class="nav-item">
-        <button class="nav-link btn" [routerLink]="['/dashboard', 'menu']">Ver menús</button>
-    </li>
-    <li class="nav-item">
-        <button class="nav-link btn" [routerLink]="['/dashboard', 'create-menu']">Crear menú</button>
-    </li>
-    <li class="nav-item">
-        <button class="nav-link btn">Logout</button>
-    </li>
-</ul>
+<nav class="navbar navbar-expand-md">
+    <div class="container-fluid">
+
+        <!-- Botón de Hamburguesa -->
+        <button class="navbar-toggler" type="button" (click)="toggleNavbar()" [attr.aria-expanded]="!isCollapsed"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menú de Navegación -->
+        <div class="collapse navbar-collapse" [class.show]="!isCollapsed" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <button class="btn" [routerLink]="['/dashboard']">Dashboard</button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn" [routerLink]="['/dashboard', 'menu']">Ver menús</button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn" [routerLink]="['/dashboard', 'create-menu']">Crear
+                        menú</button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn" [routerLink]="['/dashboard', 'usuarios-registrados']">Usuarios
+                        Registrados</button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn" [routerLink]="['/dashboard', 'proximas-reservas']">Próximas
+                        Reservas</button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn" [routerLink]="['/dashboard', 'reviews']">Reseñas</button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn" [routerLink]="['/logout']">Logout</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
