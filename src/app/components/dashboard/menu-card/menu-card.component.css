@@ -6,7 +6,7 @@
     padding-left: 10px;
 }
 
-.btn{
-    background-color: var(--color-secondary-dark);
+.btn {
+    background-color: var(--color-primary-dark);
     color: black;
 }
