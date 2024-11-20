@@ -1,11 +1,15 @@
 .card {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: rgba(182, 182, 182, 0.3);
+    background-color: var(--color-primary);
 
     h5 {
-        background-color: rgba(182, 182, 182, 0.202);
+        background-color: var(--color-secondary-dark);
         text-align: center;
         padding: 10px;
         border-radius: 10px;
     }
+}
+
+.btn {
+    background-color: var(--color-secondary-dark);
 }
