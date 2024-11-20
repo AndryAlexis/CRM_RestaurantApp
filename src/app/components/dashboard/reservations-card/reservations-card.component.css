@@ -1,10 +1,9 @@
 #menu-card {
-    background-color: var(--color-primary-light);
+    background-color: var(--color-primary);
     box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
-    font-weight: 600;
-    padding: 10px;
+    padding: 20px;
 
     h5 {
         font-weight: 500;
@@ -18,7 +17,7 @@
 
     button {
         font-size: 0.8rem;
-        background-color: var(--color-secondary-dark);
+        background-color: var(--color-primary-dark);
         color: white;
     }
 }

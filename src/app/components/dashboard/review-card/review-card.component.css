@@ -2,7 +2,7 @@
     font-family: 'Montserrat', sans-serif;
 
     .card {
-        background-color: var(--color-primary-light);
+        background-color: var(--color-primary);
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
         h5 {

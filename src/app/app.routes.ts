@@ -17,6 +17,7 @@ import { NewMenuComponent } from './pages/dashboard/new-menu/new-menu.component'
 import { UsuariosRegistradosComponent } from './pages/dashboard/usuarios-registrados/usuarios-registrados.component';
 import { ReviewsComponent } from './pages/dashboard/reviews/reviews.component';
 import { ProximasReservasComponent } from './pages/dashboard/proximas-reservas/proximas-reservas.component';
+import { EditUserComponent } from './pages/dashboard/edit-user/edit-user.component';
 
 export const routes: Routes = [
   {
@@ -64,6 +65,11 @@ export const routes: Routes = [
         path: 'users/:id',
         component: ViewUserDashboardComponent,
         title: 'User Detail',
+      },
+      {
+        path: 'edit-user/:id',
+        component: EditUserComponent,
+        title: 'Edit User',
       },
       {
         path: 'usuarios-registrados',

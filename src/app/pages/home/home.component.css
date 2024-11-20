@@ -27,7 +27,6 @@ button:hover {
 
 /* Estilos contenedor gastronomia */
 #gastronomia {
-    justify-content: scp;
     background-color: var(--color-primary);
     border-radius: 10px;
 }
