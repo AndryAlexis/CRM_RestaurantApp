@@ -23,13 +23,20 @@ p {
     box-shadow: 0 0 0 0.3rem rgba(255, 132, 104, 0.25);
 }
 
-#loginButton {
+#SignInButton {
     button {
         font-family: 'Poiret One', cursive;
         font-weight: 600;
         font-size: 18px;
         background-color: var(--color-primary-dark);
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    }
+}
+
+#SignInButton:hover{
+    button {
+        background-color: var(--color-tertiary-light);
+        cursor: pointer;
     }
 }
 
@@ -55,6 +62,7 @@ p {
     }
 
 }
+
 
 /* Make form take full viewport height on tablets and larger */
 @media (min-width: 768px) {

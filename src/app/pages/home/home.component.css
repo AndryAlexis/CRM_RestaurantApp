@@ -48,12 +48,16 @@ button:hover {
     padding-left: 500px;
 
     .reserva-text {
-        background-color: rgba(0, 0, 0, 0.444);
+        background-color: var(--color-tertiary-light);
         padding: 20px;
         border-radius: 10px;
 
         p {
             color: white;
+        }
+
+        h2{
+            color: black;
         }
     }
 
@@ -104,6 +108,11 @@ img {
 
 .col-md-6 .d-flex {
     flex: 1;
+}
+
+#sectionReseñas{
+    background-color: var(--color-primary);
+    border-radius: 20px;
 }
 
 @media (max-width: 768px) {

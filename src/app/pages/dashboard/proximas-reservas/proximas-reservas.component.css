@@ -1,4 +1,36 @@
-section{
+#text-container {
     background-color: var(--color-primary-light);
     border-radius: 10px;
+    margin: 20px 50px;
+    padding: 20px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    font-family: var(--font-primary);
+
+    p {
+        text-align: center;
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
+.container {
+    margin-top: 20px;
+    border: 2px solid #33333334;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.btn {
+    background-color: var(--color-primary-dark);
+    color: black;
+}
+
+
+
+@media (max-width: 1290px) {
+    .row {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
