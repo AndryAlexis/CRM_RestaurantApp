@@ -4,7 +4,7 @@ section {
         font-size: 2rem;
         font-weight: 600;
         color: #333;
-        background-color: var(--color-primary-light);
+        background-color: var(--color-primary);
         padding: 10px;
         border-radius: 10px;
     }

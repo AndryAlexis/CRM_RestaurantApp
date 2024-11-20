@@ -1,5 +1,5 @@
 .card {
-    background-color: var(--color-primary-light);
+    background-color: var(--color-primary);
     font-family: 'Montserrat', sans-serif;
     border-radius: 10px;
 }
