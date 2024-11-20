@@ -1,18 +1,38 @@
 /**
+ * Interface representing a user login request
+ * Used for authenticating existing users in the system
+ */
+export interface IUserLogin {
+    /** User's email address used as login identifier */
+    email: string;
+    /** User's password for authentication */
+    password: string;
+}
+
+/**
  * Interface representing a user in the system
  * Used for user registration and profile management
  */
-export interface IUser {
+export interface IUserRegister extends IUserLogin {
     /** User's first name */
     name: string;
     /** User's last name/family name */
     surname: string;
     /** User's contact phone number */
     phone: string;
-    /** User's account password (should be hashed when stored) */
-    password: string;
-    /** User's email address (used as unique identifier) */
-    email: string;
+}
+
+export interface IUserUpdate {
+    /** User's email address used as login identifier */
+    email?: string;
+    /** User's password for authentication */
+    password?: string;
+    /** User's first name */
+    name?: string;
+    /** User's last name/family name */
+    surname?: string;
+    /** User's contact phone number */
+    phone?: string;
 }
 
 /**
@@ -20,7 +40,7 @@ export interface IUser {
  * Used to handle responses from user registration, login, etc.
  */
 export interface IUserResponse {
-    /** Response status (e.g. 'success', 'error') */
+    /** Response status */
     status: string;
     /** Title/header of the response message */
     title: string;
@@ -28,5 +48,13 @@ export interface IUserResponse {
     message: string;
 }
 
+/**
+ * Interface representing the API response specifically for login operations
+ * Extends the base IUserResponse interface to include the authentication token
+ */
+export interface IUserLoginResponse extends IUserResponse {
+    /** JWT token returned after successful authentication, used for subsequent authorized requests */
+    token: string;
+}
 
 
