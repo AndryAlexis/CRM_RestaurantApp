@@ -46,7 +46,7 @@
     .nav-item {
         display: inline-block;
         margin: 0 auto;
-        border-bottom: 1px solid #867a66;
+        border-bottom: 1px solid var(--color-tertiary);
         padding-bottom: 10px;
     }
 
