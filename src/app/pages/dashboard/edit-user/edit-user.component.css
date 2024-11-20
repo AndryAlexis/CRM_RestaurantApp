@@ -1,0 +1,8 @@
+.row{
+    background-color: var(--color-primary);
+}
+
+.btn{
+    background-color: var(--color-secondary);
+    color: var(--color-tertiary);
+}
