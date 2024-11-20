@@ -3,8 +3,7 @@
         <img src="./Logo.svg" lt="Logo">
         <span>Frontend Feast</span>
     </a>
-    <button class="navbar-toggler" type="button" (click)="toggleNavbar()" [attr.aria-expanded]="!isCollapsed"
-        aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar()" [attr.aria-expanded]="!isCollapsed" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -18,6 +17,9 @@
             </li>
             <li class="nav-item">
                 <button class="btn" [routerLink]="['/reservations']" id="btn">Reservas</button>
+            </li>
+            <li class="nav-item">
+                <button class="btn" [routerLink]="['/create-review']" id="btn">Crear reseña</button>
             </li>
             <li class="nav-item">
                 <button class="btn" [routerLink]="['/login']" id="btn">Iniciar sesion</button>

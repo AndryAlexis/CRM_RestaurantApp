@@ -17,6 +17,7 @@ export class HomeComponent {
 
   private apiService = inject(ApiService);
   private token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ODF9.TZcL1_cBttvA6Nxm2nPoCiAKV5bM0zVQkQE_IfeH1qA'
+  private token2 = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ODB9.bcSCHJcsKJpFUG0zneSexyNfDFB4PXXiIXfgcncLAok'
 
   async registerUser() {
     const user: IUserRegister = {

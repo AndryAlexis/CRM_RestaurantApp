@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { HeaderComponent } from "../../components/header/header.component";
 import { FooterComponent } from "../../components/footer/footer.component";
+import { ApiService } from '../../services/api.service';
+import { IUserResponse } from '../../interfaces/user.interfaces';
 
 @Component({
   selector: 'app-login',
@@ -12,9 +14,12 @@ import { FooterComponent } from "../../components/footer/footer.component";
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
+
+  private apiService = inject(ApiService);
+  private router = inject(Router);
   loginForm: FormGroup;
 
-  constructor(private router: Router) {
+  constructor() {
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.minLength(8)])
@@ -23,9 +28,24 @@ export class LoginComponent {
 
   onSubmit() {
     if (this.loginForm.valid) {
-      console.log('Form submitted', this.loginForm.value);
+      this.loginUser();
     }
   }
+
+  async loginUser() {
+    try {
+      const email = this.loginForm.get('email')?.value;
+      const password = this.loginForm.get('password')?.value;
+      const user = await this.apiService.loginUser({ email, password });
+      localStorage.setItem('token', user.token);
+      this.router.navigate(['/user']);
+    } catch (error: any) {
+      const errorResponse = error.error as IUserResponse;
+      const { status, title, message } = errorResponse;
+      console.error('Error:', 'Status:', status, 'Title:', title, 'Message:', message);
+    }
+  }
+
 
   getPasswordErrorMessage(): string {
     const passwordControl = this.loginForm.get('password');
