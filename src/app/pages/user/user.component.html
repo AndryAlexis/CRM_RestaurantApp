@@ -2,30 +2,57 @@
 <div class="container">
     <div class="top-section">
         <div class="left-panel">
-            <h2>Información del Usuario</h2>
-            <p>Nombre: Juan</p>
-            <p>Apellidos: Pérez</p>
-            <p>Telefono: +34 654098543</p>
-            <p>Email:jj#gmail.com </p>
-            <p>Password: ********</p>
-            <button>Editar Información</button>
+            <div class="row">
+                <div class="col-lg-8 ">
+                    <div class="card-body">
+                        <h2 class="mb-4">Editar mi información</h2>
+
+                        <!-- Nombre -->
+                        <div class="form-outline mb-4">
+                            <input type="text" id="nombre" class="form-control" placeholder="Nombre">
+                        </div>
+
+                        <!-- Apellido -->
+                        <div class="form-outline mb-4">
+                            <input type="text" id="apellido" class="form-control" placeholder="Apellido">
+                        </div>
+
+                        <!-- Teléfono -->
+                        <div class="form-outline mb-4">
+                            <input type="tel" id="telefono" class="form-control" placeholder="Teléfono">
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-outline mb-4">
+                            <input type="email" id="email" class="form-control" placeholder="Email">
+                        </div>
+
+                        <!-- Password -->
+                        <div class="form-outline mb-4">
+                            <input type="password" id="password" class="form-control" placeholder="Nueva contraseña">
+                        </div>
+
+                        <button type="submit" class="btn">Guardar cambios</button>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="right-panel">
-            <h2>Reseñas</h2>
-            <ul>
-                <li>Reseña 1: "Muy buena experiencia."</li>
-                <li>Reseña 2: "Servicio excelente."</li>
-            </ul>
-            <button class="btn" [routerLink]="['/create-review']">Escribir una nueva reseña</button>
+            <div>
+                <h2>Reservas</h2>
+                <button class="btn mb-4" [routerLink]="['/reservations']">Hacer una nueva reserva</button>
+                <app-reservations-card></app-reservations-card>
+            </div>
         </div>
     </div>
     <div class="bottom-section">
-        <h2>Reservas</h2>
-        <ul>
-            <li>Reserva 1: Hotel en Madrid - 10/11/2024</li>
-            <li>Reserva 2: Restaurante en Barcelona - 15/11/2024</li>
-        </ul>
-        <button>Hacer una nueva reserva</button>
+        <h2>Reseñas</h2>
+        <div class="button-container mb-4">
+            <button class="btn" [routerLink]="['/create-review']">Escribir una nueva reseña</button>
+        </div>
+        <div>
+            <app-review-card></app-review-card>
+        </div>
     </div>
 </div>
 <app-footer></app-footer>

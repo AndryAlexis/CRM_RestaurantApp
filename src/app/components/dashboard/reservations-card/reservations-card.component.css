@@ -18,6 +18,11 @@
     button {
         font-size: 0.8rem;
         background-color: var(--color-primary-dark);
+        color: black;
+    }
+
+    button:hover {
+        background-color: var(--color-tertiary);
         color: white;
     }
 }

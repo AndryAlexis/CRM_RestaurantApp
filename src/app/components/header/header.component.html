@@ -3,7 +3,8 @@
         <img src="./Logo.svg" lt="Logo">
         <span>Frontend Feast</span>
     </a>
-    <button class="navbar-toggler" type="button" (click)="toggleNavbar()" [attr.aria-expanded]="!isCollapsed" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar()" [attr.aria-expanded]="!isCollapsed"
+        aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -19,13 +20,13 @@
                 <button class="btn" [routerLink]="['/reservations']" id="btn">Reservas</button>
             </li>
             <li class="nav-item">
-                <button class="btn" [routerLink]="['/create-review']" id="btn">Crear reseña</button>
+                <button class="btn" [routerLink]="['/register']" id="btn">Nueva cuenta</button>
             </li>
             <li class="nav-item">
                 <button class="btn" [routerLink]="['/login']" id="btn">Iniciar sesion</button>
             </li>
             <li class="nav-item">
-                <button class="btn" [routerLink]="['/register']" id="btn">Nueva cuenta</button>
+                <button class="btn" [routerLink]="['/user']" id="btn">Profile</button>
             </li>
             <li class="nav-item">
                 <button class="btn" [routerLink]="['/dashboard']" id="btn">Administrador</button>
