@@ -10,11 +10,11 @@
             padding-bottom: 10px;
         }
 
-        .btn{
+        .btn {
             background-color: var(--color-primary-dark);
         }
 
-        .btn:hover{
+        .btn:hover {
             background-color: var(--color-tertiary);
             color: white;
         }

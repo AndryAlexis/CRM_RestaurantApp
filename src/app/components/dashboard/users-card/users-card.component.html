@@ -1,11 +1,17 @@
-<div class="card m-3" id="user-card">
-    <div class="card-body">
-        <h5 class="card-title">Username</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Email</h6>
-        <p class="card-text">Información acerca de la reserva, por ejemplo?</p>
-        <a [routerLink]="['/dashboard/users/1']" class="btn card mt-3" id="viewUserBtn">Ver usuario</a>
-        <a [routerLink]="['/dashboard/edit-user/1']" class="btn card mt-3" id="editUserBtn">Editar
-            usuario</a>
-        <a href="#" class="btn card mt-3" id="deleteUserBtn">Borrar usuario</a>
+<div class="container-fluid border border-2 rounded-3 mb-3 p-3" id="menu-card">
+    <div class="row flex-column flex-md-row">
+        <div class="col-12 col-md-9 ">
+            <ul class="list-unstyled d-flex gap-4 align-items-center h-100">
+                <li class="">Id: {{user.id}}</li>
+                <li class="">{{user.name}} {{user.surname}}</li>
+            </ul>
+        </div>
+        <div class="col-12 col-md-3 ">
+            <ul class="list-unstyled d-flex gap-2 justify-content-end align-items-center h-100 ">
+                <li><a class="btn" [routerLink]="['/dashboard/users', user.id]">Ver</a></li>
+                <li><a class="btn" [routerLink]="['/dashboard/edit-user', user.id]">Actualizar</a></li>
+                <li><button class="btn">Borrar</button></li>
+            </ul>
+        </div>
     </div>
 </div>

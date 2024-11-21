@@ -38,7 +38,12 @@ export class LoginComponent {
       const password = this.loginForm.get('password')?.value;
       const user = await this.apiService.loginUser({ email, password });
       localStorage.setItem('token', user.token);
-      this.router.navigate(['/user']);
+      const response = await this.apiService.getUser();
+      if (response.data.role === 'admin') {
+        this.router.navigate(['/dashboard']);
+      } else {
+        this.router.navigate(['/']);
+      }
     } catch (error: any) {
       const errorResponse = error.error as IUserResponse;
       const { status, title, message } = errorResponse;
