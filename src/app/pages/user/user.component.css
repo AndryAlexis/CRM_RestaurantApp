@@ -47,7 +47,7 @@ button {
     margin-top: 10px;
     padding: 10px 15px;
     font-size: 14px;
-    color: #fff;
+    color: black;
     background-color: var(--color-primary-dark);
     border: none;
     border-radius: 4px;
@@ -56,6 +56,14 @@ button {
 
 button:hover {
     background-color: var(--color-tertiary);
+    color: white;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 

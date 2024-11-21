@@ -33,6 +33,7 @@
 :root {
     --color-primary: #f3f0e8;
     --color-primary-dark: #c7c18b;
+    --color-primary-dark-trans: rgba(126, 118, 51, 0.8);
 
     --color-secondary: #d4ca70;
     --color-secondary-dark: #d3b167;
