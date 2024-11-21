@@ -1,6 +1,10 @@
 <app-header-dashboard />
 <section class="container text-center">
-    <h1 class="text-center shadow-sm m-4">Menús</h1>
+    <div>
+        <h1 class="text-center shadow-sm m-4">Menús</h1>
+        <button class="btn" [routerLink]="['/dashboard', 'create-menu']">Crear
+            menú</button>
+    </div>
     <div class="row my-3">
         <div class="col p-0">
             <div class="d-flex flex-column gap-3">
