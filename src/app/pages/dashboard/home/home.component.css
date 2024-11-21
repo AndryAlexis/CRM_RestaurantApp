@@ -18,10 +18,15 @@ section.container.row {
 }
 
 .btn {
-    background-color: var(--color-secondary-dark);
+    background-color: var(--color-primary-dark);
     color: black;
     padding: 10px;
     border: 1px solid #00000010;
+}
+
+.btn:hover {
+    background-color: var(--color-tertiary);
+    color: white;
 }
 
 .card {

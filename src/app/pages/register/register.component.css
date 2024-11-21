@@ -35,8 +35,9 @@ p {
 
 #SignInButton:hover{
     button {
-        background-color: var(--color-tertiary-light);
+        background-color: var(--color-tertiary);
         cursor: pointer;
+        color: white;
     }
 }
 
@@ -48,6 +49,11 @@ p {
         margin: 5px 10px;
         background-color: var(--color-primary-dark);
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    a:hover {
+        background-color: var(--color-tertiary);
+        color: white;
     }
 }
 

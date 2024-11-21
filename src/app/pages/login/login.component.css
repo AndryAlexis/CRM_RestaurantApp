@@ -45,6 +45,11 @@
         background-color: var(--color-primary-dark);
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     }
+
+    button:hover {
+        background-color: var(--color-tertiary);
+        color: white;
+    }
 }
 
 #loginButton {
@@ -59,7 +64,9 @@
 
 #loginButton:hover {
     button {
-        background-color: var(--color-tertiary-light);
+        background-color: var(--color-tertiary);
+        color: white;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
     }
 }
 

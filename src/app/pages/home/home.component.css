@@ -21,8 +21,8 @@ button {
 }
 
 button:hover {
-    background-color: var(--color-secondary);
-    color: var(--color-black);
+    background-color: var(--color-tertiary);
+    color: white;
 }
 
 /* Estilos contenedor gastronomia */
@@ -61,11 +61,22 @@ button:hover {
     }
 
     button {
-        background-color: var(--color-secondary);
+        background-color: var(--color-primary-dark);
+    }
+
+    button:hover {
+        background-color: var(--color-tertiary);
+        color: white;
     }
 
 }
 
+#titulo{
+    color: var(--color-black);
+    background-color: var(--color-primary-dark-trans);
+    border-radius: 10px;
+    padding: 10px;
+}
 
 h1 {
     font-family: var(--font-fancy);
