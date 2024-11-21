@@ -2,8 +2,7 @@
 
 
 .background-repeating {
-    background-image: url('../../../../public/images/header-img.jpg');
-    min-height: 100vh;
+    background-image: url('../../../../public/background-food6.svg');
 }
 
 #body-menu {

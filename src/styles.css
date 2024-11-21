@@ -10,7 +10,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 /* Charm font */
 @import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
-
+/* Fur the leah */
+@import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap');
+/* DM Serif Text Static */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Fleur+De+Leah&display=swap');
+/* Serif */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Fleur+De+Leah&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap');
 
 /* Colores: #F0DEB1 Clarito
 #D6C3A1 Oscuro */
@@ -39,6 +44,7 @@
     --color-black: rgb(28, 28, 28);
 
     --font-fancy: "Birthstone", cursive;
+    --font-nav: "Libre Caslon Text", serif;
     --font-primary: "Noto Sans", sans-serif;
     --font-secondary: "Charm", cursive;
 }

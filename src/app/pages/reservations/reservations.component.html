@@ -1,82 +1,48 @@
 <header>
     <app-header />
 </header>
-<div class="img">
-    <figure>
-        <img src="./images/interior.jpg" alt="interior">
-    </figure>
+
+<div class="foody-bg overflow-x-hidden">
+    <form [formGroup]="form" (ngSubmit)="ngSubmit()">
+
+        <div class="form-group mb-3">
+            <label for="start" class="">Fecha</label>
+            <input type="date" id="start" name="trip-start" value="2024-11-25" min="2024-11-25" max="2025-12-31" formControlName="fecha"
+                class="form-control" />
+        </div>
+
+        <div class="form-group  mb-3">
+            <label class="" for="horario">Horario</label>
+            <select formControlName="horario" class="form-control" id="horario">
+                <option value="" selected disabled>Seleccione una opción</option>
+                <option value="Comida">Desayuno</option>
+                <option value="Cena">Comida</option>
+                <option value="Evento Especial">Cena</option>
+            </select>
+        </div>
+
+
+        <div class="form-group mb-3">
+            <label class="" for="horario">Comensales</label>
+            <input type="number" formControlName="comensales" class="form-control" placeholder="1" min="1">
+        </div>
+
+        <div class="form-group mb-3">
+            <label class="" for="ubicacion">Ubicación</label>
+            <select formControlName="ubicacion" class="form-control" id="ubicacion">
+                <option value="" selected disabled>Seleccione una opción</option>
+                <option value="Terraza">Terraza</option>
+                <option value="Salón">Salón</option>
+            </select>
+        </div>
+
+        <input type="submit" class="btn mt-4" value="Reservar" [disabled]="!form.valid">
+
+    </form>
+
+    <img src="./images/map-restaurante.png" class="map" alt="Mapa de la ubicacion del local">
 </div>
 
-<div class="container">
-    <div class="container-title">
-        <h1>Haga su reserva y disfrute de una experiencia gastronómica exclusiva</h1>
-        <h5>En nuestro restaurante, cada detalle está diseñado para ofrecerle un momento único e inolvidable. <br>
-            Le invitamos a realizar su reserva de manera sencilla y cómoda, donde podrá seleccionar el horario y la ubicación de su preferencia: en nuestra sala interior o en nuestra terraza al aire libre.
-            <br>
-            Nuestras plazas son limitadas, ya que nos comprometemos a garantizar un servicio de excelencia y atención personalizada a cada uno de nuestros comensales.<br>
-            Reserve con antelación y permita que nuestro equipo haga de su visita una experiencia inolvidable.
-        </h5>
-    </div>
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="d-block w-100" src="./images/fotosReservas3.jpg" alt="First slide">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="./images/fotosReservas2.jpg" alt="Second slide">
-            </div>
-            <div class="carousel-item">
-                <img class="d-block w-100" src="./images/fotosReservas1.jpg" alt="Third slide">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </button>
-
-    </div>
-</div>
-
-<!-- Formulario de reservas -->
-<form [formGroup]="form" (ngSubmit)="ngSubmit()">
-    <div class="reservations">
-        <div class="calendar-container">
-            <app-calendar class="calendar" (dateSelected)="onDateSelected($event)"></app-calendar>
-            <div class="form-group mb-3">
-                <label class="my-2" for="horario">Selecciona un horario</label>
-                <select formControlName="horario" class="form-control" id="horario">
-                    <option value="Comida">Desayuno</option>
-                    <option value="Cena">Comida</option>
-                    <option value="Evento Especial">Cena</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="reservation-container">
-            <div class="form-group mb-3">
-                <input type="number" formControlName="comensales" class="form-control" placeholder="*Comensales" min="1">
-
-                <!-- Validación de comensales -->
-                @if (checkValidation('comensales')) {
-                <div class="text-danger">
-                    <small>Introduce un número de comensales.</small>
-                </div>
-                }
-            </div>
-            <div class="form-group mb-3">
-                <label class="mb-3" for="ubicacion">Selecciona ubicación</label>
-                <select formControlName="ubicacion" class="form-control" id="ubicacion">
-                    <option value="Terraza">Terraza</option>
-                    <option value="Salón">Salón</option>
-                </select>
-
-            </div>
-            <input type="submit" class="btn" value="Reservar" [disabled]="form.invalid">
-        </div>
-    </div>
-</form>
 <footer>
-    <app-footer />
+    <app-footer></app-footer>
 </footer>

@@ -1,7 +1,7 @@
 label {
     display: flex;
     flex-direction: column;
-    font-family: 'Poiret One', cursive;
+    font-family: var(--font-secundary);
     font-weight: 700;
     font-size: 18px;
 }
