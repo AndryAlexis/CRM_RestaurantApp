@@ -23,5 +23,6 @@ button {
     border-color: rgba(0, 0, 0, 0.3);
 }
 #btn-save:hover {
-    background-color: var(--color-secondary-dark);
+    background-color: var(--color-tertiary);
+    color: white;
 }

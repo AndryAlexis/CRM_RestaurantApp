@@ -3,7 +3,7 @@
     background-color: var(--color-primary);
 
     h5 {
-        background-color: var(--color-secondary-dark);
+        background-color: var(--color-primary-dark);
         text-align: center;
         padding: 10px;
         border-radius: 10px;
@@ -11,5 +11,10 @@
 }
 
 .btn {
-    background-color: var(--color-secondary-dark);
+    background-color: var(--color-primary-dark);
+}
+
+.btn:hover {
+    background-color: var(--color-tertiary);
+    color: white;
 }

@@ -3,6 +3,11 @@
 }
 
 .btn{
-    background-color: var(--color-secondary);
-    color: var(--color-tertiary);
+    background-color: var(--color-primary-dark);
+    color: var(--color-black);
+}
+
+.btn:hover{
+    background-color: var(--color-tertiary);
+    color: white;
 }
