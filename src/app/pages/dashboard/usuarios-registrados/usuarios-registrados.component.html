@@ -5,33 +5,14 @@
         <h3 class="my-4">¡Bienvenido a la Gestión de Usuarios Registrados!</h3>
         <p>Aquí encontrarás un listado de los usuarios registrados en el sistema.</p>
     </div>
-    <div class="row justify-content-center"> <!-- Centrar la fila -->
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 g-4"> <!-- Responsive columns -->
-            <app-users-card></app-users-card>
+    <div class="row justify-content-center">
+        <div class="col-12 g-4">
+            @for(user of users; track user.id) {
+            <app-users-card [user]="user"></app-users-card>
+            }
         </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 g-4">
-            <app-users-card></app-users-card>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 g-4">
-            <app-users-card></app-users-card>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 g-4">
-            <app-users-card></app-users-card>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 g-4">
-            <app-users-card></app-users-card>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 g-4">
-            <app-users-card></app-users-card>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 g-4">
-            <app-users-card></app-users-card>
-        </div>
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 g-4">
-            <app-users-card></app-users-card>
-        </div>
-    </div>
 
+    </div>
     <div class="d-flex justify-content-center gap-3 mt-4">
         <a class="btn mx-2 mb-4">Next</a>
         <a class="btn mx-2 mb-4">Prev</a>

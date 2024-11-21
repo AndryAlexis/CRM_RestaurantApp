@@ -7,20 +7,10 @@
             <div class="card shadow-sm mb-4">
                 <div class="card-body">
                     <h1 class="text-center">Usuarios registrados</h1>
-                    <!-- Nuevos usuarios -->
                     <div class="row g-3">
-                        <div class="col-12">
-                            <app-new-users-card></app-new-users-card>
-                        </div>
-                        <div class="col-12">
-                            <app-new-users-card></app-new-users-card>
-                        </div>
-                        <div class="col-12">
-                            <app-new-users-card></app-new-users-card>
-                        </div>
-                        <div class="col-12">
-                            <app-new-users-card></app-new-users-card>
-                        </div>
+                        @for (user of users; track user.id) {
+                        <app-new-users-card [user]="user"></app-new-users-card>
+                        }
                     </div>
                     <div class="text-center mt-3">
                         <a [routerLink]="['/dashboard', 'usuarios-registrados']" class="btn btn-primary">Ver todos los
@@ -37,7 +27,10 @@
                     <h1 class="text-center">Reseñas</h1>
                     <div class="row">
                         <div class="col-12 mb-2">
-                            <app-review-card></app-review-card>
+                            @for (review of reviews; track review) {
+                            <app-review-card [rating]="review.rating" [comment]="review.comment" />
+                            }
+
                         </div>
                     </div>
                     <div class="text-center mt-3">

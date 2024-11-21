@@ -19,6 +19,7 @@ import { ReviewsComponent } from './pages/dashboard/reviews/reviews.component';
 import { ProximasReservasComponent } from './pages/dashboard/proximas-reservas/proximas-reservas.component';
 import { EditUserComponent } from './pages/dashboard/edit-user/edit-user.component';
 import { CreateReviewComponent } from './pages/create-review/create-review.component';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
   {
@@ -61,6 +62,7 @@ export const routes: Routes = [
     path: 'dashboard',
     component: DashboardComponent,
     title: 'Dashboard',
+    canActivate: [authGuard],
 
     children: [
       {

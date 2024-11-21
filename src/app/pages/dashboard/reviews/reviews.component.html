@@ -7,9 +7,11 @@
             De un vistazo podrás ver los comentarios y puntuaciones de tus usuarios.
         </p>
     </div>
-    <app-review-card />
-    <app-review-card />
-    <app-review-card />
+
+    @for (review of reviews; track review) {
+    <app-review-card [rating]="review.rating" [comment]="review.comment" />
+    }
+
     <button id="btn-top" class="btn" (click)="scrollToTop()">↑ Volver Arriba</button>
 
 

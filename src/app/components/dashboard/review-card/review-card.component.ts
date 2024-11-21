@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { IReviews } from '../../../interfaces/ireviews.interface';
 
 @Component({
   selector: 'app-review-card',
@@ -8,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrl: './review-card.component.css'
 })
 export class ReviewCardComponent {
+
+  @Input() rating: number = 5;
+  @Input() comment: string = '';
+
+
+
 
 }

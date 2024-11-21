@@ -30,10 +30,8 @@ export class HomeComponent {
 
     try {
       const response: IUserResponse = await this.apiService.registerUser(user);
-      console.log('Response:', response);
     } catch (error: any) {
       const errorResponse = error.error as IUserResponse;
-
       const { status, title, message } = errorResponse;
       console.error('Error:', 'Status:', status, 'Title:', title, 'Message:', message);
     }
@@ -56,9 +54,6 @@ export class HomeComponent {
 
       // Store JWT token in localStorage for subsequent authenticated requests
       localStorage.setItem('token', response.token);
-
-      console.log(localStorage.getItem('token'))
-
     } catch (error: any) {
       // Handle login error response
       const errorResponse = error.error as IUserResponse;
@@ -75,7 +70,6 @@ export class HomeComponent {
 
     try {
       const response: IUserResponse = await this.apiService.updateUser(user);
-      console.log('Response:', response);
     } catch (error: any) {
       const errorResponse = error.error as IUserResponse;
       const { status, title, message } = errorResponse;

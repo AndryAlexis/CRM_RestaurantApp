@@ -29,6 +29,39 @@ export class ApiService {
     );
   }
 
+  async getAllUsersAdmin(): Promise<any> {
+    const token = localStorage.getItem('token') as string;
+    const headers = { 'Authorization': token };
+    return await firstValueFrom(
+      this.http.get<any>(`${this.rootUrl}/admin/user`, { headers })
+    );
+  }
+
+  async getUserByIdAdmin(userId: string): Promise<any> {
+    const token = localStorage.getItem('token') as string;
+    const headers = { 'Authorization': token };
+    return await firstValueFrom(
+      this.http.get<any>(`${this.rootUrl}/admin/user/${userId}`, { headers })
+    );
+  }
+
+
+  async getSomeUsers(limit: number, order: string): Promise<any> {
+    const token = localStorage.getItem('token') as string;
+    const headers = { 'Authorization': token };
+    return await firstValueFrom(
+      this.http.get<any>(`${this.rootUrl}/admin/user?limit=${limit}&order=${order}`, { headers })
+    );
+  }
+
+  async getUser(): Promise<any> {
+    const token = localStorage.getItem('token') as string;
+    const headers = { 'Authorization': token };
+    return await firstValueFrom(
+      this.http.get<any>(`${this.rootUrl}/user`, { headers })
+    );
+  }
+
   async loginUser(user: IUserLogin): Promise<IUserLoginResponse> {
     return await firstValueFrom(
       this.http.post<IUserLoginResponse>(`${this.rootUrl}/user/login`, user)
