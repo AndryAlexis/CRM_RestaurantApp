@@ -1,6 +1,9 @@
 #navbar {
     background-color: var(--color-primary);
 
+    padding-bottom: 0;
+    padding-top: 0;
+
     a {
         display: flex;
         justify-content: space-between;
@@ -18,18 +21,24 @@
     border-bottom: 5px solid var(--color-tertiary);
 }
 
+
 #navbarNav ul {
     margin-left: auto;
-    
+
 }
 
 #btn {
+    margin-top: -10px;
     color: black;
     border: none;
     margin: 0 1rem;
     font-size: 1rem;
     cursor: pointer;
-    font-family: var(--font-primary);
+    font-family: var(--font-nav);
+    font-size: 20px;
+    font-weight: 500;
+
+    padding-bottom: 0;
 }
 
 #btn:hover {
@@ -49,7 +58,6 @@
         display: inline-block;
         margin: 0 auto;
         border-bottom: 1px solid var(--color-tertiary);
-        padding-bottom: 10px;
     }
 
 }

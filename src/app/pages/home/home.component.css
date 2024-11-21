@@ -47,16 +47,19 @@ button:hover {
     padding-left: 500px;
 
     .reserva-text {
-        background-color: var(--color-tertiary-light);
+        background-color: #0000009d;
         padding: 20px;
         border-radius: 10px;
+        color: white;
+
+        h2 {
+            color: white;
+            font-weight: 500;
+        }
 
         p {
             color: white;
-        }
-
-        h2{
-            color: black;
+            font-weight: 300;
         }
     }
 

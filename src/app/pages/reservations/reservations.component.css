@@ -1,118 +1,126 @@
-.img figure img {
-    width: 100%;
-    max-height: 50vh;
-    object-fit: cover;
-}
-
-/* Contenedor de título */
-.container-title {
-    font-family: 'Poiret One', sans-serif;
-    background-color: rgba(240, 222, 177, 0.2);
-    padding: 70px;
-    margin: 20px 0;
-    border-radius: 10px;
-    text-align: center;
-
-
-    h1 {
-        font-size: 32px;
-        font-weight: 600;
-        margin-bottom: 20px;
-
-    }
-
-    h5 {
-        font-size: 20px;
-        font-weight: 400;
-        line-height: 1.6;
-
-    }
+.foody-bg {
+    height: 100vh;
+    background-image: url('../../../../public/background-food6.svg');
+    position: relative;
+    z-index: 1;
 }
 
 
-/* Carrusel */
-#carouselExampleControls {
-    height: 80vh;
-    overflow: hidden;
-    border-radius: 10px;
-    margin: 20px 0;
-    box-shadow: 2px 2px 10px 7px rgba(47, 39, 39, 0.1);
-
-}
-
-#carouselExampleControls .carousel-inner,
-#carouselExampleControls .carousel-item,
-#carouselExampleControls .carousel-item img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-
-}
-
-
-/* Contenedor general reservas */
-.reservations {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    gap: 2rem;
-    padding: 40px 0;
-    font-family: 'Poiret One', sans-serif;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-/* Contenedor de fecha y horario */
-.calendar-container {
+form {
+    padding: 50px 50px 35px 50px;
+    font-family: var(--font-primary);
+    font-size: 1.2rem;
+    border-radius: 5px;
+    width: clamp(450px, 24.5%, 1000px);
+    top: 5%;
+    left: 10%;
+    position: absolute;
+    background-color: #acce56;
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.31);
+    z-index: 10;
     display: flex;
     flex-direction: column;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px 7px rgba(47, 39, 39, 0.1);
-    background-color: rgb(241, 236, 230, 0.2);
+    color: rgb(70, 70, 70);
 
-    .calendar {
-        font-size: 15px;
+    sup {
+        color: rgb(187, 83, 121);
+        font-size: 16px;
+    }
+
+    input[type="submit"] {
+
+        &:not(:disabled) {
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            color: #fff;
+            background: linear-gradient(45deg, #ff6b6b, #ffde59);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+            &:hover {
+                border-radius: 10px;
+                background: linear-gradient(45deg, #007bff, #00c853);
+                transform: scale(1.1) rotate(3deg);
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        &:disabled {
+            transition: all 0.6s ease;
+        }
+
     }
 }
 
+.map {
+    position: absolute;
+    left: 0%;
+    top: 1%;
+    width: 100%;
+    height: auto;
+    z-index: 5;
+    clip-path: polygon(0% 82%, 0% 18%, 100% 0%, 100% 100%);
+}
 
+.okiw {
+    color: red !important;
+}
 
-/* Contenedor de comensales y ubicacion */
-.reservation-container {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px 7px rgba(47, 39, 39, 0.1);
-    background-color: rgb(241, 236, 230, 0.2);
-
-
-    .btn {
-        background-color: var(--color-primary-dark);
-        box-shadow: 2px 2px 10px 5px rgba(47, 39, 39, 0.1);
-        width: 100%;
-        font-weight: bold;
-        font-size: 18px;
+@media (width <=1400px) {
+    .map {
+        width: 1400px;
+        top: 7%;
     }
 }
 
-/* Media queries */
-
-@media (max-width: 768px) {
-    .reservation-container {
-        width: 80%;
-        margin: 40px;
+@media (width <=1200px) {
+    .map {
+        top: 10%;
     }
+}
 
-    .calendar-container {
-        width: 80%;
-        margin: 40px;
+@media (width <=1000px) {
+    .map {
+        top: 13%;
     }
+}
 
-    .reservations {
+@media (width <=888px) {
+    .map {
+        top: 16%;
+        left: -10%;
+    }
+}
+
+@media (width <=794px) {
+    .map {
+        top: 15%;
+        left: -15%;
+    }
+}
+
+@media (width <=734px) {
+    .foody-bg {
+        height: 1000px;
+        display: flex;
         flex-direction: column;
-        gap: 1rem;
+        align-content: center;
+        gap: 20px;
+        justify-content: space-between;
+
+        form {
+            position: unset;
+            width: 99%;
+            margin: 0.5%;
+        }
+
+        .map {
+            top: 35%;
+            left: -65%;
+            clip-path: polygon(0% 100%, 0% 40%, 100% 0%, 100% 100%);
+        }
     }
 }
