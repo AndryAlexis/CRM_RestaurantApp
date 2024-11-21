@@ -76,7 +76,7 @@ button:hover {
 
 #titulo{
     color: var(--color-black);
-    background-color: var(--color-primary-dark-trans);
+    background-color: rgba(226, 219, 205, 0.5);
     border-radius: 10px;
     padding: 10px;
 }
