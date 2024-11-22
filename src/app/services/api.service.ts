@@ -83,4 +83,12 @@ export class ApiService {
       this.http.delete<any>(`${this.rootUrl}/admin/user/${id}`, { headers })
     );
   }
+
+  async updateUserAdmin(id: string, userData: IUserUpdate): Promise<IUserResponse> {
+    const token = localStorage.getItem('token') as string;
+    const headers = { 'Authorization': token };
+    return await firstValueFrom(
+      this.http.put<IUserResponse>(`${this.rootUrl}/admin/user/${id}`, userData, { headers })
+    );
+  }
 }
