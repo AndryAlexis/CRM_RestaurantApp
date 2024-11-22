@@ -8,12 +8,10 @@
     <div class="row my-3">
         <div class="col p-0">
             <div class="d-flex flex-column gap-3">
-                <app-menu-card />
-                <app-menu-card />
-                <app-menu-card />
-                <app-menu-card />
-                <app-menu-card />
-                <app-menu-card />
+                @for (menu of menus; track menu.id) {
+                <app-menu-card [menu]="menu" />
+                }
+
             </div>
         </div>
     </div>
