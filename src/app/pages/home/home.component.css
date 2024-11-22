@@ -94,6 +94,7 @@ p {
 }
 
 .gastronomia {
+    margin-top: 10rem;
     .text {
         padding: 4%;
         display: flex;
@@ -104,6 +105,10 @@ p {
         .unete {
             margin-bottom: 1rem;
         }
+    }
+
+    img {
+        height: 100%;
     }
 }
 
