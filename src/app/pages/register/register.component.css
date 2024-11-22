@@ -30,10 +30,11 @@ p {
         font-size: 18px;
         background-color: var(--color-primary-dark);
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+        padding: 15px 0px;
     }
 }
 
-#SignInButton:hover{
+#SignInButton:hover {
     button {
         background-color: var(--color-tertiary);
         cursor: pointer;

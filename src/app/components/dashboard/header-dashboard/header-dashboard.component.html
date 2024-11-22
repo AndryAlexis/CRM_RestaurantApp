@@ -2,8 +2,7 @@
     <div class="container-fluid">
 
         <!-- Botón de Hamburguesa -->
-        <button class="navbar-toggler" type="button" (click)="toggleNavbar()" [attr.aria-expanded]="!isCollapsed"
-            aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" (click)="toggleNavbar()" [attr.aria-expanded]="!isCollapsed" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
@@ -28,7 +27,10 @@
                     <button class="btn" [routerLink]="['/dashboard', 'reviews']">Reseñas</button>
                 </li>
                 <li class="nav-item">
-                    <button class="btn" [routerLink]="['/logout']">Logout</button>
+                    <button class="btn" [routerLink]="['/']">Restaurante</button>
+                </li>
+                <li class="nav-item">
+                    <button class="btn" (click)="logout()">Logout</button>
                 </li>
             </ul>
         </div>

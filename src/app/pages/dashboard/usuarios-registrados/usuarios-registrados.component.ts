@@ -1,17 +1,15 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HeaderDashboardComponent } from '../../../components/dashboard/header-dashboard/header-dashboard.component';
-import { NewUsersCardComponent } from '../../../components/dashboard/new-users-card/new-users-card.component';
 import { UsersCardComponent } from "../../../components/dashboard/users-card/users-card.component";
 import { ApiService } from '../../../services/api.service';
 import { IUserResponse } from '../../../interfaces/user.interfaces';
 
-
 @Component({
   selector: 'app-usuarios-registrados',
   standalone: true,
-  imports: [HeaderDashboardComponent, NewUsersCardComponent, UsersCardComponent],
+  imports: [HeaderDashboardComponent, UsersCardComponent],
   templateUrl: './usuarios-registrados.component.html',
-  styleUrl: './usuarios-registrados.component.css'
+  styleUrls: ['./usuarios-registrados.component.css']
 })
 export class UsuariosRegistradosComponent {
 
@@ -19,10 +17,13 @@ export class UsuariosRegistradosComponent {
   users: any[] = [];
 
   async ngOnInit(): Promise<any> {
+    await this.loadUsers(); // Cargar usuarios al iniciar
+  }
+
+  async loadUsers() {
     try {
       const users = await this.usersService.getAllUsersAdmin();
       this.users = users.data.users;
-      console.log(this.users);
     } catch (error: any) {
       const errorResponse = error.error as IUserResponse;
       const { status, title, message } = errorResponse;
@@ -30,5 +31,8 @@ export class UsuariosRegistradosComponent {
     }
   }
 
-
+  async onDeleteUser() {
+    //Recargar lista de usuarios
+    await this.loadUsers();
+  }
 }

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header-dashboard',
@@ -9,8 +9,17 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./header-dashboard.component.css']
 })
 export class HeaderDashboardComponent {
+
+  private router = inject(Router);
+
   isCollapsed = true;
   toggleNavbar() {
     this.isCollapsed = !this.isCollapsed;
   }
+
+  logout() {
+    localStorage.removeItem('token');
+    this.router.navigate(['/']);
+  }
+
 }

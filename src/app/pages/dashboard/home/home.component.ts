@@ -23,9 +23,10 @@ export class HomeComponent {
 
   reviews: IReviews[] = [];
   users: any[] = [];
+
   async ngOnInit() {
     try {
-      const response = await this.reviewService.getSomeReviews(3, 'desc');
+      const response = await this.reviewService.getSomeReviews(4, 'desc');
       this.reviews = response.data.reviews;
     } catch (error: any) {
       const errorResponse = error.error as any;
@@ -37,7 +38,6 @@ export class HomeComponent {
     try {
       const response = await this.apiService.getSomeUsers(3, 'desc');
       this.users = response.data.users;
-      console.log(this.users);
     } catch (error: any) {
       console.error('Error:', error);
     }

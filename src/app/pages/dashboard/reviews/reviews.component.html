@@ -9,7 +9,7 @@
     </div>
 
     @for (review of reviews; track review) {
-    <app-review-card [rating]="review.rating" [comment]="review.comment" [hasDeleteButton]="true" />
+    <app-review-card [rating]="review.rating" [comment]="review.comment" [hasDeleteButton]="true" [reviewId]="review.id" (reviewDeleted)="loadReviews()" />
     }
 
     <button id="btn-top" class="btn" (click)="scrollToTop()">↑ Volver Arriba</button>

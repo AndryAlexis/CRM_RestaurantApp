@@ -4,7 +4,7 @@
             @if(hasDeleteButton) {
             <div class="d-flex justify-content-between align-items-center">
                 <h5 class="card-title">Nombre de usuario que la ha escrito</h5>
-                <button class="btn">Eliminar</button>
+                <button class="btn" (click)="deleteReview()">Eliminar</button>
             </div>
             }
             <p class="card-text">⭐ Rating: {{rating}}/5</p>

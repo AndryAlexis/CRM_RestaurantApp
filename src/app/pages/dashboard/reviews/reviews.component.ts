@@ -19,6 +19,10 @@ export class ReviewsComponent {
 
 
   async ngOnInit() {
+    await this.loadReviews();
+  }
+
+  async loadReviews() {
     try {
       const response = await this.service.getReviewsAdmin();
       if (response) {

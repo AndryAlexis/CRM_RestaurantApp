@@ -32,6 +32,7 @@ export class CreateReviewComponent {
     }
   }
 
+
   // TODO: Avisar al usuario si la reseña no se ha creado correctamente con sweetalert2
   async createReview() {
     try {
@@ -50,42 +51,48 @@ export class CreateReviewComponent {
           title: "¡Gracias por tu comentario!",
           icon: "success",
           preConfirm: () => {
-            this.router.navigate(['/']);
+            this.router.navigate(['/user']);
           }
         });
         this.reviewForm.reset();
-
       }
     } catch (error: any) {
       const errorResponse = error.error as IUserResponse;
       const { status, title, message } = errorResponse;
       console.error('Error:', 'Status:', status, 'Title:', title, 'Message:', message);
+      Swal.fire({
+        title: "Error",
+        text: "No se pudo crear la reseña. Inténtalo de nuevo más tarde.",
+        icon: "error"
+      });
     }
   }
 
-  async getReviews() {
-    try {
-      const reviews = await this.reviewsService.getReviews();
-      console.log(reviews);
-    }
-    catch (error: any) {
-      const errorResponse = error.error as IUserResponse;
-      const { status, title, message } = errorResponse;
-      console.error('Error:', 'Status:', status, 'Title:', title, 'Message:', message);
-    }
-  }
+  // He comentado esto porque no entiendo por qué en la página de crear nueva review están las funciones de obtener y borrar?????
 
-  async deleteReview(id: string) {
-    try {
-      const reviews = await this.reviewsService.deleteReview(id);
-      console.log(reviews);
-    }
-    catch (error: any) {
-      const errorResponse = error.error as IUserResponse;
-      const { status, title, message } = errorResponse;
-      console.error('Error:', 'Status:', status, 'Title:', title, 'Message:', message);
-    }
-  }
+  // async getReviews() {
+  //   try {
+  //     const reviews = await this.reviewsService.getReviews();
+  //     console.log(reviews);
+  //   }
+  //   catch (error: any) {
+  //     const errorResponse = error.error as IUserResponse;
+  //     const { status, title, message } = errorResponse;
+  //     console.error('Error:', 'Status:', status, 'Title:', title, 'Message:', message);
+  //   }
+  // }
+
+  // async deleteReview(id: string) {
+  //   try {
+  //     const reviews = await this.reviewsService.deleteReview(id);
+  //     console.log(reviews);
+  //   }
+  //   catch (error: any) {
+  //     const errorResponse = error.error as IUserResponse;
+  //     const { status, title, message } = errorResponse;
+  //     console.error('Error:', 'Status:', status, 'Title:', title, 'Message:', message);
+  //   }
+  // }
 
 
 }

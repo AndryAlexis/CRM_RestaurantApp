@@ -41,4 +41,14 @@ export class ReviewsService {
     const headers = { 'Authorization': token };
     return firstValueFrom(this.http.delete<any>(`${this.rootUrl}/review/${id}`, { headers }));
   }
+
+
+  deleteReviewAdmin(id: string): Promise<any> {
+    const token = localStorage.getItem('token') as string;
+    const headers = { 'Authorization': token };
+    return firstValueFrom(this.http.delete<any>(`${this.rootUrl}/admin/review/${id}`, { headers }));
+  }
+
+
+
 }

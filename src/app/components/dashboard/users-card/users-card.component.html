@@ -10,7 +10,7 @@
             <ul class="list-unstyled d-flex gap-2 justify-content-end align-items-center h-100 ">
                 <li><a class="btn" [routerLink]="['/dashboard/users', user.id]">Ver</a></li>
                 <li><a class="btn" [routerLink]="['/dashboard/edit-user', user.id]">Actualizar</a></li>
-                <li><button class="btn">Borrar</button></li>
+                <li><button class="btn" (click)="onDelete()">Borrar</button></li>
             </ul>
         </div>
     </div>
