@@ -1,17 +1,71 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HeaderComponent } from "../../components/header/header.component";
 import { FooterComponent } from '../../components/footer/footer.component';
 import { RouterLink } from '@angular/router';
 import { ReviewCardComponent } from "../../components/dashboard/review-card/review-card.component";
 import { ReservationsCardComponent } from "../../components/dashboard/reservations-card/reservations-card.component";
+import { ReactiveFormsModule, Validators, FormControl, FormGroup } from '@angular/forms';
+import { ApiService } from '../../services/api.service';
+import { IUserResponse, IUserUpdate } from '../../interfaces/user.interfaces';
+import Swal from 'sweetalert2';
+import { ReviewsService } from '../../services/reviews.service';
 
 @Component({
   selector: 'app-user',
   standalone: true,
-  imports: [HeaderComponent, FooterComponent, RouterLink, ReviewCardComponent, ReservationsCardComponent],
+  imports: [HeaderComponent, FooterComponent, RouterLink, ReviewCardComponent, ReservationsCardComponent, ReactiveFormsModule],
   templateUrl: './user.component.html',
   styleUrl: './user.component.css'
 })
 export class UserComponent {
+
+reviews: any[] = [];
+
+  private apiService = inject(ApiService);
+  private service = inject(ReviewsService)
+
+
+  userForm: FormGroup = new FormGroup({
+    name: new FormControl('', [Validators.required]),
+    surname: new FormControl('', [Validators.required]),
+    phone: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required]),
+  });
+
+  async onSubmit() {
+    const dataUser = [];
+    const formValues = this.userForm.value;
+    for (const key in formValues) {
+      const value = formValues[key].trim()
+      if (value) {
+        dataUser.push({ [key]: formValues[key] });
+      }
+    }
+    const combinedObject = dataUser.reduce((acumulator, currentObject) => {
+      return { ...acumulator, ...currentObject }
+    }, {})
+    try {
+      await this.apiService.updateUser(combinedObject);
+      Swal.fire({
+        icon: 'success',
+        title: 'El usuario se ha actualizado correctamente.',
+        confirmButtonText: 'Aceptar'
+      });
+    } catch (error: any) {
+      console.log(error, 'error')
+      Swal.fire({
+        icon: 'error',
+        title: error.error.message,
+        confirmButtonText: 'Aceptar'
+      });
+    }
+  }
+
+
+   async ngOnInit() {
+    const result = await this.service.getReviews() 
+    this.reviews = result.data;
+  }
 
 }

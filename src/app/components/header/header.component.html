@@ -24,8 +24,15 @@
             <li class="nav-item">
                 <button class="btn" [routerLink]="['/user']" id="btn">Perfil</button>
             </li>
+            <li class="nav-item">
+                <button class="btn" (click)="logout()" id="btn">Logout</button>
+            </li>
             }
-
+            @if (userRole === 'admin') {
+            <li class="nav-item">
+                <button class="btn" [routerLink]="['/dashboard']" id="btn">Dashboard</button>
+            </li>
+            }
             <li class="nav-item">
                 <button class="btn" [routerLink]="['/login']" id="btn">Entrar</button>
             </li>

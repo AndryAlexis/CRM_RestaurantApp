@@ -5,8 +5,7 @@
     <!-- Seccion Titulo -->
     <section class="row">
         <div class="col-12 position-relative">
-            <img src="./images/header-img.jpg" class="img-fluid w-100" alt="Restaurant"
-                style="max-height: 500px; object-fit: cover;">
+            <img src="./images/header-img.jpg" class="img-fluid w-100" alt="Restaurant" style="max-height: 500px; object-fit: cover;">
             <h1 id="titulo" class="position-absolute top-50 start-50 translate-middle">¡Bienvenido a Frotend
                 Feast!
             </h1>
@@ -80,8 +79,7 @@
                 <button class="btn mb-3" [routerLink]="['/register']">Registrate</button>
             </div>
             <div class="col-md-6" id="imgRegistro">
-                <img src="./images/thai-food-green-curry-chicken-ai-generated-image.jpg" class="img-fluid w-100 rounded"
-                    alt="Imagen plato">
+                <img src="./images/thai-food-green-curry-chicken-ai-generated-image.jpg" class="img-fluid w-100 rounded" alt="Imagen plato">
             </div>
         </div>
     </section>
@@ -98,8 +96,12 @@
                     en Frontend
                     Feast!</p>
             </div>
-            <div class="col-12">
-                <app-review-card></app-review-card>
+            <div class="row">
+                @for (review of reviews; track review.id) {
+                <div class="col-12 col-md-4">
+                    <app-review-card [rating]="review.rating" [comment]="review.comment"></app-review-card>
+                </div>
+                }
             </div>
         </div>
     </section>

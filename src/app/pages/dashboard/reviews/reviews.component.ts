@@ -24,7 +24,7 @@ export class ReviewsComponent {
 
   async loadReviews() {
     try {
-      const response = await this.service.getReviewsAdmin();
+      const response = await this.service.getReviewsAll();
       if (response) {
         this.reviews = response.data.reviews;
       }

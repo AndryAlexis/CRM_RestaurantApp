@@ -18,16 +18,12 @@ export class ReviewsService {
     return firstValueFrom(this.http.get<any>(`${this.rootUrl}/review`, { headers }));
   }
 
-  getReviewsAdmin(): Promise<any> {
-    const token = localStorage.getItem('token') as string;
-    const headers = { 'Authorization': token };
-    return firstValueFrom(this.http.get<any>(`${this.rootUrl}/admin/review`, { headers }));
+  getReviewsAll(): Promise<any> {
+    return firstValueFrom(this.http.get<any>(`${this.rootUrl}/review/all`));
   }
 
   getSomeReviews(amount: number, order: string): Promise<any> {
-    const token = localStorage.getItem('token') as string;
-    const headers = { 'Authorization': token };
-    return firstValueFrom(this.http.get<any>(`${this.rootUrl}/admin/review?limit=${amount}&order=${order}`, { headers }));
+    return firstValueFrom(this.http.get<any>(`${this.rootUrl}/review/all?limit=${amount}&order=${order}`));
   }
 
   createReview(review: any): Promise<any> {

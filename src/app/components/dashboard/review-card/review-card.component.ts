@@ -17,12 +17,15 @@ export class ReviewCardComponent {
   @Input() comment: string = '';
   @Input() hasDeleteButton: boolean = false;
 
+
+
   //Borrar reseña
   @Output() reviewDeleted = new EventEmitter<void>();
   @Input() reviewId: string = '';
   private service = inject(ReviewsService);
   private router = inject(Router);
 
+  
 
   async deleteReview() {
     const result = await Swal.fire({
@@ -51,4 +54,5 @@ export class ReviewCardComponent {
     }
   }
 
+ 
 }

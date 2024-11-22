@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { ApiService } from '../../services/api.service';
 
 @Component({
@@ -12,6 +12,7 @@ import { ApiService } from '../../services/api.service';
 export class HeaderComponent {
 
   private apiService = inject(ApiService);
+  private router = inject(Router);
 
   isCollapsed = true;
   toggleNavbar() {
@@ -26,5 +27,10 @@ export class HeaderComponent {
     const user = await this.apiService.getUser(); // Obtiene el usuario
     this.userRole = user.data.role; // Asigna el rol del usuario
 
+  }
+
+  logout() {
+    localStorage.removeItem('token');
+    this.router.navigate(['/']);
   }
 }

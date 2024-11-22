@@ -39,6 +39,7 @@ export class LoginComponent {
       const user = await this.apiService.loginUser({ email, password });
       localStorage.setItem('token', user.token);
       const response = await this.apiService.getUser();
+      console.log(response)
       if (response.data.role === 'admin') {
         this.router.navigate(['/dashboard']);
       } else {
