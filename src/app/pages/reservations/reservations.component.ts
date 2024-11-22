@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
-import { CalendarComponent } from "../../components/calendar/calendar.component";
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HeaderComponent } from "../../components/header/header.component";
 import { FooterComponent } from "../../components/footer/footer.component";
+import { ReservationService } from '../../services/reservation.service';
+import { IReservation } from '../../interfaces/ireservation.interface';
 
 @Component({
   selector: 'app-reservations',
@@ -14,23 +15,28 @@ import { FooterComponent } from "../../components/footer/footer.component";
 export class ReservationsComponent {
 
   form: FormGroup;
+  reservationService = inject(ReservationService)
 
   constructor() {
     this.form = new FormGroup({
-      comensales: new FormControl(1, [Validators.required, Validators.min(1)]),
-      horario: new FormControl('', [Validators.required]),
-      ubicacion: new FormControl('', [Validators.required]),
-      fecha: new FormControl('2024-11-25', [Validators.required]),
+      date: new FormControl('2024-11-25', [Validators.required]),
+      time: new FormControl('', [Validators.required]),
+      guests: new FormControl(1, [Validators.required, Validators.min(1)]),
+      location: new FormControl('', [Validators.required])
     }, [])
   }
 
   ngSubmit() {
-    if (this.form.valid) {
-      this.form.reset()
-      
-
-    } else {
-      console.log('Formulario inválido');
-    }
+    const reservation: IReservation = this.form.value;
+    reservation.status = 'pending';
+    reservation.user_id = 1;
+    console.log(reservation)
+    this.reservationService.createReservation(this.form.value)
+    this.form.reset({
+      date: '2024-11-25',
+      time: '',
+      guests: 1,
+      location: '',
+    })
   }
 }

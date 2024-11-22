@@ -7,6 +7,8 @@ import { NewUsersCardComponent } from "../../../components/dashboard/new-users-c
 import { ReviewsService } from '../../../services/reviews.service';
 import { IReviews } from '../../../interfaces/ireviews.interface';
 import { ApiService } from '../../../services/api.service';
+import { ReservationService } from '../../../services/reservation.service';
+import { ICustomerReservationResponse } from '../../../interfaces/icustomer-reservation-response.interface';
 
 @Component({
   selector: 'app-home',
@@ -20,11 +22,18 @@ export class HomeComponent {
 
   private reviewService = inject(ReviewsService);
   private apiService = inject(ApiService);
+  reservationService = inject(ReservationService)
+  reservationsToday: ICustomerReservationResponse[] = [];
+  reservations: ICustomerReservationResponse[] = [];
+  currentDate = new Date()
+  date: string = this.currentDate.toLocaleDateString('en-CA')
+
 
   reviews: IReviews[] = [];
   users: any[] = [];
 
   async ngOnInit() {
+    this.loadReservations()
     try {
       const response = await this.reviewService.getSomeReviews(4, 'desc');
       this.reviews = response.data.reviews;
@@ -41,5 +50,13 @@ export class HomeComponent {
     } catch (error: any) {
       console.error('Error:', error);
     }
+  }
+  
+    async loadReservations() {
+    this.date = '2024-11-25'
+    this.reservationsToday = await this.reservationService.getReservations({ date: this.date });
+    const [first, second, third] = this.reservationsToday;
+    this.reservations = [first, second, third]
+    
   }
 }

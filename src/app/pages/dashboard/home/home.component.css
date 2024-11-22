@@ -1,26 +1,15 @@
-section {
-    h1 {
-        font-family: 'Gowun Dodum', cursive;
-        font-size: 2rem;
-        font-weight: 600;
-        color: #333;
-        background-color: var(--color-primary-light);
-        padding: 10px;
-        width: 50%;
-        margin: 0 auto;
-        border-radius: 10px;
-    }
+h2 {
+    font-size: 2.6rem;
+    font-weight: 600;
+    color: var(--bg-black);
+    margin: 0 auto;
 }
 
-section.container.row {
-    background-color: var(--color-primary-light);
-    border-radius: 10px;
-}
 
 .btn {
     background-color: var(--color-primary-dark);
-    color: black;
-    padding: 10px;
+    color: var(--bg-black);
+    padding: 1rem;
     border: 1px solid #00000010;
 }
 
@@ -31,4 +20,10 @@ section.container.row {
 
 .card {
     height: 100%;
+}
+
+@media (width <=768px) {
+    .reseñas {
+        margin-top: 2rem;
+    }
 }

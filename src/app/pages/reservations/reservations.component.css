@@ -29,7 +29,7 @@ form {
 
     input[type="submit"] {
 
-        &:not(:disabled) {
+        &.active {
             padding: 15px 30px;
             font-size: 1.2rem;
             color: #fff;

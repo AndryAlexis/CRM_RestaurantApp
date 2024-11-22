@@ -7,36 +7,37 @@
 
         <div class="form-group mb-3">
             <label for="start" class="">Fecha</label>
-            <input type="date" id="start" name="trip-start" value="2024-11-25" min="2024-11-25" max="2025-12-31" formControlName="fecha"
-                class="form-control" />
+            <input type="date" id="start" name="trip-start" value="2024-11-25" min="2024-11-25" max="2025-12-31"
+                formControlName="date" class="form-control" />
         </div>
 
         <div class="form-group  mb-3">
             <label class="" for="horario">Horario</label>
-            <select formControlName="horario" class="form-control" id="horario">
+            <select formControlName="time" class="form-control" id="horario">
                 <option value="" selected disabled>Seleccione una opción</option>
-                <option value="Comida">Desayuno</option>
-                <option value="Cena">Comida</option>
-                <option value="Evento Especial">Cena</option>
+                <option value="breakfast">Desayuno</option>
+                <option value="lunch">Comida</option>
+                <option value="dinner">Cena</option>
             </select>
         </div>
 
 
         <div class="form-group mb-3">
             <label class="" for="horario">Comensales</label>
-            <input type="number" formControlName="comensales" class="form-control" placeholder="1" min="1">
+            <input type="number" formControlName="guests" class="form-control" placeholder="1" min="1">
         </div>
 
         <div class="form-group mb-3">
             <label class="" for="ubicacion">Ubicación</label>
-            <select formControlName="ubicacion" class="form-control" id="ubicacion">
+            <select formControlName="location" class="form-control" id="ubicacion">
                 <option value="" selected disabled>Seleccione una opción</option>
-                <option value="Terraza">Terraza</option>
-                <option value="Salón">Salón</option>
+                <option value="outside">Terraza</option>
+                <option value="inside">Salón</option>
             </select>
         </div>
 
-        <input type="submit" class="btn mt-4" value="Reservar" [disabled]="!form.valid">
+        <input type="submit" class="btn mt-4" value="Reservar" [disabled]="!form.valid"
+        [class.active]="form.valid">
 
     </form>
 

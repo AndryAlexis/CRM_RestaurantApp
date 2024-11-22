@@ -1,28 +1,46 @@
-#menu-card {
+ul {
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    border: 0.5px solid rgb(205, 205, 205);
+
+    padding: 2%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     background-color: var(--color-primary);
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.1);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1rem;
-    padding: 20px;
 
-    h5 {
-        font-weight: 500;
-        font-size: 0.9rem;
-        border-bottom: 1px solid #333;
-    }
+}
 
-    li {
-        font-size: 0.9rem;
-    }
+.buttons {
+    gap: 0.3rem;
+    display: flex;
+    justify-content: start;
 
     button {
-        font-size: 0.8rem;
-        background-color: var(--color-primary-dark);
-        color: black;
-    }
+        font-size: 1rem;
+        color: var(--bg-black);
+        border: 1px solid rgb(104, 104, 104);
 
-    button:hover {
-        background-color: var(--color-tertiary);
-        color: white;
+        &.confirmar {
+            background-color: #bbf6c7;
+        }
+
+        &.cancelar {
+            background-color: #f8cbc7;
+        }
+
+        &.completar {
+            background-color: #f8f2d7;
+        }
+    }
+}
+
+@media (width <= 760px) {
+    ul {
+        flex-direction: column;
+        align-content: center;
+        
+        > div {
+            padding-left: 3%;
+        }
     }
 }

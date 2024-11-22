@@ -1,63 +1,65 @@
-<app-header-dashboard />
+<div class="bg-food">
 
-<div class="container p-3 mt-3 mb-3">
-    <div class="row">
-        <!-- Usuarios registrados -->
-        <div class="col-12 col-md-6">
-            <div class="card shadow-sm mb-4">
-                <div class="card-body">
-                    <h1 class="text-center">Usuarios registrados</h1>
-                    <div class="row g-3">
+    <header class="mb-3">
+        <app-header-dashboard />
+    </header>
+
+    <div class="container p-3 mb-3">
+        <div class="row">
+            <!-- Usuarios registrados -->
+            <div class="col-12 col-md-6">
+                <div class="card shadow-sm mb-4 usuarios">
+                    <div class="card-body">
+                        <h2 class="text-center mb-4">Usuarios registrados</h2>
+                        <!-- Nuevos usuarios -->
+                        <div class="row g-3">
                         @for (user of users; track user.id) {
                         <app-new-users-card [user]="user"></app-new-users-card>
                         }
-                    </div>
-                    <div class="text-center mt-3">
-                        <a [routerLink]="['/dashboard', 'usuarios-registrados']" class="btn btn-primary">Ver todos los
-                            usuarios</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Reseñas -->
-        <div class="col-12 col-md-6">
-            <div class="card shadow-sm mb-4">
-                <div class="card-body">
-                    <h1 class="text-center">Reseñas</h1>
-                    <div class="row">
-                        <div class="col-12 mb-2">
-                            @for (review of reviews; track review) {
-                            <app-review-card [rating]="review.rating" [comment]="review.comment" />
-                            }
-
+                        </div>
+                        <div class="text-center mt-3 boton-suelto">
+                            <a [routerLink]="['/dashboard', 'usuarios-registrados']" class="btn btn-primary">Ver todos
+                                los
+                                usuarios</a>
                         </div>
                     </div>
-                    <div class="text-center mt-3">
-                        <a [routerLink]="['/dashboard', 'reviews']" class="btn btn-primary">Ver todas las reseñas</a>
+                </div>
+            </div>
+
+            <!-- Reseñas -->
+            <div class="col-12 col-md-6 reseñas">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="text-center mb-4">Reseñas</h2>
+                        <div class="row">
+						  @for (review of reviews; track review) {
+                            <app-review-card [rating]="review.rating" [comment]="review.comment" />
+                            }
+                        </div>
+                        <div class="text-center mt-3">
+                            <a [routerLink]="['/dashboard', 'reviews']" class="btn btn-primary">Ver todas las
+                                reseñas</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Próximas reservas -->
-    <div class="card shadow-sm m-4">
-        <div class="card-body">
-            <h1 class="text-center">Próximas reservas</h1>
-            <div class="row">
-                <div class="col-12 mb-2">
-                    <app-reservations-card></app-reservations-card>
+        <!-- Próximas reservas -->
+        <div class="card shadow-sm p-4 mt-4 reservas">
+            <div class="card-body">
+                <h2 class="text-center mb-4">Próximas reservas</h2>
+                <div class="row">
+                    @for(reservation of reservations; track reservation.id) {
+                    <div class="col-12 mb-2">
+                        <app-reservations-card [reservation]="reservation"></app-reservations-card>
+                    </div>
+                    }
                 </div>
-                <div class="col-12 mb-2">
-                    <app-reservations-card></app-reservations-card>
+                <div class="text-center mt-3">
+                    <a [routerLink]="['/dashboard', 'proximas-reservas']" class="btn btn-primary">Ver todas las
+                        reservas</a>
                 </div>
-                <div class="col-12 mb-2">
-                    <app-reservations-card></app-reservations-card>
-                </div>
-            </div>
-            <div class="text-center mt-3">
-                <a [routerLink]="['/dashboard', 'proximas-reservas']" class="btn btn-primary">Ver todas las reservas</a>
             </div>
         </div>
     </div>

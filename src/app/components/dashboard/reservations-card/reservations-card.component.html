@@ -1,21 +1,25 @@
-<div class="border border-2 rounded-3 " id="menu-card">
-    <div class="container">
-        <div class="row g-3">
-            <div class="col-12">
-                <ul class="list-unstyled row">
-                    <div class="col-12">
-                        <li class="m-2 fs-5"><strong>Francisco Pérez de la Torre </strong></li>
-                        <li class="m-2"><strong>10/12/2024</strong></li>
-                        <li class="m-2"><strong>21:00</strong></li>
-                        <li class="m-2">Mesa 2</li>
-                        <li class="m-2">Comensales 4</li>
-                        <li class="m-2">
-                            <button class="btn">Cancelar</button>
-                        </li>
-                    </div>
-                </ul>
-            </div>
-        </div>
-
+<ul class="list-unstyled">
+    <div class="user-info">
+        <li class=" fs-5">{{reservation.name + " " + reservation.surname}}</li>
+        <li class=""><strong>{{reservation.date | date: 'dd/MM/yyyy'}}</strong></li>
+        <li class=" "><strong>{{reservation.time | traductor}}</strong></li>
     </div>
-</div>
+    <div class="reservation-info">
+        <div>
+            <li class=" ">Mesa{{reservation.tables | tables}}</li>
+            <li class=" ">Comensales {{reservation.guests}}</li>
+            <li>Estado: {{reservation.status | traductor}}</li>
+        </div>
+        <div class="buttons">
+            <button (click)="changeStatus($event)" class="btn cancelar" value="cancelled"
+                [disabled]="reservation.status === 'cancelled'">Cancelar
+            </button>
+            <button (click)="changeStatus($event)" class="btn confirmar" value="confirmed"
+                [disabled]="reservation.status === 'confirmed'">Confirmar
+            </button>
+            <button (click)="changeStatus($event)" class="btn completar" value="completed"
+                [disabled]="reservation.status === 'completed'">Completar
+            </button>
+        </div>
+    </div>
+</ul>
