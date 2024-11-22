@@ -3,7 +3,7 @@
     <div id="body-menu" class="container my-5">
         <!-- Título del menú -->
         <img src="./Leaf.svg" alt="Una rama de olivo con hojas">
-        <h2 class="text-center mb-4">Menú del Día</h2>
+        <h2 class="text-center mb-4">Menú del Día: {{data?.name }}</h2>
         <p>Descubre una variedad de opciones pensadas para todos los gustos. Preparado todo con dedicación para que
             disfrutes de una experiencia deliciosa.
 
@@ -14,102 +14,71 @@
             <!-- Categoría 1: Entrantes -->
             <div class="accordion-item">
                 <h3 class="accordion-header" id="headingEntrantes">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEntrantes" aria-expanded="true" aria-controls="collapseEntrantes">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseEntrantes" aria-expanded="true" aria-controls="collapseEntrantes">
                         Entrantes
                     </button>
                 </h3>
-                <div id="collapseEntrantes" class="accordion-collapse collapse show" aria-labelledby="headingEntrantes" data-bs-parent="#menuAccordion">
+                <div id="collapseEntrantes" class="accordion-collapse collapse show" aria-labelledby="headingEntrantes"
+                    data-bs-parent="#menuAccordion">
                     <div class="accordion-body">
                         <!-- Platillos de la categoría -->
+                        @for (starter of starters; track starter.id){
                         <div class="row mb-3">
                             <div class="col-10">
-                                <h5>Bruschetta</h5>
-                                <p class="text-muted">Tostadas con tomate fresco, albahaca y aceite de oliva.</p>
+                                <h5>{{starter.name}}</h5>
+                                <p class="text-muted">{{starter.description}}</p>
                             </div>
-
                         </div>
-                        <div class="row mb-3">
-                            <div class="col-10">
-                                <h5>Sopa del día</h5>
-                                <p class="text-muted">Preparada con ingredientes frescos y naturales.</p>
-                            </div>
-
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-10">
-                                <h5>Ensalada César</h5>
-                                <p class="text-muted">Lechuga, pollo, croutons y aderezo especial.</p>
-                            </div>
-
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-10">
-                                <h5>Tabla de quesos</h5>
-                                <p class="text-muted">Selección de quesos artesanales con acompañamientos.</p>
-                            </div>
-
-                        </div>
+                        }
                     </div>
                 </div>
             </div>
             <!-- Categoría 2: Platos Principales -->
             <div class="accordion-item">
                 <h3 class="accordion-header" id="headingPlatosPrincipales">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePlatosPrincipales" aria-expanded="false" aria-controls="collapsePlatosPrincipales">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapsePlatosPrincipales" aria-expanded="false"
+                        aria-controls="collapsePlatosPrincipales">
                         Platos Principales
                     </button>
                 </h3>
-                <div id="collapsePlatosPrincipales" class="accordion-collapse collapse" aria-labelledby="headingPlatosPrincipales" data-bs-parent="#menuAccordion">
+                <div id="collapsePlatosPrincipales" class="accordion-collapse collapse"
+                    aria-labelledby="headingPlatosPrincipales" data-bs-parent="#menuAccordion">
                     <div class="accordion-body">
                         <!-- Platillos de la categoría -->
+                        @for (main of mainDishes; track main.id){
                         <div class="row mb-3">
                             <div class="col-10">
                                 <h5>Risotto de setas</h5>
                                 <p class="text-muted">Crema de arroz con setas y parmesano.</p>
                             </div>
-
                         </div>
-                        <div class="row mb-3">
-                            <div class="col-10">
-                                <h5>Pollo al curry</h5>
-                                <p class="text-muted">Acompañado de arroz basmati y especias.</p>
-                            </div>
-
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-10">
-                                <h5>Entrecot a la parrilla</h5>
-                                <p class="text-muted">Servido con guarnición de patatas y verduras.</p>
-                            </div>
-
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col-10">
-                                <h5>Paella mixta</h5>
-                                <p class="text-muted">Arroz con mariscos y pollo, cocinado al momento.</p>
-                            </div>
-
-                        </div>
+                        }
                     </div>
                 </div>
             </div>
             <!-- Categoría 3: Postres -->
             <div class="accordion-item">
                 <h3 class="accordion-header" id="headingPostres">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePostres" aria-expanded="false" aria-controls="collapsePostres">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapsePostres" aria-expanded="false" aria-controls="collapsePostres">
                         Postres
                     </button>
                 </h3>
-                <div id="collapsePostres" class="accordion-collapse collapse" aria-labelledby="headingPostres" data-bs-parent="#menuAccordion">
+                <div id="collapsePostres" class="accordion-collapse collapse" aria-labelledby="headingPostres"
+                    data-bs-parent="#menuAccordion">
                     <div class="accordion-body">
                         <!-- Platillos de la categoría -->
+                        @for (dessert of desserts; track dessert.id){
                         <div class="row mb-3">
                             <div class="col-10">
-                                <h5>Tarta de queso</h5>
-                                <p class="text-muted">Con cobertura de frutas del bosque.</p>
+                                <h5>{{dessert.name}}</h5>
+                                <p class="text-muted">{{dessert.description}}</p>
                             </div>
 
                         </div>
+                        }
                         <div class="row mb-3">
                             <div class="col-10">
                                 <h5>Flan casero</h5>
@@ -137,16 +106,17 @@
             <!-- Categoría 4: Precio y suplementos -->
             <div class="accordion-item">
                 <h3 class="accordion-header" id="headingPrecio">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePrecio" aria-expanded="false" aria-controls="collapsePrecio">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapsePrecio" aria-expanded="false" aria-controls="collapsePrecio">
                         Precio y Suplementos
                     </button>
                 </h3>
-                <div id="collapsePrecio" class="accordion-collapse collapse" aria-labelledby="headingPrecio" data-bs-parent="#menuAccordion">
+                <div id="collapsePrecio" class="accordion-collapse collapse" aria-labelledby="headingPrecio"
+                    data-bs-parent="#menuAccordion">
                     <div class="accordion-body">
                         <!-- Contenido de la sección Precio y Suplementos -->
                         <h5>Precios</h5>
-                        <p class="text-muted">El precio del menu es de 20€. Los fines de semanas el precio asciende a
-                            25€.</p>
+                        <p class="text-muted">El precio del menu es de {{data?.price}} €.</p>
 
                         <h5>Suplementos</h5>
                         <p class="text-muted">El pan y el agua es gratis, pero las tostadas, el vino y refrescos tienen
