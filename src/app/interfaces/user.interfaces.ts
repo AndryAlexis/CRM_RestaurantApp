@@ -33,6 +33,8 @@ export interface IUserUpdate {
     surname?: string;
     /** User's contact phone number */
     phone?: string;
+    /** User's role */
+    role?: string;
 }
 
 /**
