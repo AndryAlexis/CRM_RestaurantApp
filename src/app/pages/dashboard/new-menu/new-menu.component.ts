@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { HeaderDashboardComponent } from "../../../components/dashboard/header-dashboard/header-dashboard.component";
 import { MenuService } from '../../../services/menu.service';
 import { IUserResponse } from '../../../interfaces/user.interfaces';
+import { DishService } from '../../../services/dish.service';
 
 @Component({
   selector: 'app-new-menu',
@@ -15,12 +16,20 @@ export class NewMenuComponent {
   menuForm: FormGroup;
 
   private menuService = inject(MenuService);
+  private dishService = inject(DishService);
+
+
+
+  desserts?: any;
+  mainDishes?: any;
+  starters?: any;
 
   constructor(private fb: FormBuilder) {
     this.menuForm = this.fb.group({
       menuName: ['', Validators.required],
       date: ['', Validators.required],
       menuPrice: ['', [Validators.required, Validators.min(1)]],
+      dishes : this.fb.array([]),
       // mainDishes: this.fb.array(this.createDishArray()),
       // secondDishes: this.fb.array(this.createDishArray()),
       // desserts: this.fb.array(this.createDishArray())
@@ -66,5 +75,24 @@ export class NewMenuComponent {
   checkValidation(controlName: string): boolean {
     const control = this.menuForm.get(controlName);
     return control ? control.invalid && control.touched : false;
+  }
+
+  async ngOnInit() {
+    const result = await this.dishService.getAllDishes();
+    const dishes = result.data;
+    this.desserts = dishes.filter((dish: any) => dish.type === 'dessert');
+    this.mainDishes = dishes.filter((dish: any) => dish.type === 'main');
+    this.starters = dishes.filter((dish: any) => dish.type === 'starters');
+
+  }
+
+  prueba() {
+    const form = this.menuForm.value;
+    console.log(form);
+  }
+
+  onCheckboxChange(event: any) {
+    const checkboxesArray = this.menuForm.get('dishes');
+
   }
 }
