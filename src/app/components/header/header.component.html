@@ -5,8 +5,7 @@
         </figure>
         <h1>Frontend Feast</h1>
     </a>
-    <button class="navbar-toggler" type="button" (click)="toggleNavbar()" [attr.aria-expanded]="!isCollapsed"
-        aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar()" [attr.aria-expanded]="!isCollapsed" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -21,6 +20,12 @@
             <li class="nav-item">
                 <button class="btn" [routerLink]="['/reservations']" id="btn">Reservas</button>
             </li>
+            @if (userRole === 'client') {
+            <li class="nav-item">
+                <button class="btn" [routerLink]="['/user']" id="btn">Perfil</button>
+            </li>
+            }
+
             <li class="nav-item">
                 <button class="btn" [routerLink]="['/login']" id="btn">Entrar</button>
             </li>
