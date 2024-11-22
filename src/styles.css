@@ -32,7 +32,7 @@
 
 :root {
     --color-primary: #f3f0e8;
-    --color-primary-dark: #c7c18b;
+    --color-primary-dark: #d0cb99;
 
     --color-secondary: #d4ca70;
     --color-secondary-dark: #d3b167;
@@ -51,4 +51,8 @@
 
 body {
     background-color: var(--bg-white) !important;
+}
+
+.bg-food {
+    background-image: url('../public/background-food6.svg');
 }

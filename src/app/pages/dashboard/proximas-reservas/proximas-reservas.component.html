@@ -1,42 +1,19 @@
-<app-header-dashboard />
-<div>
-    <div class="text-center" id="text-container">
-        <h3 class="my-4">¡Bienvenido a la Gestión de Próximas Reservas!</h3>
-        <p>Aquí encontrarás un listado de las reservas pendientes organizadas por fecha. Revisa los detalles, actualiza el
+<div class="bg-food">
+    <app-header-dashboard />
+    <div class="container gestion pt-3">
+        <h3 class="my-3">Gestión de Reservas</h3>
+        <p>Aquí encontrarás un listado de las reservas pendientes organizadas por fecha. Revisa los detalles,
+            actualiza
+            el
             estado o
-            realiza los ajustes necesarios para garantizar una experiencia impecable. ¡Gracias por tu dedicación
+            realiza los ajustes necesarios para garantizar una experiencia impecable. ¡Gracias por tu dedicación!
         </p>
-    </div>
-    <div class="m-4">
-        <div class="row g-1">
-            <div class="col-12 col-md-6 col-lg-6 d-flex justify-content-center">
-                <app-reservations-card></app-reservations-card>
+        <div class="row reservas">
+            @for(reservation of reservations; track reservation.id) {
+            <div class="col-12 col-lg-6">
+                <app-reservations-card [reservation]="reservation"></app-reservations-card>
             </div>
-            <div class="col-12 col-md-6 col-lg-6 d-flex justify-content-center">
-                <app-reservations-card></app-reservations-card>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 d-flex justify-content-center">
-                <app-reservations-card></app-reservations-card>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 d-flex justify-content-center">
-                <app-reservations-card></app-reservations-card>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 d-flex justify-content-center">
-                <app-reservations-card></app-reservations-card>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 d-flex justify-content-center">
-                <app-reservations-card></app-reservations-card>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 d-flex justify-content-center">
-                <app-reservations-card></app-reservations-card>
-            </div>
-            <div class="col-12 col-md-6 col-lg-6 d-flex justify-content-center">
-                <app-reservations-card></app-reservations-card>
-            </div>
-        </div>
-        <div class="d-flex justify-content-center gap-3 mt-4">
-            <a href="" class="btn">Next</a>
-            <a href="" class="btn">Prev</a>
+            }
         </div>
     </div>
 </div>
