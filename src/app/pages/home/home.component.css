@@ -1,8 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Gowun+Dodum&family=Poiret+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-
 .body {
-    background-color: #f5f5f5;
+    background-color: var(--bg-white);
     min-height: 100vh;
     overflow-x: hidden;
     font-size: var(--font-size);
@@ -25,26 +22,12 @@ button:hover {
     color: white;
 }
 
-/* Estilos contenedor gastronomia */
-#gastronomia {
-    background-color: var(--color-primary);
-    border-radius: 10px;
-}
-
-/* Estilos contenedor registrate */
-#registrate {
-    background-color: var(--color-primary);
-    border-radius: 10px;
-
-}
 
 .reserva {
 
     background-image: url('../../../../public/images/interior.jpg');
     background-size: cover;
     background-position: center;
-
-    padding-left: 500px;
 
     .reserva-text {
         background-color: #0000009d;
@@ -96,36 +79,32 @@ p {
     color: var(--color-black);
 }
 
-img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-.row {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.col-md-6 {
-    display: flex;
-    flex-direction: column;
-}
-
-.col-md-6 img {
-    flex: 1;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.col-md-6 .d-flex {
-    flex: 1;
-}
 
 #sectionReseñas {
     background-color: var(--color-primary);
     border-radius: 20px;
+}
+
+.row>* {
+    padding: 0;
+
+    img {
+        width: 100%;
+    }
+}
+
+.gastronomia {
+    .text {
+        padding: 4%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: var(--color-primary);
+
+        .unete {
+            margin-bottom: 1rem;
+        }
+    }
 }
 
 @media (max-width: 768px) {

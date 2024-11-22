@@ -14,12 +14,12 @@
     <!-- Fin Titulo -->
 
     <!-- Seccion Gastronmia -->
-    <section class="container mt-4 mb-4">
-        <div class="row mt-4 mb-4">
+    <section class="container my-4 gastronomia">
+        <div class="row my-4">
             <div class="col-md-6">
-                <img src="./images/indian-food.jpg" class="img-fluid w-100 rounded" alt="Imagen gastronomia">
+                <img src="./images/indian-food.jpg" class="img-fluid rounded" alt="Imagen gastronomia">
             </div>
-            <div class="col-md-6 d-flex flex-column justify-content-center p-5" id="gastronomia">
+            <div class="col-md-6 text">
                 <h2>Gastronomia</h2>
                 <p>En Frontend Feast, te invitamos a sumergirte en una travesía culinaria que despierta los
                     sentidos. Nuestra
@@ -48,42 +48,34 @@
                     tu memoria.
                     Ven y descubre por qué somos más que un restaurante; somos una experiencia. ¡Te esperamos!
                 </p>
-                <button id="btnReserva" class="btn mb-4" [routerLink]="['/menu']">Ver
-                    menú
-                </button>
+                <button class="btn" [routerLink]="['/menu']">Ver menú</button>
             </div>
         </div>
-    </section>
-    <!-- Fin Gastronmia -->
-
-    <!-- Seccion Registrate -->
-    <section class="container mt-4 mb-4">
-        <div class="row mt-4 mb-4">
-            <div class="col-md-6 d-flex flex-column justify-content-center p-5 " id="registrate">
-                <div class="
-                m-3">
-                    <h2>Únete a Nuestra Familia Gastronómica</h2>
-                    <p>En Frontend Feast, no solo reservamos una mesa para ti, te damos la bienvenida a nuestra
-                        familia. Regístrate y
-                        sé parte de nuestra comunidad, donde cada visita es un momento especial y cada cliente, un
-                        miembro
-                        más
-                        de nuestro hogar.
-                    </p>
-                    <p>
-                        Forma parte de esta experiencia única y asegura tu lugar en nuestro espacio diseñado para
-                        compartir,
-                        disfrutar y crear
-                        recuerdos inolvidables. ¡Te esperamos con los brazos abiertos!</p>
-                </div>
-                <button class="btn mb-3" [routerLink]="['/register']">Registrate</button>
+        <div class="row my-4">
+            <div class="col-md-6 text">
+                <h2 class="unete">Únete a Nuestra Familia Gastronómica</h2>
+                <p>En Frontend Feast, no solo reservamos una mesa para ti, te damos la bienvenida a nuestra
+                    familia. Regístrate y
+                    sé parte de nuestra comunidad, donde cada visita es un momento especial y cada cliente, un
+                    miembro
+                    más
+                    de nuestro hogar.
+                </p>
+                <p>
+                    Forma parte de esta experiencia única y asegura tu lugar en nuestro espacio diseñado para
+                    compartir,
+                    disfrutar y crear
+                    recuerdos inolvidables. ¡Te esperamos con los brazos abiertos!</p>
+                <button class="btn" [routerLink]="['/register']">Registrate</button>
             </div>
-            <div class="col-md-6" id="imgRegistro">
-                <img src="./images/thai-food-green-curry-chicken-ai-generated-image.jpg" class="img-fluid w-100 rounded" alt="Imagen plato">
+            <div class="col-md-6">
+                <img src="./images/thai-food-green-curry-chicken-ai-generated-image.jpg" class="img-fluid rounded"
+                    alt="Imagen plato">
             </div>
         </div>
     </section>
     <!-- Fin Registrate -->
+
     <!-- Inicio Reseñas -->
     <section class="container mt-4 mb-4" id="sectionReseñas">
         <div class="row mt-4 mb-4">
@@ -106,6 +98,7 @@
         </div>
     </section>
     <!-- Seccion Reserva -->
+
     <section class="container-fluid mt-5 p-5 position-relative reserva">
         <div class="row">
             <div class="col-12 text-center text-white">
