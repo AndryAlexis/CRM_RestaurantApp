@@ -29,4 +29,11 @@ export class MenuService {
     return await firstValueFrom(this.http.post<any>(`${this.rootUrl}`, { name, date, dishes }, { headers }));
   }
 
+
+
+  async getDailyMenu(date: string): Promise<any> {
+      const result = await firstValueFrom(this.http.get<any>(`http://localhost:3000/api/menu?date=${date}`));
+      return result;
+  }
+  
 }
