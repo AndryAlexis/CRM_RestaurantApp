@@ -4,6 +4,8 @@ import { HeaderComponent } from "../../components/header/header.component";
 import { FooterComponent } from "../../components/footer/footer.component";
 import { ReservationService } from '../../services/reservation.service';
 import { IReservation } from '../../interfaces/ireservation.interface';
+import { jwtDecode } from 'jwt-decode';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-reservations',
@@ -17,6 +19,7 @@ export class ReservationsComponent {
   form: FormGroup;
   reservationService = inject(ReservationService)
 
+
   constructor() {
     this.form = new FormGroup({
       date: new FormControl('2024-11-25', [Validators.required]),
@@ -27,16 +30,40 @@ export class ReservationsComponent {
   }
 
   ngSubmit() {
+    // Get form values and create reservation
     const reservation: IReservation = this.form.value;
     reservation.status = 'pending';
-    reservation.user_id = 1;
-    console.log(reservation)
-    this.reservationService.createReservation(this.form.value)
-    this.form.reset({
+
+    // Get and validate token
+    const token = localStorage.getItem('token');
+    if (!token) {
+      return;
+    }
+
+    // Extract user ID from token and add to reservation
+    const decodedToken = jwtDecode(token) as { id: number };
+    reservation.user_id = decodedToken.id;
+
+
+    try {
+      // Submit reservation and reset form
+      this.reservationService.createReservation(reservation);
+      this.form.reset({
       date: '2024-11-25',
       time: '',
-      guests: 1,
-      location: '',
-    })
+        guests: 1,
+        location: ''
+      });
+
+      Swal.fire({
+        title: 'Reservation created successfully',
+        icon: 'success',
+      })
+    } catch (error) {
+      Swal.fire({
+        title: 'Error creating reservation',
+        icon: 'error',
+      })
+    }
   }
 }
