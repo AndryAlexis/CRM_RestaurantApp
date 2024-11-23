@@ -18,16 +18,19 @@ export class ReservationsComponent {
 
   form: FormGroup;
   reservationService = inject(ReservationService)
+  currentDate = new Date()
+  today: string = this.currentDate.toLocaleDateString('en-CA')
 
 
   constructor() {
     this.form = new FormGroup({
-      date: new FormControl('2024-11-25', [Validators.required]),
+      date: new FormControl(this.today, [Validators.required]),
       time: new FormControl('', [Validators.required]),
       guests: new FormControl(1, [Validators.required, Validators.min(1)]),
       location: new FormControl('', [Validators.required])
     }, [])
   }
+
 
   ngSubmit() {
     // Get form values and create reservation
@@ -49,8 +52,8 @@ export class ReservationsComponent {
       // Submit reservation and reset form
       this.reservationService.createReservation(reservation);
       this.form.reset({
-      date: '2024-11-25',
-      time: '',
+        date: this.today,
+        time: '',
         guests: 1,
         location: ''
       });

@@ -7,7 +7,7 @@
 
         <div class="form-group mb-3">
             <label for="start" class="">Fecha</label>
-            <input type="date" id="start" name="trip-start" value="2024-11-25" min="2024-11-25" max="2025-12-31"
+            <input type="date" id="start" name="trip-start" [value]="today" [min]="today" max="2025-12-31"
                 formControlName="date" class="form-control" />
         </div>
 
@@ -36,8 +36,7 @@
             </select>
         </div>
 
-        <input type="submit" class="btn mt-4" value="Reservar" [disabled]="!form.valid"
-        [class.active]="form.valid">
+        <input type="submit" class="btn mt-4" value="Reservar" [disabled]="!form.valid" [class.active]="form.valid">
 
     </form>
 
