@@ -3,7 +3,8 @@
         <div class="col ">
             <ul class="list-unstyled d-flex gap-4 align-items-center h-100">
                 <li>{{ menu.id}}</li>
-                <li>{{ menu.date }}</li>
+                <li class="menu-date">{{ menu.date | date: 'dd/MM/yyyy' }}</li>
+                <li class="menu-name">{{ menu.name}}</li>
             </ul>
         </div>
         <div class="col" style="height: 50px">

@@ -8,6 +8,9 @@
         estado o
         realiza los ajustes necesarios para garantizar una experiencia impecable. ¡Gracias por tu dedicación!
     </p>
+    @if (reservations.length === 0) {
+        <p class="mt-5">Cargando ...</p>
+    }
     <div class="row reservas">
         @for(reservation of reservations; track reservation.id) {
         <div class="col-12 col-lg-6">

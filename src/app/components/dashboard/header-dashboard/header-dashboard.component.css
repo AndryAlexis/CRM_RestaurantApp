@@ -8,6 +8,13 @@
     }
 }
 
+#navbarNav {
+    ul {
+        margin: auto;
+        justify-content: space-between;
+    }
+}
+
 
 .nav-item .btn {
     color: black;

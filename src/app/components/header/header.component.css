@@ -5,6 +5,7 @@
 
 
     a {
+        padding: 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -24,7 +25,7 @@
         font-size: 50px;
 
         h1 {
-            font-size: 3rem;
+            font-size: 3.1rem;
         }
     }
 }
@@ -39,7 +40,7 @@
     margin-top: -10px;
     color: black;
     margin: 0 1rem;
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     cursor: pointer;
     font-family: var(--font-nav);
     font-weight: 500;
