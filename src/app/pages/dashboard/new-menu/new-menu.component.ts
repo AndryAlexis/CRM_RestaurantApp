@@ -1,9 +1,10 @@
 import { Component, inject } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators, FormArray, FormControl } from '@angular/forms';
 import { HeaderDashboardComponent } from "../../../components/dashboard/header-dashboard/header-dashboard.component";
 import { MenuService } from '../../../services/menu.service';
 import { IUserResponse } from '../../../interfaces/user.interfaces';
 import { DishService } from '../../../services/dish.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-new-menu',
@@ -17,8 +18,6 @@ export class NewMenuComponent {
 
   private menuService = inject(MenuService);
   private dishService = inject(DishService);
-
-
 
   desserts?: any;
   mainDishes?: any;
@@ -54,22 +53,44 @@ export class NewMenuComponent {
   // }
 
   async onSubmit() {
-    if (this.menuForm.valid) {
-      const menuName = this.menuForm.get('menuName')?.value;
-      const date = this.menuForm.get('date')?.value;
-      // const price = this.menuForm.get('menuPrice')?.value;
-      console.log(menuName, date);
-      try {
-        await this.menuService.createMenu(menuName, date, []);
-      } catch (error: any) {
-        console.log(error);
-        const errorResponse = error.error as IUserResponse;
-        const { status, title, message } = errorResponse;
-        console.error('Error:', 'Status:', status, 'Title:', title, 'Message:', message);
-      }
-    } else {
-      console.log('Formulario inválido');
+    // Check if form is valid before proceeding
+    if (!this.menuForm.valid) {
+      return;
     }
+
+    // Get form values
+    const menuName = this.menuForm.get('menuName')?.value;
+    const date = this.menuForm.get('date')?.value;
+    const dishes = this.menuForm.get('dishes')?.value;
+    const price = this.menuForm.get('menuPrice')?.value;
+    try {
+      // Extract dish IDs and create menu
+      const dishIds = dishes.map((dish: any) => dish.id);
+      await this.menuService.createMenu(menuName, date, dishIds, price);
+
+      Swal.fire({
+        title: 'Menu creado correctamente',
+        icon: 'success',
+      })
+
+    } catch (error: any) {
+      // Handle error response
+      const errorResponse = error.error as IUserResponse;
+      const { status, title, message } = errorResponse;
+      
+      console.error('Error creating menu:', {
+        status,
+        title, 
+        message
+      });
+
+      Swal.fire({
+        title: 'Error al crear el menu',
+        icon: 'error',
+      })
+    }
+
+    this.menuForm.reset();
   }
 
   checkValidation(controlName: string): boolean {
@@ -83,16 +104,19 @@ export class NewMenuComponent {
     this.desserts = dishes.filter((dish: any) => dish.type === 'dessert');
     this.mainDishes = dishes.filter((dish: any) => dish.type === 'main');
     this.starters = dishes.filter((dish: any) => dish.type === 'starters');
-
   }
 
-  prueba() {
-    const form = this.menuForm.value;
-    console.log(form);
-  }
-
-  onCheckboxChange(event: any) {
-    const checkboxesArray = this.menuForm.get('dishes');
-
+  onCheckboxChange(event: any, dish: any) {
+    const dishesArray = this.menuForm.get('dishes') as FormArray;
+    if (event.target.checked) {
+      // Add the dish to the array if checked
+      dishesArray.push(new FormControl(dish));
+    } else {
+      // Remove the dish from the array if unchecked
+      const index = dishesArray.controls.findIndex(x => x.value.id === dish.id);
+      if (index !== -1) {
+        dishesArray.removeAt(index);
+      }
+    }
   }
 }
