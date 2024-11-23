@@ -25,16 +25,33 @@ export class EditUserComponent {
       nombre: ['', Validators.required],
       apellido: ['', Validators.required],
       telefono: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
       role: ['', Validators.required]
     });
   }
 
+
   async ngOnInit() {
     const params = await firstValueFrom(this.route.params);
-    // Recoge el ID del usuario de los parámetros de la URL
     this.userId = params['id'];
+    console.log('User ID:', this.userId);
+    await this.loadUserData();
+  }
+
+  async loadUserData(): Promise<void> {
+    try {
+      const userResponse: any = await this.apiService.getUserByIdAdmin(this.userId);
+      console.log('User Data:', userResponse);
+      const userData = userResponse.data;
+      this.userForm.patchValue({
+        nombre: userData.name,
+        apellido: userData.surname,
+        telefono: userData.phone,
+        role: userData.role
+      });
+      // TODO: Mostrar error al cargar datos del usuario
+    } catch (error) {
+      console.error('Error al cargar los datos del usuario:', error);
+    }
   }
 
   async onSubmit(): Promise<void> {
@@ -43,8 +60,6 @@ export class EditUserComponent {
         name: this.userForm.value.nombre,
         surname: this.userForm.value.apellido,
         phone: this.userForm.value.telefono,
-        email: this.userForm.value.email,
-        password: this.userForm.value.password,
         role: this.userForm.value.role
       };
       try {
