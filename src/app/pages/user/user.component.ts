@@ -67,14 +67,23 @@ export class UserComponent {
   }
 
 
-   async ngOnInit() {
-    const result = await this.service.getReviews() 
+  ngOnInit() {
+    this.loadReviews()
+    this.loadReservations()
+  }
+
+  async loadReviews() {
+    const result = await this.service.getReviews()
     this.reviews = result.data;
-     const token = localStorage.getItem('token') as string;
-     const decodedToken = jwtDecode(token) as { id: number };
-     const user_id = decodedToken.id;
-     
-     const reservations = await this.reservationService.getReservationByUserId(user_id);
+  }
+
+  async loadReservations() {
+    const token = localStorage.getItem('token') as string;
+    const decodedToken = jwtDecode(token) as { id: number };
+    const user_id = decodedToken.id;
+    console.log(user_id, '🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥')
+    this.reservations = await this.reservationService.getReservationByUserId(user_id);
+    console.log(this.reservations)
   }
 
 

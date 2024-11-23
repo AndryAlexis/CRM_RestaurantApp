@@ -22,9 +22,9 @@ export class ReservationService {
       this.http.get<ICustomerReservationResponse[]>(`${this.rootUrl}/reservations/customer?id=${id}`));
   }
 
-  getReservationByUserId(id: number): Promise<ICustomerReservationResponse[]> {
+  getReservationByUserId(userId: number): Promise<ICustomerReservationResponse[]> {
     return firstValueFrom(
-      this.http.get<ICustomerReservationResponse[]>(`${this.rootUrl}/reservations/customer?user_id=${id}`));
+      this.http.get<ICustomerReservationResponse[]>(`${this.rootUrl}/reservations/customer?user_id=${userId}`));
   }
 
 
