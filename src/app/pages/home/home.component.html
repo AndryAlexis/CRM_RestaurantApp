@@ -4,10 +4,9 @@
 <div class="body">
     <!-- Seccion Titulo -->
     <section class="row">
-        <div class="col-12 position-relative">
-            <img src="./images/header-img.jpg" class="img-fluid w-100" alt="Restaurant" style="max-height: 500px; object-fit: cover;">
-            <h1 id="titulo" class="position-absolute top-50 start-50 translate-middle text-center">¡Bienvenido a Frontend
-                Feast!
+        <div class="col-12 d-flex justify-content-center align-items-center hero">
+            <h1 id="titulo" class="text-center p-5 m-2">
+                ¡Bienvenido a Frontend Feast!
             </h1>
         </div>
     </section>
@@ -16,60 +15,49 @@
     <!-- Seccion Gastronmia -->
     <section class="container my-4 gastronomia">
         <div class="row my-4">
-            <div class="col-md-6">
-                <img src="./images/indian-food.jpg" class="img-fluid rounded" alt="Imagen gastronomia" id="imgGastro">
-            </div>
+            <figure class="col-md-6 p-0 m-0">
+                <img src="./images/indian-food.jpg" class="img-fluid rounded w-100 h-100" alt="Frontend Feast Gastronomia" id="imgGastro">
+            </figure>
             <div class="col-md-6 text">
-                <h2>Gastronomia</h2>
-                <p>En Frontend Feast, te invitamos a sumergirte en una travesía culinaria que despierta los
-                    sentidos. Nuestra
-                    propuesta combina lo mejor de la cocina tradicional y contemporánea, con ingredientes frescos y de
-                    calidad,
-                    cuidadosamente seleccionados para cada plato.
-                </p>
-                <p>
-                    Desde el momento en que entras, te recibirán aromas que evocan recuerdos y sabores que sorprenden
-                    con
-                    cada bocado.
-                    Nuestros chefs, apasionados por la excelencia, trabajan con creatividad y dedicación para
-                    transformar recetas en obras
-                    de arte, presentadas con el máximo cuidado en cada detalle.
-                </p>
-                <p>
-                    Acompaña tu experiencia con nuestra exclusiva selección de vinos y cócteles, diseñados para maridar
-                    a la
-                    perfección con
-                    nuestra carta. El ambiente cálido y acogedor, junto con un servicio atento y personalizado, harán
-                    que
-                    cada visita sea
-                    inolvidable.
-                </p>
-                <p>En Frontend Feast, no solo comes, disfrutas, celebras y compartes momentos que quedarán en
-                    tu memoria.
-                    Ven y descubre por qué somos más que un restaurante; somos una experiencia. ¡Te esperamos!
-                </p>
-                <button class="btn" [routerLink]="['/menu']">Ver menú</button>
+                <div>
+                    <h2 class="mb-4 h1">Gastronomia</h2>
+                    <p>
+                        Te ofrecemos una experiencia culinaria que combina lo mejor de la cocina tradicional y contemporánea con ingredientes frescos. 
+                    </p>
+                    <p>
+                        Los chefs transforman recetas en obras de arte, complementadas con una selección de vinos y cócteles.
+                    </p>
+                    <p>
+                        El ambiente acogedor y el servicio atento garantizan una visita inolvidable, donde no solo se come, sino que se disfrutan y celebran momentos memorables.
+                    </p>
+                    <p>
+                        <strong>¡Te esperamos!</strong>
+                    </p>
+                </div>
+                <div class="text-center h-100 d-flex justify-content-center align-items-center">
+                    <button class="btn" [routerLink]="['/menu']">Ver menú</button>
+                </div>
             </div>
         </div>
         <div class="row my-4">
             <div class="col-md-6 text">
                 <h2 class="unete">Únete a Nuestra Familia Gastronómica</h2>
-                <p>En Frontend Feast, no solo reservamos una mesa para ti, te damos la bienvenida a nuestra
-                    familia. Regístrate y
-                    sé parte de nuestra comunidad, donde cada visita es un momento especial y cada cliente, un
-                    miembro
-                    más
-                    de nuestro hogar.
+                <p>
+                    En Frontend Feast, no solo reservamos una mesa para ti, te damos la bienvenida a nuestra
+                    familia.
                 </p>
                 <p>
-                    Forma parte de esta experiencia única y asegura tu lugar en nuestro espacio diseñado para
-                    compartir,
-                    disfrutar y crear
-                    recuerdos inolvidables. ¡Te esperamos con los brazos abiertos!</p>
+                    Regístrate y sé parte de nuestra comunidad, donde cada visita es un momento especial y cada cliente, un miembro más de nuestro hogar.
+                </p>
                 <button class="btn mt-4" [routerLink]="['/register']">Registrate</button>
             </div>
             <div class="col-md-6">
-                <img src="./images/thai-food-green-curry-chicken-ai-generated-image.jpg" class="img-fluid rounded" alt="Imagen plato" id="imgGastro">
+                <img 
+                    src="./images/thai-food-green-curry-chicken-ai-generated-image.jpg" 
+                    class="img-fluid rounded w-100 h-100" 
+                    alt="Imagen plato" 
+                    id="imgGastro"
+                >
             </div>
         </div>
     </section>
@@ -79,13 +67,7 @@
     <section class="container mt-4 mb-4" id="sectionReseñas">
         <div class="row mt-4 mb-4 px-5">
             <div class="col-12 d-flex flex-column justify-content-center" id="reseñas">
-                <h2>Reseñas</h2>
-                <p>En Frontend Feast, la satisfacción de nuestros clientes es nuestra mayor recompensa. Cada opinión
-                    cuenta y nos inspira a seguir mejorando, para ofrecerte una experiencia gastronómica inigualable.
-                    Descubre lo
-                    que dicen nuestros comensales y déjate llevar por sus historias. ¡Ven y vive tu propia experiencia
-                    en Frontend
-                    Feast!</p>
+                <h2 class="text-center mb-4">Últimas Reseñas</h2>
             </div>
             <div class="row">
                 @for (review of reviews; track review.id) {
@@ -98,23 +80,10 @@
     </section>
     <!-- Seccion Reserva -->
 
-    <section class="container-fluid mt-5 p-5 position-relative reserva">
+    <section class="container-fluid mt-5 position-relative reserva">
         <div class="row">
             <div class="col-12 text-center text-white">
-                <div class="reserva-text">
-                    <h2>Tu Momento, Tu Mesa</h2>
-                    <p>Es hora de vivir la experiencia que mereces. Haz tu reserva ahora y prepárate para disfrutar de
-                        una
-                        velada única en
-                        Frontend Feast. Selecciona tu fecha, horario y déjanos encargarnos del resto.
-
-                        Cada detalle está pensado para que tu visita sea inolvidable. Porque aquí, tu lugar siempre
-                        estará
-                        listo
-                        para recibirte.
-                        ¡Reserva ahora y forma parte de nuestra historia!</p>
-                </div>
-                <button class="btn m-5" [routerLink]="['/reservations']">Reservar Ahora</button>
+                <button class="btn m-5 " [routerLink]="['/reservations']">Reservar Ahora</button>
             </div>
         </div>
     </section>
