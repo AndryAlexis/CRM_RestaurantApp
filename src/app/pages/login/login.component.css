@@ -5,28 +5,34 @@
     background-size: cover;
     background-position: center;
     border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    pointer-events: none;
 }
 
 #logoAndTitle {
     h4 {
-        font-family: 'Poiret One', cursive;
+        font-family: 'Poiret One';
         font-weight: 600;
         font-size: 40px;
+        background-color: rgb(227, 203, 166, 0.2);
+        font-weight: bold;
     }
 
     p {
         font-family: 'Gowun Dodum', sans-serif;
         font-weight: 500;
         font-size: 20px;
+
     }
 }
 
 .text-white {
-    font-family: 'Poiret One', cursive;
+    font-family: 'Poiret One';
     font-weight: 600;
     font-size: 20px;
     border-radius: 15px;
     background-color: rgb(227, 203, 166, 0.2);
+    font-weight: bold;
 }
 
 
