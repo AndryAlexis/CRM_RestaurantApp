@@ -9,6 +9,8 @@ import { ApiService } from '../../services/api.service';
 import { IUserResponse, IUserUpdate } from '../../interfaces/user.interfaces';
 import Swal from 'sweetalert2';
 import { ReviewsService } from '../../services/reviews.service';
+import { ReservationService } from '../../services/reservation.service';
+import { jwtDecode } from 'jwt-decode';
 
 @Component({
   selector: 'app-user',
@@ -19,10 +21,12 @@ import { ReviewsService } from '../../services/reviews.service';
 })
 export class UserComponent {
 
-reviews: any[] = [];
+  reviews: any[] = [];
+  reservations: any[] = [];
 
   private apiService = inject(ApiService);
-  private service = inject(ReviewsService)
+  private service = inject(ReviewsService);
+  private reservationService = inject(ReservationService);
 
 
   userForm: FormGroup = new FormGroup({
@@ -66,6 +70,12 @@ reviews: any[] = [];
    async ngOnInit() {
     const result = await this.service.getReviews() 
     this.reviews = result.data;
+     const token = localStorage.getItem('token') as string;
+     const decodedToken = jwtDecode(token) as { id: number };
+     const user_id = decodedToken.id;
+     
+     const reservations = await this.reservationService.getReservationByUserId(user_id);
   }
+
 
 }
