@@ -1,6 +1,7 @@
 #navbar {
     background-color: var(--color-primary);
     padding: 0 2rem;
+    overflow: hidden;
 
 
     a {
@@ -22,7 +23,7 @@
         font-family: var(--font-fancy);
         font-size: 50px;
 
-        h1{
+        h1 {
             font-size: 3rem;
         }
     }
@@ -58,6 +59,7 @@
     .navbar-nav {
         flex-direction: column;
     }
+
     .nav-item {
         display: flex;
         justify-content: center;
@@ -66,7 +68,3 @@
         border-bottom: 1px solid var(--color-tertiary);
     }
 }
-
-
-
-
