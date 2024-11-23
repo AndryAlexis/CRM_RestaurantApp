@@ -1,3 +1,9 @@
 .card-body {
     min-height: 200px;
+
+
+    img {
+        height: 40%;
+        align-content: center;
+    }
 }
