@@ -9,6 +9,6 @@ import { Component, Input } from '@angular/core';
 })
 export class MenuCard2Component {
 
-  @Input() menu: any = {};
+  @Input() dish: any = {};
 
 }
