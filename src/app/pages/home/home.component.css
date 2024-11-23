@@ -17,9 +17,18 @@ button {
 }
 
 
+
 button:hover {
     background-color: var(--color-tertiary);
     color: white;
+}
+
+.hero {
+    background-image: url('../../../../public/images/header-img.jpg');
+    background-size: cover;
+    background-position: center;
+
+    min-height: 70vh;
 }
 
 
@@ -29,7 +38,7 @@ button:hover {
     background-image: url('../../../../public/images/interior.jpg');
     background-size: cover;
     background-position: center;
-    height: 70vh;
+    height: 40vh;
     align-content: center;
 
 
@@ -56,7 +65,8 @@ button:hover {
     button {
         background-color: var(--color-primary-dark);
         padding: 0.9rem;
-        font-size: 1.3rem;
+        font-size: 2rem;
+        width: 400px;
     }
 
     button:hover {
@@ -116,19 +126,18 @@ p {
 
         .unete {
             margin-bottom: 1rem;
-
         }
-
     }
 
-    img {
-        height: 100%;
+    & > .row {
+        & figure {
+            max-height: 550px;
+        }
     }
 }
 
 #imgGastro {
     object-fit: cover;
-
 }
 
 
