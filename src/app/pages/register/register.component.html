@@ -1,8 +1,8 @@
 <header>
   <app-header />
 </header>
-<section class="h-100 gradient-form" style="background-color: #eee;">
-  <div class="container py-5 h-100">
+<section class="h-100 gradient-form">
+  <div class=" container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-xl-10">
         <div class="card rounded-3 text-black">
@@ -17,22 +17,26 @@
 
                 <!-- Name Input -->
                 <div class="form-outline mb-4">
-                  <input type="text" formControlName="name" id="name" class="form-control" [class.border-danger]="checkValidation('name')" placeholder="*Name">
+                  <input type="text" formControlName="name" id="name" class="form-control"
+                    [class.border-danger]="checkValidation('name')" placeholder="*Name">
                 </div>
 
                 <!-- Lastname Input -->
                 <div class="form-outline mb-4">
-                  <input type="text" formControlName="surname" id="surname" class="form-control" [class.border-danger]="checkValidation('surname')" placeholder="*Surname">
+                  <input type="text" formControlName="surname" id="surname" class="form-control"
+                    [class.border-danger]="checkValidation('surname')" placeholder="*Surname">
                 </div>
 
                 <!-- Phone Input -->
                 <div class="form-outline mb-4">
-                  <input type="tel" formControlName="phone" id="phone" class="form-control" [class.border-danger]="checkValidation('phone')" placeholder="*Phone">
+                  <input type="tel" formControlName="phone" id="phone" class="form-control"
+                    [class.border-danger]="checkValidation('phone')" placeholder="*Phone">
                 </div>
 
                 <!-- Email Input -->
                 <div class="form-outline mb-4">
-                  <input type="email" formControlName="email" id="email" class="form-control" [class.border-danger]="checkValidation('email')" placeholder="*Email address">
+                  <input type="email" formControlName="email" id="email" class="form-control"
+                    [class.border-danger]="checkValidation('email')" placeholder="*Email address">
 
                   <!-- Email Validation Messages -->
                   @if (checkValidation('email')) {
@@ -44,7 +48,8 @@
 
                 <!-- Password Input -->
                 <div class="form-outline mb-4">
-                  <input type="password" formControlName="password" id="password" class="form-control" [class.border-danger]="checkValidation('password')" placeholder="*Password">
+                  <input type="password" formControlName="password" id="password" class="form-control"
+                    [class.border-danger]="checkValidation('password')" placeholder="*Password">
 
                   <!-- Password Validation Message -->
                   @if (checkValidation('password')) {
@@ -56,7 +61,8 @@
 
                 <!-- Confirm Password Input -->
                 <div class="form-outline mb-4">
-                  <input type="password" formControlName="confirmPassword" id="confirmPassword" class="form-control" [class.border-danger]="checkValidation('confirmPassword')" placeholder="*Confirm Password">
+                  <input type="password" formControlName="confirmPassword" id="confirmPassword" class="form-control"
+                    [class.border-danger]="checkValidation('confirmPassword')" placeholder="*Confirm Password">
 
                   <!-- Confirm Password Validation Message -->
                   @if (!passwordsMatch() && checkValidation('confirmPassword')) {

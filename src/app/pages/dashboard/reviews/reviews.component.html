@@ -1,18 +1,14 @@
 <app-header-dashboard />
 
-<section class="container">
-    <div class="text-center" id="text-container">
+<section class="container reviews pt-3">
+    <div class="mb-4">
         <h3 class="my-3">¡Visualiza las reseñas del local!</h3>
         <p>Aquí podrás ver todas las reseñas que los clientes han dejado acerca de tu local.
             De un vistazo podrás ver los comentarios y puntuaciones de tus usuarios.
         </p>
     </div>
-
     @for (review of reviews; track review) {
     <app-review-card [rating]="review.rating" [comment]="review.comment" [hasDeleteButton]="true" [reviewId]="review.id" (reviewDeleted)="loadReviews()" />
     }
-
     <button id="btn-top" class="btn" (click)="scrollToTop()">↑ Volver Arriba</button>
-
-
 </section>
