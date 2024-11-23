@@ -4,7 +4,6 @@
     overflow: hidden;
     font-size: var(--font-size);
 
-
 }
 
 button {
@@ -127,15 +126,13 @@ p {
     }
 }
 
-@media (min-with: 600px) {
+#imgGastro {
+    object-fit: cover;
 
-    section {
-        margin: 0 20px;
-    }
 }
 
-@media (max-width: 768px) {
 
+@media (max-width: 768px) {
 
     h1 {
         font-size: 50px;
