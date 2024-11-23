@@ -1,17 +1,30 @@
 <app-header-dashboard />
+
 <section class="container text-center">
-    <div>
-        <h1 class="text-center shadow-sm m-4">Menús</h1>
-        <button class="btn" [routerLink]="['/dashboard', 'create-menu']">Crear
-            menú</button>
+    <!-- Header section with title and create button -->
+    <div class="mb-4">
+        <h1 class="text-center shadow-sm m-4">
+            Menús
+        </h1>
+        <button 
+            class="btn btn-primary" 
+            [routerLink]="['/dashboard', 'create-menu']"
+        >
+            Crear menú
+        </button>
     </div>
+
+    <!-- Menu cards container -->
     <div class="row my-3">
         <div class="col p-0">
             <div class="d-flex flex-column gap-3">
                 @for (menu of menus; track menu.id) {
-                <app-menu-card [menu]="menu" />
+                    <app-menu-card 
+                        [menu]="menu"
+                    />
+                } @empty {
+                    <p class="text-center h4">Cargando menús...</p>
                 }
-
             </div>
         </div>
     </div>
