@@ -17,9 +17,11 @@
             <button (click)="changeStatus($event)" class="btn confirmar" value="confirmed"
                 [disabled]="reservation.status === 'confirmed'">Confirmar
             </button>
+            @if( isUserAdmin() ) {
             <button (click)="changeStatus($event)" class="btn completar" value="completed"
-                [disabled]="reservation.status === 'completed'">Completar
+                [disabled]="reservation.status === 'co  mpleted'">Completar
             </button>
+            }
         </div>
     </div>
 </ul>

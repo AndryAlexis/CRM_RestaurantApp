@@ -78,13 +78,15 @@ export class UserComponent {
   }
 
   async loadReservations() {
-    const token = localStorage.getItem('token') as string;
-    const decodedToken = jwtDecode(token) as { id: number };
-    const user_id = decodedToken.id;
-    console.log(user_id, '🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥')
+    const user_id = this.getUserId()
     this.reservations = await this.reservationService.getReservationByUserId(user_id);
     console.log(this.reservations)
   }
 
-
+  getUserId() {
+    const token = localStorage.getItem('token') as string;
+    const decodedToken = jwtDecode(token) as { id: number };
+    const user_id = decodedToken.id;
+    return user_id
+  }
 }
