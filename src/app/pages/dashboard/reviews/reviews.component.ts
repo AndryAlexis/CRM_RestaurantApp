@@ -3,7 +3,7 @@ import { HeaderDashboardComponent } from "../../../components/dashboard/header-d
 import { ReviewCardComponent } from "../../../components/dashboard/review-card/review-card.component";
 import { ReviewsService } from '../../../services/reviews.service';
 import { IReviews } from '../../../interfaces/ireviews.interface';
-
+import { ApiService } from '../../../services/api.service'
 
 @Component({
   selector: 'app-reviews',
@@ -15,7 +15,12 @@ import { IReviews } from '../../../interfaces/ireviews.interface';
 export class ReviewsComponent {
 
   private service = inject(ReviewsService);
+  private userService = inject(ApiService)
   reviews: IReviews[] = [];
+  users: any[] = [];
+  
+
+
 
 
   async ngOnInit() {
@@ -27,6 +32,7 @@ export class ReviewsComponent {
       const response = await this.service.getReviewsAll();
       if (response) {
         this.reviews = response.data.reviews;
+       
       }
     } catch (error: any) {
       const errorResponse = error.error as any;

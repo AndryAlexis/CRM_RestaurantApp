@@ -3,7 +3,7 @@
         <div class="card-body">
             @if(hasDeleteButton) {
             <div class="d-flex justify-content-between align-items-center">
-                <h5 class="card-title">Nombre de usuario que la ha escrito</h5>
+                <h5 class="card-title">{{userid}} | {{userName}}</h5>
                 <button class="btn" (click)="deleteReview()">Eliminar</button>
             </div>
             }
