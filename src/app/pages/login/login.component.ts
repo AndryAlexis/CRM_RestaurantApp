@@ -5,6 +5,7 @@ import { HeaderComponent } from "../../components/header/header.component";
 import { FooterComponent } from "../../components/footer/footer.component";
 import { ApiService } from '../../services/api.service';
 import { IUserResponse } from '../../interfaces/user.interfaces';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -49,6 +50,10 @@ export class LoginComponent {
       const errorResponse = error.error as IUserResponse;
       const { status, title, message } = errorResponse;
       console.error('Error:', 'Status:', status, 'Title:', title, 'Message:', message);
+      Swal.fire({
+        icon: 'error',
+        text: 'Usuario y/o contraseña incorrectos',
+      });
     }
   }
 

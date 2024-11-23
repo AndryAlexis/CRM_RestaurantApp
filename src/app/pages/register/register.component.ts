@@ -28,15 +28,24 @@ export class RegisterComponent {
       name: new FormControl('', [Validators.required, Validators.minLength(3)]),
       surname: new FormControl('', [Validators.required, Validators.minLength(3)]),
       phone: new FormControl('', [Validators.required, Validators.minLength(9), Validators.pattern('^[0-9]*$')]),
-    });
+    },);
   }
 
   onSubmit() {
     if (this.registerForm.valid) {
+      if (!this.passwordsMatch()) {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'Las contraseñas no coinciden',
+        });
+        return;
+      }
       this.registerUser();
     }
   }
-  // TODO: Avisar al usuario tanto si el registro es correcto como hay algún error con sweetalert2
+
+
   async registerUser() {
     try {
       const email = this.registerForm.get('email')?.value;
@@ -71,7 +80,7 @@ export class RegisterComponent {
     return this.registerForm.get(field)?.invalid && this.registerForm.get(field)?.touched;
   }
 
-  passwordsMatch() {
+  passwordsMatch(): boolean {
     const password = this.registerForm.get('password')?.value;
     const confirmPassword = this.registerForm.get('confirmPassword')?.value;
     return password === confirmPassword;
