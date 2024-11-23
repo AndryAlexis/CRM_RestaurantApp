@@ -11,7 +11,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { HomeComponent as HomeDashboardComponent } from './pages/dashboard/home/home.component';
 import { ViewMenuComponent } from './pages/dashboard/menu-dashboard/view-menu/view-menu.component';
 import { DeleteComponent as DeleteMenuComponent } from './pages/dashboard/menu-dashboard/delete/delete.component';
-import { UpdateComponent as UpdateMenuComponent } from './pages/dashboard/menu-dashboard/update/update.component';
+import { UpdateMenuComponent } from './pages/dashboard/menu-dashboard/update/update.component';
 import { HomeComponent as HomeMenuComponent } from './pages/dashboard/menu/home/home.component';
 import { NewMenuComponent } from './pages/dashboard/new-menu/new-menu.component';
 import { UsuariosRegistradosComponent } from './pages/dashboard/usuarios-registrados/usuarios-registrados.component';

@@ -29,28 +29,8 @@ export class NewMenuComponent {
       date: ['', Validators.required],
       menuPrice: ['', [Validators.required, Validators.min(1)]],
       dishes : this.fb.array([]),
-      // mainDishes: this.fb.array(this.createDishArray()),
-      // secondDishes: this.fb.array(this.createDishArray()),
-      // desserts: this.fb.array(this.createDishArray())
     });
   }
-
-  // createDishArray(): FormGroup[] {
-  //   return [
-  //     this.createDish(),
-  //     this.createDish(),
-  //     this.createDish(),
-  //     this.createDish()
-  //   ];
-  // }
-
-  // createDish(): FormGroup {
-  //   return this.fb.group({
-  //     name: ['', Validators.required],
-  //     description: ['', Validators.required],
-  //     imageUrl: ['', Validators.required]
-  //   });
-  // }
 
   async onSubmit() {
     // Check if form is valid before proceeding
