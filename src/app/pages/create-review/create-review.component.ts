@@ -60,9 +60,13 @@ export class CreateReviewComponent {
       const errorResponse = error.error as IUserResponse;
       const { status, title, message } = errorResponse;
       console.error('Error:', 'Status:', status, 'Title:', title, 'Message:', message);
+
+      if (error.error.message === 'Need a completed reservation before making a review')
+        error.error.message = 'Se necesita al menos una reserva completada para hacer reviews'
+
       Swal.fire({
         title: "Error",
-        text: "No se pudo crear la reseña. Inténtalo de nuevo más tarde.",
+        text: error.error.message,
         icon: "error"
       });
     }
