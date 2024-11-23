@@ -26,7 +26,7 @@ export class HomeComponent {
   reservationsToday: ICustomerReservationResponse[] = [];
   reservations: ICustomerReservationResponse[] = [];
   currentDate = new Date()
-  date: string = this.currentDate.toLocaleDateString('en-CA')
+  today: string = this.currentDate.toLocaleDateString('en-CA')
 
 
   reviews: IReviews[] = [];
@@ -51,12 +51,10 @@ export class HomeComponent {
       console.error('Error:', error);
     }
   }
-  
-    async loadReservations() {
-    this.date = '2024-11-25'
-    this.reservationsToday = await this.reservationService.getReservations({ date: this.date });
-    const [first, second, third] = this.reservationsToday;
-    this.reservations = [first, second, third]
-    
+
+  async loadReservations() {
+    this.reservationsToday = await this.reservationService.getReservations({ date: this.today });
+    this.reservations = this.reservationsToday.slice(0, 3)
+
   }
 }
