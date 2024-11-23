@@ -8,12 +8,12 @@
 
 button {
     font-family: var(--font-secondary);
-    font-size: 19px;
-    padding: 5px;
     background-color: var(--color-secondary);
     color: var(--color-black);
     margin: 0 auto;
     width: 200px;
+    padding: 1rem;
+    font-size: 1.5rem;
 }
 
 
@@ -22,18 +22,21 @@ button:hover {
     color: white;
 }
 
-
+/* Reservas final pagina */
 .reserva {
 
     background-image: url('../../../../public/images/interior.jpg');
     background-size: cover;
     background-position: center;
+    height: 65vh;
 
     .reserva-text {
         background-color: #0000009d;
         padding: 20px;
         border-radius: 10px;
         color: white;
+
+
 
         h2 {
             color: white;
@@ -43,11 +46,14 @@ button:hover {
         p {
             color: white;
             font-weight: 300;
+
         }
     }
 
     button {
         background-color: var(--color-primary-dark);
+        padding: 0.9rem;
+        font-size: 1.3rem;
     }
 
     button:hover {
@@ -83,6 +89,7 @@ p {
 #sectionReseñas {
     background-color: var(--color-primary);
     border-radius: 20px;
+    padding: 1rem;
 }
 
 .row>* {
@@ -95,6 +102,7 @@ p {
 
 .gastronomia {
     margin-top: 10rem;
+
     .text {
         padding: 4%;
         display: flex;
@@ -104,7 +112,9 @@ p {
 
         .unete {
             margin-bottom: 1rem;
+
         }
+
     }
 
     img {
