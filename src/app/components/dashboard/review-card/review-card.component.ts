@@ -1,3 +1,4 @@
+import { ApiService } from './../../../services/api.service';
 import { Router, RouterModule } from '@angular/router';
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { ReviewsService } from '../../../services/reviews.service';
@@ -16,16 +17,26 @@ export class ReviewCardComponent {
   @Input() rating: number = 5;
   @Input() comment: string = '';
   @Input() hasDeleteButton: boolean = false;
+  @Input() userid: string = '';
 
 
 
-  //Borrar reseña
+
   @Output() reviewDeleted = new EventEmitter<void>();
   @Input() reviewId: string = '';
   private service = inject(ReviewsService);
   private router = inject(Router);
+  private userService = inject(ApiService);
+  userName: string = '';
 
-  
+
+  async ngOnInit() {
+    const userName = await this.userService.getUserByIdAdmin(this.userid);
+    this.userName = userName.data.name
+    
+  }
+
+
 
   async deleteReview() {
     const result = await Swal.fire({
@@ -39,6 +50,7 @@ export class ReviewCardComponent {
     if (result.isConfirmed) {
       try {
         await this.service.deleteReviewAdmin(this.reviewId);
+
         this.reviewDeleted.emit();
         Swal.fire({
           icon: 'success',
@@ -54,5 +66,5 @@ export class ReviewCardComponent {
     }
   }
 
- 
+
 }
