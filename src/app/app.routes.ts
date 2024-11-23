@@ -81,9 +81,9 @@ export const routes: Routes = [
         title: 'Edit User',
       },
       {
-        path: 'usuarios-registrados',
+        path: 'registered-users',
         component: UsuariosRegistradosComponent,
-        title: 'Usuarios Registrados'
+        title: 'Registered Users'
       },
       {
         path: 'reviews',
@@ -91,9 +91,9 @@ export const routes: Routes = [
         title: 'Reviews Dashboard'
       },
       {
-        path: 'proximas-reservas',
+        path: 'next-reservations',
         component: ProximasReservasComponent,
-        title: 'Proximas Reservas'
+        title: 'Next Reservations'
       },
       {
         path: 'create-menu',

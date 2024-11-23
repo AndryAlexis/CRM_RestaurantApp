@@ -13,14 +13,12 @@
                         <h2 class="text-center mb-4">Usuarios registrados</h2>
                         <!-- Nuevos usuarios -->
                         <div class="row g-3">
-                        @for (user of users; track user.id) {
-                        <app-new-users-card [user]="user"></app-new-users-card>
-                        }
+                            @for (user of users; track user.id) {
+                            <app-new-users-card [user]="user"></app-new-users-card>
+                            }
                         </div>
                         <div class="text-center mt-3 boton-suelto">
-                            <a [routerLink]="['/dashboard', 'usuarios-registrados']" class="btn btn-primary">Ver todos
-                                los
-                                usuarios</a>
+                            <a [routerLink]="['/dashboard', 'registered-users']" class="btn btn-primary">Ver todos los usuarios</a>
                         </div>
                     </div>
                 </div>
@@ -32,7 +30,7 @@
                     <div class="card-body">
                         <h2 class="text-center mb-4">Reseñas</h2>
                         <div class="row">
-						  @for (review of reviews; track review) {
+                            @for (review of reviews; track review) {
                             <app-review-card [rating]="review.rating" [comment]="review.comment" />
                             }
                         </div>
@@ -57,7 +55,7 @@
                     }
                 </div>
                 <div class="text-center mt-3">
-                    <a [routerLink]="['/dashboard', 'proximas-reservas']" class="btn btn-primary">Ver todas las
+                    <a [routerLink]="['/dashboard', 'next-reservations']" class="btn btn-primary">Ver todas las
                         reservas</a>
                 </div>
             </div>
