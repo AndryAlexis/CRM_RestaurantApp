@@ -9,3 +9,9 @@
     background-color: var(--color-secondary);
     color: var(--color-black);
 }
+
+label {
+    font-size: 1.5rem;
+    font-weight: 500;
+    
+}
