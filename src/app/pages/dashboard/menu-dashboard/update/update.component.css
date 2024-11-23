@@ -1,28 +1,33 @@
-.container {
-    max-width: 600px;
-    background-color: var(--color-primary-light);
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.card {
+    background-color: var(--color-primary);
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 10px;
 }
 
-h1 {
-    color: #333;
+.form-outline {
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 
 h3 {
-    margin-top: 20px;
-    color: #555;
+    font-weight: 600;
+    border-bottom: 1px solid #3c3e40;
+    padding-bottom: 10px;
 }
 
-button {
-    width: 48%;
+.btn {
     background-color: var(--color-primary-dark);
+    border: 1px solid var(--color-secondary-dark);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
-#btn-save{
-    border-color: rgba(0, 0, 0, 0.3);
-}
-#btn-save:hover {
+
+.btn:hover {
     background-color: var(--color-tertiary);
     color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
