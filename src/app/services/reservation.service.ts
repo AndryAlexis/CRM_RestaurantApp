@@ -22,6 +22,12 @@ export class ReservationService {
       this.http.get<ICustomerReservationResponse[]>(`${this.rootUrl}/reservations/customer?id=${id}`));
   }
 
+  getReservationByUserId(id: number): Promise<ICustomerReservationResponse[]> {
+    return firstValueFrom(
+      this.http.get<ICustomerReservationResponse[]>(`${this.rootUrl}/reservations/customer?user_id=${id}`));
+  }
+
+
   getReservations(reservation: IReservationOptionalParameters): Promise<ICustomerReservationResponse[]> {
     let parameters: string = "?"
     for (const property in reservation) {
