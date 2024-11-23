@@ -16,3 +16,18 @@
     background-color: var(--color-primary-dark);
     color: black;
 }
+
+#btn-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    margin-right: 15px;
+    z-index: 1000;
+    background-color: var(--color-primary-dark);
+    color: black;
+}
+
+#btn-top:hover {
+    background-color: var(--color-tertiary);
+    color: white;
+}

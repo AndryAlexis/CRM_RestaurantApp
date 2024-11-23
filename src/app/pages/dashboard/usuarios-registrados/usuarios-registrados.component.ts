@@ -32,7 +32,14 @@ export class UsuariosRegistradosComponent {
   }
 
   async onDeleteUser() {
-    //Recargar lista de usuarios
     await this.loadUsers();
   }
+
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+
 }
