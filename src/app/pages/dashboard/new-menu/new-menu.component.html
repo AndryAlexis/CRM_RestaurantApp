@@ -13,210 +13,76 @@
 
                                 <!-- Menu Name Input -->
                                 <div class="form-outline mb-4">
-                                    <input type="text" formControlName="menuName" id="menuName" class="form-control" [class.border-danger]="checkValidation('menuName')" placeholder="*Nombre del Menú" required>
+                                    <input type="text" formControlName="menuName" id="menuName" class="form-control"
+                                        [class.border-danger]="checkValidation('menuName')"
+                                        placeholder="*Nombre del Menú" required>
                                 </div>
 
                                 <!-- Date Input -->
                                 <div class="form-outline mb-4">
-                                    <input type="date" formControlName="date" id="date" class="form-control" [class.border-danger]="checkValidation('date')" placeholder="*Fecha" required>
+                                    <input type="date" formControlName="date" id="date" class="form-control"
+                                        [class.border-danger]="checkValidation('date')" placeholder="*Fecha" required>
                                 </div>
 
                                 <!-- Menu Price Input -->
                                 <div class="form-outline mb-4">
-                                    <input type="text" formControlName="menuPrice" class="form-control" placeholder="*Precio del Menú" required>
+                                    <input type="text" formControlName="menuPrice" class="form-control"
+                                        placeholder="*Precio del Menú" required>
                                 </div>
 
-                                <!-- <h3 class="my-3">Entrantes</h3>
-                                <div formArrayName="mainDishes">
-                                    <div [formGroupName]="0" class="mb-3">
-                                        <h4 class="my-3">Plato 1</h4>
-                                        <div class="form-outline mb-3">
-                                            <input type="text" formControlName="name" class="form-control"
-                                                placeholder="*Nombre" required>
-                                        </div>
-                                        <div class="form-outline mb-3">
-                                            <textarea formControlName="description" class="form-control"
-                                                placeholder="*Descripción" required></textarea>
-                                        </div>
-                                        <div class="form-outline mb-3">
-                                            <input type="text" formControlName="imageUrl" class="form-control"
-                                                placeholder="*URL de la Imagen" required>
+                                <h2>Entrantes</h2>
+
+
+                                <div class="container-fluid mb-5 ">
+                                    @for (starter of starters; track starter.id){
+                                    <div class="row mb-2">
+                                        <div class="col bg-white rounded-3 border border-2 ">
+                                            <div class="d-flex justify-content-between align-middle  py-2 ">
+                                                <h5 class=" m-0">{{starter.name}}</h5>
+                                                <input (change)="onCheckboxChange($event)" type="checkbox">
+                                            </div>
                                         </div>
                                     </div>
-                                    <div [formGroupName]="1" class="mb-3">
-                                        <h4 class="my-3">Plato 2</h4>
-                                        <div class="form-outline mb-3">
-                                            <input type="text" formControlName="name" class="form-control"
-                                                placeholder="*Nombre" required>
-                                        </div>
-                                        <div class="form-outline mb-3">
-                                            <textarea formControlName="description" class="form-control"
-                                                placeholder="*Descripción" required></textarea>
-                                        </div>
-                                        <div class="form-outline mb-3">
-                                            <input type="text" formControlName="imageUrl" class="form-control"
-                                                placeholder="*URL de la Imagen" required>
-                                        </div>
-                                    </div>
-                                    <div [formGroupName]="2" class="mb-3">
-                                        <h4 class="my-3">Plato 3</h4>
-                                        <div class="form-outline mb-3">
-                                            <input type="text" formControlName="name" class="form-control"
-                                                placeholder="*Nombre" required>
-                                        </div>
-                                        <div class="form-outline mb-3">
-                                            <textarea formControlName="description" class="form-control"
-                                                placeholder="*Descripción" required></textarea>
-                                        </div>
-                                        <div class="form-outline mb-3">
-                                            <input type="text" formControlName="imageUrl" class="form-control"
-                                                placeholder="*URL de la Imagen" required>
+                                    }
+
+                                </div>
+                                <button (click)="prueba()">
+                                    Prueba
+                                </button>
+
+                                <h2>Platos principales</h2>
+
+
+                                <div class="container-fluid mb-5 ">
+                                    @for (main of mainDishes; track main.id){
+                                    <div class="row mb-2">
+                                        <div class="col bg-white rounded-3 border border-2 ">
+                                            <div class="d-flex justify-content-between align-middle  py-2 ">
+                                                <h5 class=" m-0">{{main.name}}</h5>
+                                                <input type="checkbox">
+                                            </div>
                                         </div>
                                     </div>
-                                    <div [formGroupName]="3" class="mb-3">
-                                        <h4 class="my-3">Plato 4</h4>
-                                        <div class="form-outline mb-3">
-                                            <input type="text" formControlName="name" class="form-control"
-                                                placeholder="*Nombre" required>
-                                        </div>
-                                        <div class="form-outline mb-3">
-                                            <textarea formControlName="description" class="form-control"
-                                                placeholder="*Descripción" required></textarea>
-                                        </div>
-                                        <div class="form-outline mb-3">
-                                            <input type="text" formControlName="imageUrl" class="form-control"
-                                                placeholder="*URL de la Imagen" required>
-                                        </div>
-                                    </div>
+                                    }
+
                                 </div>
 
-                                <h3 class="mt-4">Platos Principales</h3>
-                                <div formArrayName="secondDishes">
-                                    <div [formGroupName]="0" class="mb-3">
-                                        <h4 class="my-3">Plato 1</h4>
-                                        <div class="form-outline mb-3">
-                                            <input type="text" formControlName="name" class="form-control"
-                                                placeholder="*Nombre" required>
-                                        </div>
-                                        <div class="form-outline mb-3">
-                                            <textarea formControlName="description" class="form-control"
-                                                placeholder="*Descripción" required></textarea>
-                                        </div>
-                                        <div class="form-outline mb-3">
-                                            <input type="text" formControlName="imageUrl" class="form-control"
-                                                placeholder="*URL de la Imagen" required>
+                                <h2>Postres</h2>
+
+                                <div class="container-fluid mb-5 ">
+                                    @for (dessert of desserts; track dessert.id){
+                                    <div class="row mb-2">
+                                        <div class="col bg-white rounded-3 border border-2 ">
+                                            <div class="d-flex justify-content-between align-middle  py-2 ">
+                                                <h5 class=" m-0">{{dessert.name}}</h5>
+                                                <input type="checkbox">
+                                            </div>
                                         </div>
                                     </div>
-                                    <div [formGroupName]="1" class="mb-3">
-                                        <h4 class="my-3">Plato 2</h4>
-                                        <div class="form-outline mb-3">
-                                            <input type="text" formControlName="name" class="form-control"
-                                                placeholder="*Nombre" required>
-                                        </div>
-                                        <div class="form-outline mb-3">
-                                            <textarea formControlName="description" class="form-control"
-                                                placeholder="*Descripción" required></textarea>
-                                        </div>
-                                        <div class="form-outline mb-3">
-                                            <input type="text" formControlName="imageUrl" class="form-control"
-                                                placeholder="*URL de la Imagen" required>
-                                        </div>
-                                    </div>
-                                    <div [formGroupName]="2" class="mb-3">
-                                        <h4 class="my-3">Plato 3</h4>
-                                        <div class="form-outline mb-3">
-                                            <input type="text" formControlName="name" class="form-control"
-                                                placeholder="*Nombre" required>
-                                        </div>
-                                        <div class="form-outline mb-3">
-                                            <textarea formControlName="description" class="form-control"
-                                                placeholder="*Descripción" required></textarea>
-                                        </div>
-                                        <div class="form-outline mb-3">
-                                            <input type="text" formControlName="imageUrl" class="form-control"
-                                                placeholder="*URL de la Imagen" required>
-                                        </div>
-                                    </div>
-                                    <div [formGroupName]="3" class="mb-3">
-                                        <h4 class="my-3">Plato 4</h4>
-                                        <div class="form-outline mb-3">
-                                            <input type="text" formControlName="name" class="form-control"
-                                                placeholder="*Nombre" required>
-                                        </div>
-                                        <div class="form-outline mb-3">
-                                            <textarea formControlName="description" class="form-control"
-                                                placeholder="*Descripción" required></textarea>
-                                        </div>
-                                        <div class="form-outline mb-3">
-                                            <input type="text" formControlName="imageUrl" class="form-control"
-                                                placeholder="*URL de la Imagen" required>
-                                        </div>
-                                    </div>
+                                    }
+
                                 </div>
 
-                                <h3 class="mt-4">Postres</h3>
-                                <div formArrayName="desserts">
-                                    <div [formGroupName]="0" class="mb-3">
-                                        <h4 class="my-3">Postre 1</h4>
-                                        <div class="form-outline mb-3">
-                                            <input type="text" formControlName="name" class="form-control"
-                                                placeholder="*Nombre" required>
-                                        </div>
-                                        <div class="form-outline mb-3">
-                                            <textarea formControlName="description" class="form-control"
-                                                placeholder="*Descripción" required></textarea>
-                                        </div>
-                                        <div class="form-outline mb-3">
-                                            <input type="text" formControlName="imageUrl" class="form-control"
-                                                placeholder="*URL de la Imagen" required>
-                                        </div>
-                                    </div>
-                                    <div [formGroupName]="1" class="mb-3">
-                                        <h4 class="my-3">Postre 2</h4>
-                                        <div class="form-outline mb-3">
-                                            <input type="text" formControlName="name" class="form-control"
-                                                placeholder="*Nombre" required>
-                                        </div>
-                                        <div class="form-outline mb-3">
-                                            <textarea formControlName="description" class="form-control"
-                                                placeholder="*Descripción" required></textarea>
-                                        </div>
-                                        <div class="form-outline mb-3">
-                                            <input type="text" formControlName="imageUrl" class="form-control"
-                                                placeholder="*URL de la Imagen" required>
-                                        </div>
-                                    </div>
-                                    <div [formGroupName]="2" class="mb-3">
-                                        <h4 class="my-3">Postre 3</h4>
-                                        <div class="form-outline mb-3">
-                                            <input type="text" formControlName="name" class="form-control"
-                                                placeholder="*Nombre" required>
-                                        </div>
-                                        <div class="form-outline mb-3">
-                                            <textarea formControlName="description" class="form-control"
-                                                placeholder="*Descripción" required></textarea>
-                                        </div>
-                                        <div class="form-outline mb-3">
-                                            <input type="text" formControlName="imageUrl" class="form-control"
-                                                placeholder="*URL de la Imagen" required>
-                                        </div>
-                                    </div>
-                                    <div [formGroupName]="3" class="mb-3">
-                                        <h4 class="my-3">Postre 4</h4>
-                                        <div class="form-outline mb-3">
-                                            <input type="text" formControlName="name" class="form-control"
-                                                placeholder="*Nombre" required>
-                                        </div>
-                                        <div class="form-outline mb-3">
-                                            <textarea formControlName="description" class="form-control"
-                                                placeholder="*Descripción" required></textarea>
-                                        </div>
-                                        <div class="form-outline mb-3">
-                                            <input type="text" formControlName="imageUrl" class="form-control"
-                                                placeholder="*URL de la Imagen" required>
-                                        </div>
-                                    </div>
-                                </div> -->
 
                                 <!-- Submit Button -->
                                 <div class="text-center pt-1 mb-5 pb-1 d-grid gap-2" id="submitButton">
