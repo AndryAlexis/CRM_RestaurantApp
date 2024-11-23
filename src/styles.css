@@ -54,6 +54,7 @@ body {
     background-color: var(--bg-white) !important;
 }
 
-.bg-food {
+html, body {
     background-image: url('../public/background-food6.svg');
+    background-repeat: repeat;
 }

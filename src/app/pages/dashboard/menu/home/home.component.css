@@ -1,24 +1,26 @@
-section {
-    h1 {
-        font-family: 'Gowun Dodum', cursive;
-        font-size: 2rem;
-        font-weight: 600;
-        color: #333;
-        background-color: var(--color-primary);
-        padding: 10px;
-        border-radius: 10px;
+.menus {
+    background-color: var(--bg-white);
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    margin-top: 2.5rem;
+    text-align: center;
+
+    p {
+        width: 70%;
+        margin: 0 auto;
     }
+
 
     button {
         width: 40%;
-        font-family: 'Gowun Dodum', cursive;
-        font-size: 1.5rem;
-        font-weight: 600;
+        font-size: 1.2rem;
+        font-weight: 400;
         color: var(--color-black);
         background-color: var(--color-primary-dark);
         padding: 5px;
         border-radius: 10px;
         margin-top: 10px;
+        border-color: transparent;
     }
 
     button:hover {

@@ -1,19 +1,18 @@
-<div class="bg-food">
-    <app-header-dashboard />
-    <div class="container gestion pt-3">
-        <h3 class="my-3">Gestión de Reservas</h3>
-        <p>Aquí encontrarás un listado de las reservas pendientes organizadas por fecha. Revisa los detalles,
-            actualiza
-            el
-            estado o
-            realiza los ajustes necesarios para garantizar una experiencia impecable. ¡Gracias por tu dedicación!
-        </p>
-        <div class="row reservas">
-            @for(reservation of reservations; track reservation.id) {
-            <div class="col-12 col-lg-6">
-                <app-reservations-card [reservation]="reservation"></app-reservations-card>
-            </div>
-            }
+<app-header-dashboard />
+
+<div class="container gestion pt-3">
+    <h3 class="my-3">Gestión de Reservas</h3>
+    <p>Aquí encontrarás un listado de las reservas pendientes organizadas por fecha. Revisa los detalles,
+        actualiza
+        el
+        estado o
+        realiza los ajustes necesarios para garantizar una experiencia impecable. ¡Gracias por tu dedicación!
+    </p>
+    <div class="row reservas">
+        @for(reservation of reservations; track reservation.id) {
+        <div class="col-12 col-lg-6">
+            <app-reservations-card [reservation]="reservation"></app-reservations-card>
         </div>
+        }
     </div>
 </div>
