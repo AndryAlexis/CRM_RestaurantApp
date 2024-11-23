@@ -1,104 +1,97 @@
 <app-header-dashboard></app-header-dashboard>
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Actualizar Menú</h1>
 
-<section class="container-fluid h-100">
-    <div class="container py-5 h-100">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-            <div class="col-xl-10">
-                <div class="card rounded-3 text-black shadow">
-                    <div class="row g-0">
+    <!-- Fecha del Menú -->
+    <div class="mb-3">
+        <label for="menuDate" class="form-label">Fecha del Menú</label>
+        <input type="date" id="menuDate" class="form-control" required />
+    </div>
 
-                        <!-- Menu Creation Form -->
-                        <form [formGroup]="menuForm" class="col-lg-12" (ngSubmit)="onSubmit()">
-                            <div class="card-body p-md-5 mx-md-4 text-center">
-                                <h1 class="h4 mb-4">Actualizar menú</h1>
+    <!-- Precio del Menú -->
+    <div class="mb-3">
+        <label for="menuPrice" class="form-label">Precio del Menú (€)</label>
+        <input type="number" id="menuPrice" class="form-control" required />
+    </div>
 
-                                <!-- Basic Menu Information -->
-                                <div class="form-outline mb-4">
-                                    <input type="text" 
-                                           formControlName="menuName" 
-                                           id="menuName" 
-                                           class="form-control"
-                                           [class.border-danger]="checkValidation('menuName')"
-                                           placeholder="*Nombre del Menú" 
-                                           required>
-                                </div>
-
-                                <div class="form-outline mb-4">
-                                    <input type="date" 
-                                           formControlName="date" 
-                                           id="date" 
-                                           class="form-control"
-                                           [class.border-danger]="checkValidation('date')" 
-                                           placeholder="*Fecha" 
-                                           required>
-                                </div>
-
-                                <div class="form-outline mb-4">
-                                    <input type="text" 
-                                           formControlName="menuPrice" 
-                                           class="form-control"
-                                           placeholder="*Precio del Menú" 
-                                           required>
-                                </div>
-
-                                <!-- Starters Section -->
-                                <h2 class="mb-3">Entrantes</h2>
-                                <div class="container-fluid mb-5">
-                                    @for (starter of starters; track starter.id) {
-                                        <div class="row mb-2">
-                                            <div class="col bg-white rounded-3 border border-2">
-                                                <div class="d-flex justify-content-between align-items-center py-2">
-                                                    <h5 class="m-0">{{starter.name}}</h5>
-                                                    <input type="checkbox" (change)="onCheckboxChange($event, starter)">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    }
-                                </div>
-
-                                <!-- Main Dishes Section -->
-                                <h2 class="mb-3">Platos principales</h2>
-                                <div class="container-fluid mb-5">
-                                    @for (main of mainDishes; track main.id) {
-                                        <div class="row mb-2">
-                                            <div class="col bg-white rounded-3 border border-2">
-                                                <div class="d-flex justify-content-between align-items-center py-2">
-                                                    <h5 class="m-0">{{main.name}}</h5>
-                                                    <input type="checkbox" (change)="onCheckboxChange($event, main)">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    }
-                                </div>
-
-                                <!-- Desserts Section -->
-                                <h2 class="mb-3">Postres</h2>
-                                <div class="container-fluid mb-5">
-                                    @for (dessert of desserts; track dessert.id) {
-                                        <div class="row mb-2">
-                                            <div class="col bg-white rounded-3 border border-2">
-                                                <div class="d-flex justify-content-between align-items-center py-2">
-                                                    <h5 class="m-0">{{dessert.name}}</h5>
-                                                    <input type="checkbox" (change)="onCheckboxChange($event, dessert)">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    }
-                                </div>
-
-                                <!-- Submit Button -->
-                                <div class="text-center pt-1 mb-5 pb-1 d-grid gap-2">
-                                    <button class="btn fa-lg mb-3 py-4" type="submit">
-                                        Actualizar Menú
-                                    </button>
-                                </div>  
-
-                            </div>
-                        </form>
-
-                    </div>
-                </div>
-            </div>
+    <!-- Entrantes -->
+    <div class="mb-4">
+        <h3>Entrantes</h3>
+        <div class="mb-3">
+            <label class="form-label">Entrante 1</label>
+            <input type="text" class="form-control mb-2" placeholder="Nombre del Entrante" required />
+            <textarea class="form-control" rows="2" placeholder="Descripción del Entrante" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Entrante 2</label>
+            <input type="text" class="form-control mb-2" placeholder="Nombre del Entrante" required />
+            <textarea class="form-control" rows="2" placeholder="Descripción del Entrante" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Entrante 3</label>
+            <input type="text" class="form-control mb-2" placeholder="Nombre del Entrante" required />
+            <textarea class="form-control" rows="2" placeholder="Descripción del Entrante" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Entrante 4</label>
+            <input type="text" class="form-control mb-2" placeholder="Nombre del Entrante" required />
+            <textarea class="form-control" rows="2" placeholder="Descripción del Entrante" required></textarea>
         </div>
     </div>
-</section>
+
+    <!-- Platos Principales -->
+    <div class="mb-4">
+        <h3>Platos Principales</h3>
+        <div class="mb-3">
+            <label class="form-label">Plato Principal 1</label>
+            <input type="text" class="form-control mb-2" placeholder="Nombre del Plato Principal" required />
+            <textarea class="form-control" rows="2" placeholder="Descripción del Plato Principal" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Plato Principal 2</label>
+            <input type="text" class="form-control mb-2" placeholder="Nombre del Plato Principal" required />
+            <textarea class="form-control" rows="2" placeholder="Descripción del Plato Principal" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Plato Principal 3</label>
+            <input type="text" class="form-control mb-2" placeholder="Nombre del Plato Principal" required />
+            <textarea class="form-control" rows="2" placeholder="Descripción del Plato Principal" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Plato Principal 4</label>
+            <input type="text" class="form-control mb-2" placeholder="Nombre del Plato Principal" required />
+            <textarea class="form-control" rows="2" placeholder="Descripción del Plato Principal" required></textarea>
+        </div>
+    </div>
+
+    <!-- Postres -->
+    <div class="mb-4">
+        <h3>Postres</h3>
+        <div class="mb-3">
+            <label class="form-label">Postre 1</label>
+            <input type="text" class="form-control mb-2" placeholder="Nombre del Postre" required />
+            <textarea class="form-control" rows="2" placeholder="Descripción del Postre" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Postre 2</label>
+            <input type="text" class="form-control mb-2" placeholder="Nombre del Postre" required />
+            <textarea class="form-control" rows="2" placeholder="Descripción del Postre" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Postre 3</label>
+            <input type="text" class="form-control mb-2" placeholder="Nombre del Postre" required />
+            <textarea class="form-control" rows="2" placeholder="Descripción del Postre" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Postre 4</label>
+            <input type="text" class="form-control mb-2" placeholder="Nombre del Postre" required />
+            <textarea class="form-control" rows="2" placeholder="Descripción del Postre" required></textarea>
+        </div>
+    </div>
+
+    <!-- Botones -->
+    <div class="d-flex justify-content-between">
+        <button class="btn btn-secondary">Cancelar</button>
+        <button class="btn">Guardar Cambios</button>
+    </div>
+</div>
