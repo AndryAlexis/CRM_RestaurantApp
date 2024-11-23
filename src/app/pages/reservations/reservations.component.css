@@ -1,9 +1,38 @@
+.container {
+    background-color: var(--color-primary);
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    
+}
+h2{
+    font-family: var(--font-fancy);
+    font-size: 5rem;
+}
+
+h3 {
+    font-family: var(--font-primary);
+    font-size: 2rem;
+}
+
+p {
+    font-family: var(--font-primary);
+    font-size: 1rem;
+}
+
+li{
+    font-family: var(--font-primary);
+    font-size: 0.9rem;
+}
+
 .foody-bg {
     height: 100vh;
     background-image: url('../../../../public/background-food6.svg');
     position: relative;
     z-index: 1;
 }
+
 
 
 form {
@@ -15,7 +44,7 @@ form {
     top: 5%;
     left: 10%;
     position: absolute;
-    background-color: #acce56;
+    background-color: var(--color-primary-dark);
     box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.31);
     z-index: 10;
     display: flex;
@@ -55,11 +84,14 @@ form {
     }
 }
 
+
 .map {
-    position: absolute;
+    position: relative;
+    overflow: hidden;
+    display: block;
     left: 0%;
     top: 1%;
-    width: 100%;
+    max-width: 100%;
     height: auto;
     z-index: 5;
     clip-path: polygon(0% 82%, 0% 18%, 100% 0%, 100% 100%);
