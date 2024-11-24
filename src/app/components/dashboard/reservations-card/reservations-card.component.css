@@ -9,12 +9,17 @@ ul {
     background-color: var(--color-primary);
     text-align: left;
 
+    li {
+        margin-bottom: 18px;
+    }
+
 }
 
 .buttons {
     gap: 0.3rem;
     display: flex;
     justify-content: start;
+    max-width: 30%;
 
     button {
         font-size: 1rem;
@@ -22,7 +27,7 @@ ul {
         border: 1px solid rgb(104, 104, 104);
 
         &.confirmar {
-            background-color: #bbf6c7;
+            background-color: #bbf6c7c7;
         }
 
         &.cancelar {
@@ -35,13 +40,55 @@ ul {
     }
 }
 
-@media (width <= 760px) {
+.info-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+}
+
+.user-info,
+.reservation-info,
+.buttons {
+    flex: 1;
+    padding: 0 10px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+
+
+@media (width <=760px) {
     ul {
         flex-direction: column;
         align-content: center;
-        
-        > div {
+
+        >div {
             padding-left: 3%;
         }
+    }
+}
+
+
+@media (max-width: 440px) {
+    .info-container {
+        flex-direction: column;
+        /* Cambiar a columna en pantallas pequeñas */
+    }
+
+    .user-info,
+    .reservation-info {
+        li {
+            margin-bottom: 5px !important;
+
+        }
+    }
+
+    .buttons {
+        max-width: 100%;
+
     }
 }
