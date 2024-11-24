@@ -54,6 +54,8 @@ export class LoginComponent {
       Swal.fire({
         icon: 'error',
         text: 'Usuario y/o contraseña incorrectos',
+        background: 'var(--color-primary)',
+        confirmButtonText: 'Aceptar',
       });
     }
   }
