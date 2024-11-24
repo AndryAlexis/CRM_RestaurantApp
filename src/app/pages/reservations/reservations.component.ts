@@ -61,11 +61,13 @@ export class ReservationsComponent {
       Swal.fire({
         title: 'Reservation created successfully',
         icon: 'success',
+        background: 'var(--color-primary-dark)'
       })
     } catch (error) {
       Swal.fire({
         title: 'Error creating reservation',
         icon: 'error',
+        background: 'var(--color-primary)'
       })
     }
   }

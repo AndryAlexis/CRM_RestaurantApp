@@ -68,7 +68,8 @@ export class EditUserComponent {
         Swal.fire({
           icon: 'success',
           title: 'El usuario se ha actualizado correctamente',
-          confirmButtonText: 'Aceptar'
+          confirmButtonText: 'Aceptar',
+          background: 'var(--color-primary)'
         });
       } catch (error: any) {
         const errorResponse = error.error as IUserResponse;
@@ -78,7 +79,8 @@ export class EditUserComponent {
         Swal.fire({
           icon: 'error',
           title: 'Ha ocurrido un error al actualizar el usuario.',
-          confirmButtonText: 'Aceptar'
+          confirmButtonText: 'Aceptar',
+          background: 'var(--color-primary)'
         });
       }
     }
