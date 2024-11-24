@@ -29,6 +29,11 @@ export class MenuService {
     return await firstValueFrom(this.http.post<any>(`${this.rootUrl}`, { name, date, dishes, price }, { headers }));
   }
 
+  async updateMenu(id: number, name: string, date: string, dishes: any[], price: number): Promise<any> {
+    const token = localStorage.getItem('token') as string;
+    const headers = { 'Authorization': token };
+    return await firstValueFrom(this.http.put<any>(`${this.rootUrl}/${id}`, { name, date, dishes, price }, { headers }));
+  }
 
 
   async getDailyMenu(date: string): Promise<any> {
