@@ -18,7 +18,8 @@
                             }
                         </div>
                         <div class="text-center mt-3 boton-suelto">
-                            <a [routerLink]="['/dashboard', 'registered-users']" class="btn btn-primary">Ver todos los usuarios</a>
+                            <a [routerLink]="['/dashboard', 'registered-users']" class="btn btn-primary">Ver todos los
+                                usuarios</a>
                         </div>
                     </div>
                 </div>
@@ -48,7 +49,7 @@
             <div class="card-body">
                 <h2 class="text-center mb-4">Reservas Hoy</h2>
                 @if(!reservations.length) {
-                    <p>No hay reservas hoy</p>
+                <p class="text-center">No hay reservas hoy</p>
                 }
                 <div class="row">
                     @for(reservation of reservations; track reservation.id) {
