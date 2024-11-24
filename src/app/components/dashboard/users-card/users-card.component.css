@@ -28,3 +28,8 @@ body {
     background-color: var(--color-primary-dark);
     color: black;
 }
+
+.btn:hover {
+    background-color: var(--color-tertiary);
+    color: white;
+}
