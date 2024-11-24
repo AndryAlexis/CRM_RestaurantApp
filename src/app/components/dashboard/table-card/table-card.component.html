@@ -17,7 +17,9 @@
 
     <!-- Contenedor de botones de acción -->
     <div class="buttons">
-        <i class="me-3" data-tooltip="Mesa asociada a reservas futuras">⚠️</i>
+        @if (table.future) {
+        <i class="me-3" data-tooltip="Mesa tiene asociada reservas futuras">⚠️</i>
+        }
         <button class="btn" [disabled]="!form.valid" (click)="ngSubmit()">Editar</button>
         <button class="btn" (click)="borrar()">Borrar</button>
     </div>
