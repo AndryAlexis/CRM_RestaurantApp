@@ -6,7 +6,6 @@ import { ReviewCardComponent } from "../../components/dashboard/review-card/revi
 import { ReservationsCardComponent } from "../../components/dashboard/reservations-card/reservations-card.component";
 import { ReactiveFormsModule, Validators, FormControl, FormGroup } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
-import { IUserResponse, IUserUpdate } from '../../interfaces/user.interfaces';
 import Swal from 'sweetalert2';
 import { ReviewsService } from '../../services/reviews.service';
 import { ReservationService } from '../../services/reservation.service';
@@ -68,8 +67,24 @@ export class UserComponent {
 
 
   ngOnInit() {
-    this.loadReviews()
-    this.loadReservations()
+    this.loadReviews();
+    this.loadReservations();
+    this.loadUserData();
+  }
+
+  async loadUserData() {
+    try {
+      const userData = await this.apiService.getUser();
+      const { name, surname, phone, email } = userData.data;
+      this.userForm.patchValue({ name, surname, phone, email });
+    } catch (error) {
+      console.error('Error al cargar los datos del usuario:', error);
+      Swal.fire({
+        icon: 'error',
+        title: 'No se pudieron cargar los datos del usuario.',
+        confirmButtonText: 'Aceptar'
+      });
+    }
   }
 
   async loadReviews() {
