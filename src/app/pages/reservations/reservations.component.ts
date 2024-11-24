@@ -40,6 +40,11 @@ export class ReservationsComponent {
     // Get and validate token
     const token = localStorage.getItem('token');
     if (!token) {
+      Swal.fire({
+        title: 'Cuenta requerida',
+        icon: 'error',
+        background: 'var(--color-primary)'
+      })
       return;
     }
 
