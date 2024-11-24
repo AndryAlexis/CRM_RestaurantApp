@@ -1,39 +1,37 @@
-<nav class="navbar navbar-expand-md">
-    <div class="container-fluid">
+<nav class="navbar navbar-expand-xl">
+    <!-- Botón de Hamburguesa -->
+    <button class="navbar-toggler" type="button" (click)="toggleNavbar()" [attr.aria-expanded]="!isCollapsed"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <!-- Botón de Hamburguesa -->
-        <button class="navbar-toggler" type="button" (click)="toggleNavbar()" [attr.aria-expanded]="!isCollapsed" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <!-- Menú de Navegación -->
+    <div class="collapse navbar-collapse" [class.show]="!isCollapsed" id="navbarNav">
+        <ul class="navbar-nav container">
+            <li class="nav-item">
+                <button class="btn" [routerLink]="['/dashboard']">Dashboard</button>
+            </li>
+            <li class="nav-item">
+                <button class="btn" [routerLink]="['/dashboard', 'menu']">Menús</button>
+            </li>
+            <li class="nav-item">
+                <button class="btn" [routerLink]="['/dashboard', 'registered-users']">Usuarios
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="btn" [routerLink]="['/dashboard', 'next-reservations']">Reservas
 
-        <!-- Menú de Navegación -->
-        <div class="collapse navbar-collapse" [class.show]="!isCollapsed" id="navbarNav">
-            <ul class="navbar-nav container">
-                <li class="nav-item">
-                    <button class="btn" [routerLink]="['/dashboard']">Dashboard</button>
-                </li>
-                <li class="nav-item">
-                    <button class="btn" [routerLink]="['/dashboard', 'menu']">Menús</button>
-                </li>
-                <li class="nav-item">
-                    <button class="btn" [routerLink]="['/dashboard', 'registered-users']">Usuarios
-                    </button>
-                </li>
-                <li class="nav-item">
-                    <button class="btn" [routerLink]="['/dashboard', 'next-reservations']">Reservas
-
-                    </button>
-                </li>
-                <li class="nav-item">
-                    <button class="btn" [routerLink]="['/dashboard', 'reviews']">Reseñas</button>
-                </li>
-                <li class="nav-item">
-                    <button class="btn" [routerLink]="['/']">Restaurante</button>
-                </li>
-                <li class="nav-item">
-                    <button class="btn" (click)="logout()">Logout</button>
-                </li>
-            </ul>
-        </div>
+                </button>
+            </li>
+            <li class="nav-item">
+                <button class="btn" [routerLink]="['/dashboard', 'reviews']">Reseñas</button>
+            </li>
+            <li class="nav-item">
+                <button class="btn" [routerLink]="['/']">Restaurante</button>
+            </li>
+            <li class="nav-item">
+                <button class="btn" (click)="logout()">Logout</button>
+            </li>
+        </ul>
     </div>
 </nav>
