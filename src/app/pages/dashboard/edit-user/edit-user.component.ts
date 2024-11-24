@@ -48,7 +48,6 @@ export class EditUserComponent {
         telefono: userData.phone,
         role: userData.role
       });
-      // TODO: Mostrar error al cargar datos del usuario
     } catch (error) {
       console.error('Error al cargar los datos del usuario:', error);
     }

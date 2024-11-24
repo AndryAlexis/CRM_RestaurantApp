@@ -80,7 +80,6 @@ export class UserComponent {
   async loadReservations() {
     const user_id = this.getUserId()
     this.reservations = await this.reservationService.getReservationByUserId(user_id);
-    console.log(this.reservations)
   }
 
   getUserId() {

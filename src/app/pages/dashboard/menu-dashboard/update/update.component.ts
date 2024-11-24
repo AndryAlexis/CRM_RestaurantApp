@@ -65,13 +65,15 @@ export class UpdateMenuComponent {
     const date = this.menuForm.get('date')?.value;
     const dishes = this.menuForm.get('dishes')?.value;
     const price = this.menuForm.get('menuPrice')?.value;
+
+    const menuId = this.route.snapshot.params['id'];
     try {
       // Extract dish IDs and create menu
       const dishIds = dishes.map((dish: any) => dish.id);
-      await this.menuService.createMenu(menuName, date, dishIds, price);
+      await this.menuService.updateMenu(menuId, menuName, date, dishIds, price);
 
       Swal.fire({
-        title: 'Menu creado correctamente',
+        title: 'Menu actualizado correctamente',
         icon: 'success',
       })
 
@@ -80,14 +82,14 @@ export class UpdateMenuComponent {
       const errorResponse = error.error as IUserResponse;
       const { status, title, message } = errorResponse;
       
-      console.error('Error creating menu:', {
+      console.error('Error actualizando menu:', {
         status,
         title, 
         message
       });
 
       Swal.fire({
-        title: 'Error al crear el menu',
+        title: 'Error al actualizar el menu',
         icon: 'error',
       })
     }

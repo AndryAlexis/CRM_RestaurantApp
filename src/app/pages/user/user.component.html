@@ -12,8 +12,7 @@
                         <div class="form-outline mb-4 row">
                             <label for="nombre" class="col-6 col-form-label">Introduce tu nombre</label>
                             <div class="col-6">
-                                <input type="text" id="nombre" class="form-control" formControlName="name"
-                                    placeholder="Nombre">
+                                <input type="text" id="nombre" class="form-control" formControlName="name" placeholder="Nombre">
                             </div>
                         </div>
 
@@ -21,8 +20,7 @@
                         <div class="form-outline mb-4 row">
                             <label for="apellido" class="col-6 col-form-label">Introduce tu apellido</label>
                             <div class="col-6">
-                                <input type="text" id="apellido" class="form-control" formControlName="surname"
-                                    placeholder="Apellido">
+                                <input type="text" id="apellido" class="form-control" formControlName="surname" placeholder="Apellido">
                             </div>
                         </div>
 
@@ -31,8 +29,7 @@
                             <label for="telefono" class="col-6 col-form-label ">Introduce tu
                                 teléfono</label>
                             <div class="col-6">
-                                <input type="tel" id="telefono" class="form-control" formControlName="phone"
-                                    placeholder="Teléfono">
+                                <input type="tel" id="telefono" class="form-control" formControlName="phone" placeholder="Teléfono">
                             </div>
                         </div>
 
@@ -41,8 +38,7 @@
                             <label for="email" class="col-6 col-form-label">Introduce tu
                                 nuevo email</label>
                             <div class="col-6">
-                                <input type="email" id="email" class="form-control" formControlName="email"
-                                    placeholder="Email">
+                                <input type="email" id="email" class="form-control" formControlName="email" placeholder="Email">
                             </div>
                         </div>
 
@@ -51,8 +47,7 @@
                             <label for="password" class="col-6 col-form-label">Introduce tu
                                 nueva contraseña</label>
                             <div class="col-6">
-                                <input type="password" id="password" class="form-control" formControlName="password"
-                                    placeholder="Nueva contraseña">
+                                <input type="password" id="password" class="form-control" formControlName="password" placeholder="Nueva contraseña">
                             </div>
                         </div>
 
@@ -64,6 +59,9 @@
         <div class="right-panel">
             <div>
                 <h2>Reservas</h2>
+                @if (reservations.length === 0) {
+                    <p class="mt-4">No ha realizado ninguna reserva todavía</p>
+                }
                 @for(reservation of reservations; track reservation.id){
                 <app-reservations-card [reservation]="reservation"></app-reservations-card>
                 }
@@ -82,4 +80,4 @@
         </div>
     </div>
 </div>
-<app-footer></app-footer>
+<app-footer />

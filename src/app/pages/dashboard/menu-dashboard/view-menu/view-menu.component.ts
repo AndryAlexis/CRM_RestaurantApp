@@ -23,5 +23,7 @@ export class ViewMenuComponent {
     const result = await this.menuService.getMenuById(this.route.snapshot.params['id']);
     this.menu = result.data[0];
     this.dishes = result.data[1];
+    console.log(result)
+    console.log(this.menu)
   }
 }

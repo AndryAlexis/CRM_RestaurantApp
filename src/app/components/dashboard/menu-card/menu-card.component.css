@@ -15,3 +15,11 @@
     background-color: var(--color-tertiary);
     color: white;
 }
+
+.menu-date {
+    font-weight: 400;
+}
+
+.menu-name {
+    font-weight: 600;
+}

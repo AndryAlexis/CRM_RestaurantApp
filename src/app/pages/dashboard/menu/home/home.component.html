@@ -12,13 +12,13 @@
     </div>
 
     <!-- Menu cards container -->
-    <div class="row my-3">
+    <div class="row p-5">
         <div class="col p-0">
             <div class="d-flex flex-column gap-3 px-3">
                 @for (menu of menus; track menu.id) {
-                    <app-menu-card [menu]="menu" />
+                <app-menu-card [menu]="menu" />
                 } @empty {
-                    <p class="text-center">Cargando menús...</p>
+                <p class="text-center">Cargando menús...</p>
                 }
             </div>
         </div>

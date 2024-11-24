@@ -18,7 +18,8 @@
                             }
                         </div>
                         <div class="text-center mt-3 boton-suelto">
-                            <a [routerLink]="['/dashboard', 'registered-users']" class="btn btn-primary">Ver todos los usuarios</a>
+                            <a [routerLink]="['/dashboard', 'registered-users']" class="btn btn-primary">Ver todos los
+                                usuarios</a>
                         </div>
                     </div>
                 </div>
@@ -46,7 +47,10 @@
         <!-- Próximas reservas -->
         <div class="card shadow-sm p-4 mt-4 reservas">
             <div class="card-body">
-                <h2 class="text-center mb-4">Próximas reservas</h2>
+                <h2 class="text-center mb-4">Reservas Hoy</h2>
+                @if(!reservations.length) {
+                <p class="text-center">No hay reservas hoy</p>
+                }
                 <div class="row">
                     @for(reservation of reservations; track reservation.id) {
                     <div class="col-12 mb-2">

@@ -1,28 +1,24 @@
 <!-- Header -->
 <app-header-dashboard />
 
-<!-- Menu Title and Price -->
-<div class="container-fluid p-3" id="menu-info">
-    <h1 class="text-center p-2 m-3 shadow-sm w-50 mx-auto">
-        {{ menu.name }} | {{ menu.date | onlyDate }} | {{ menu.price }}€
-    </h1>
-</div>
-
-<!-- Dishes Section -->
-<div class="container-fluid" id="menu-info">
-    <h5 class="text-center shadow-sm w-50 mx-auto">Platos</h5>
-</div>
-
 <!-- Menu Cards Grid -->
-<section class="p-3 my-3">
-    <div class="container">
-        <div class="row g-5">
-            @for (dish of dishes; track dish.id) {
-                <article class="col-12 col-md-6 col-lg-4">
-                    <app-menu-card2 [dish]="dish" />
-                </article>
-            }
-        </div>
+<section class="p-5 my-3 container">
+    <h3 class="mb-3">{{ menu.name }}</h3>
+    <span class="me-3">
+        <strong>Fecha</strong>: 
+        {{ menu.date | onlyDate }}
+    </span>
+    <span>
+        <strong>Precio</strong>: 
+        {{ menu.price }}€
+    </span>
+
+    <div class="row g-5 mt-1">
+        @for (dish of dishes; track dish.id) {
+        <article class="col-12 col-md-6 col-lg-4">
+            <app-menu-card2 [dish]="dish" />
+        </article>
+        }
     </div>
 </section>
 
