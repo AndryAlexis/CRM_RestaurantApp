@@ -22,5 +22,8 @@ export class ProximasReservasComponent {
 
   async loadData() {
     this.reservations = await this.reservationService.getReservations({})
+
+    // Sorting by date
+    this.reservations.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
   }
 }

@@ -1,0 +1,15 @@
+<article class="mesa">
+    <div class="info">
+        <span>
+            <strong>Numero</strong>: {{table?.number}}
+        </span>
+        <form [formGroup]="form" (ngSubmit)="ngSubmit()">
+            <label for="capacity"><strong>Capacidad</strong></label>
+            <input type="number" formControlName="capacity" id="capacity" placeholder="{{table?.capacity}}">
+        </form>
+    </div>
+    <div class="buttons">
+        <button class="btn" [disabled]="!form.valid" (click)="ngSubmit()" >Editar</button>
+        <button class="btn" (click)="borrar()">Borrar</button>
+    </div>
+</article>

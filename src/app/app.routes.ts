@@ -20,12 +20,15 @@ import { ProximasReservasComponent } from './pages/dashboard/proximas-reservas/p
 import { EditUserComponent } from './pages/dashboard/edit-user/edit-user.component';
 import { CreateReviewComponent } from './pages/create-review/create-review.component';
 import { authGuard } from './guards/auth.guard';
+import { TablesComponent } from './pages/dashboard/tables/tables.component';
+import { TableNewComponent } from './pages/dashboard/tables/table-new/table-new.component';
+import { TableViewComponent } from './pages/dashboard/tables/table-view/table-view.component';
 
 export const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    title: 'Home',
+    title: 'Frontend Feast',
     pathMatch: 'full'
   },
   {
@@ -94,6 +97,21 @@ export const routes: Routes = [
         path: 'next-reservations',
         component: ProximasReservasComponent,
         title: 'Next Reservations'
+      },
+      {
+        path: 'tables',
+        component: TablesComponent,
+        title: 'Tables',
+        children: [
+          {
+            path: '',
+            component: TableViewComponent,
+          },
+          {
+            path: 'create',
+            component: TableNewComponent,
+          },
+        ]
       },
       {
         path: 'create-menu',

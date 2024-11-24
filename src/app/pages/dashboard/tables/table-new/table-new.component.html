@@ -1,0 +1,25 @@
+<app-header-dashboard />
+
+<div class="container my-4 p-5">
+    <h3 class="">Crear nueva mesa</h3>
+
+    <form [formGroup]="form" (ngSubmit)="ngSubmit()">
+        <label for="numero-mesa">Numero:</label>
+        <input type="number" formControlName="number" class="form-control" min="1" id="numero-mesa">
+
+        <label for="numero-mesa">Capacidad:</label>
+        <input type="number" formControlName="capacity" class="form-control" min="1" id="numero-mesa">
+
+        <label class="" for="ubicacion">Ubicación</label>
+        <select formControlName="location" class="form-control" id="ubicacion">
+            <option value="" selected disabled>Seleccione una opción</option>
+            <option value="outside">Terraza</option>
+            <option value="inside">Salón</option>
+        </select>
+
+        <input type="submit" value="Enviar" class="btn mt-5" [disabled]="!form.valid">
+    </form>
+
+
+
+</div>
