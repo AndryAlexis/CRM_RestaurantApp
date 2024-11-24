@@ -51,7 +51,7 @@
     background-color: white;
 }
 
-@media (max-width: 47.8125rem) {
+@media (max-width: 62.5rem) {   
     .navbar-collapse {
         text-align: center;
     }
