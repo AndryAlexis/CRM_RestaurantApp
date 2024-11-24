@@ -41,4 +41,11 @@ export class TablesService {
     )
   }
 
+  getFutureTables(date: string): Promise<any> {
+    const token = localStorage.getItem('token') as string;
+    const headers = { 'Authorization': token };
+    return firstValueFrom(
+      this.http.get<any>(`${this.rootUrl}/tables/future/${date}`, { headers }));
+  }
+
 }
