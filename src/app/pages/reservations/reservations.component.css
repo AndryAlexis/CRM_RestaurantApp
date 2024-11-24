@@ -4,9 +4,10 @@
     border-radius: 10px;
     position: relative;
     overflow: hidden;
-    
+
 }
-h2{
+
+h2 {
     font-family: var(--font-fancy);
     font-size: 5rem;
 }
@@ -21,7 +22,7 @@ p {
     font-size: 1rem;
 }
 
-li{
+li {
     font-family: var(--font-primary);
     font-size: 0.9rem;
 }
@@ -53,7 +54,7 @@ form {
             padding: 15px 30px;
             font-size: 1.2rem;
             color: #fff;
-            background: linear-gradient(45deg, #ff6b6b, #ffde59);
+            background: var(--color-tertiary);
             border: none;
             border-radius: 50px;
             cursor: pointer;
@@ -62,8 +63,8 @@ form {
 
             &:hover {
                 border-radius: 10px;
-                background: linear-gradient(45deg, #007bff, #00c853);
-                transform: scale(1.1) rotate(3deg);
+                background: var(--color-tertiary-light);
+
                 box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
             }
         }
@@ -82,15 +83,13 @@ form {
     display: block;
     left: 0%;
     top: 1%;
+    padding-right: 50px;
     max-width: 100%;
     height: auto;
     z-index: 5;
     clip-path: polygon(0% 82%, 0% 18%, 100% 0%, 100% 100%);
 }
 
-.okiw {
-    color: red !important;
-}
 
 @media (width <=1400px) {
     .map {
@@ -103,6 +102,15 @@ form {
     .map {
         top: 10%;
     }
+
+    form {
+        top: 3%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
 }
 
 @media (width <=1000px) {
@@ -114,7 +122,7 @@ form {
 @media (width <=888px) {
     .map {
         top: 16%;
-        left: -10%;
+        left: 0;
     }
 }
 
@@ -122,6 +130,31 @@ form {
     .map {
         top: 15%;
         left: -15%;
+    }
+}
+
+
+@media (max-width: 770px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    form {
+        position: relative;
+        width: 90%;
+        margin: 0.5%;
+        left: 0;
+        top: 0;
+    }
+
+    .map {
+        width: 90%;
+        top: 0;
+        left: 0;
+        clip-path: none;
+        clip-path: polygon(0% 100%, 0% 40%, 100% 0%, 100% 100%);
     }
 }
 
@@ -135,14 +168,14 @@ form {
         justify-content: space-between;
 
         form {
-            position: unset;
+            position: relative;
             width: 99%;
             margin: 0.5%;
         }
 
         .map {
             top: 35%;
-            left: -65%;
+            left: 0;
             clip-path: polygon(0% 100%, 0% 40%, 100% 0%, 100% 100%);
         }
     }

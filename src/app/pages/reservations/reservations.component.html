@@ -2,16 +2,10 @@
     <app-header />
 </header>
 <div class="d-flex justify-content-center">
-    <div class="container m-3">
-        <div class="container m-4">
-            <h2>Reserva Sin Complicaciones</h2>
-            <p>¡Bienvenido! Aquí puedes realizar la reserva de tu mesa en pocos pasos. Selecciona la fecha, la hora y el
-                número
-                de
-                personas para garantizar tu lugar. Una vez confirmada tu reserva, recibirás un correo electrónico con
-                los
-                detalles.
-                Estamos aquí para hacer tu experiencia cómoda y especial. ¿Listo para reservar? ¡Te esperamos!</p>
+    <div class="container m-2">
+        <div class="container m-2 text-center">
+            <h2>Reserva tu experiencia.</h2>
+            <p>Disfruta de nuestro exclusivo menú diario, creado para cada momento del día. Reserva tu mesa en sala o terraza y vive una experiencia inolvidable.</p>
         </div>
 
         <div class=" container m-4">
@@ -19,8 +13,7 @@
 
                 <div class="form-group mb-3">
                     <label for="start" class="">Fecha</label>
-                    <input type="date" id="start" name="trip-start" [value]="today" [min]="today" max="2025-12-31"
-                        formControlName="date" class="form-control" />
+                    <input type="date" id="start" name="trip-start" [value]="today" [min]="today" max="2025-12-31" formControlName="date" class="form-control" />
                 </div>
 
                 <div class="form-group  mb-3">
@@ -48,72 +41,16 @@
                     </select>
                 </div>
 
-                <input type="submit" class="btn mt-4" value="Reservar" [disabled]="!form.valid"
-                    [class.active]="form.valid">
+                <input type="submit" class="btn mt-4" value="Reservar" [disabled]="!form.valid" [class.active]="form.valid">
 
             </form>
 
             <img src="./images/map-restaurante.png" class="map" alt="Mapa de la ubicacion del local">
         </div>
-        <div class="container m-4">
-            <h3>Conoce nuestro restaurante</h3>
-            <p>Sumérgete en un ambiente diseñado para tu confort y disfrute. Nuestros interiores combinan estilo y
-                calidez,
-                con
-                una
-                decoración cuidada al detalle que crea el equilibrio perfecto entre elegancia y comodidad. Ya sea que
-                busques un
-                rincón
-                acogedor o un espacio amplio para compartir, cada rincón está pensado para hacerte sentir como en casa
-                mientras
-                disfrutas de una experiencia única. ¡Ven y descúbrelo por ti mismo!</p>
-            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="./images/interior.jpg" class="d-block w-100" alt="First slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./images/fotoNewReview.jpg" class="d-block w-100" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="./images/tasty-smoke-cooked-food.jpg" class="d-block w-100" alt="Third slide">
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div>
-        <div class="container m-4">
-            <h3>¿Por qué reservar con nosotros?</h3>
-            <p>En nuestro restaurante, la satisfacción de nuestros clientes es nuestra prioridad. Por eso, nos
-                esforzamos
-                por
-                ofrecerte una experiencia única en cada visita. Al reservar con nosotros, disfrutarás de los siguientes
-                beneficios:</p>
-            <ul>
-                <li>Atención personalizada</li>
-                <li>Menú variado y de calidad</li>
-                <li>Ubicación céntrica y de fácil acceso</li>
-                <li>Instalaciones modernas y acogedoras</li>
-                <li>Precios competitivos</li>
-                <li>Reserva rápida y sencilla</li>
-            </ul>
-            <p><strong>¡No esperes más! Haz tu reserva ahora y déjanos sorprenderte con una experiencia gastronómica
-                    inolvidable.
-                    ¡Te
-                    esperamos!</strong></p>
-        </div>
+
     </div>
 </div>
 
 <footer>
-    <app-footer></app-footer>
+    <app-footer />
 </footer>
