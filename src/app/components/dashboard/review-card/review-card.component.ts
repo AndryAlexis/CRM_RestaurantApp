@@ -33,7 +33,6 @@ export class ReviewCardComponent {
   async ngOnInit() {
     const userName = await this.userService.getUserByIdAdmin(this.userid);
     this.userName = userName.data.name
-
   }
 
 

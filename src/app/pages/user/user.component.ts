@@ -6,7 +6,6 @@ import { ReviewCardComponent } from "../../components/dashboard/review-card/revi
 import { ReservationsCardComponent } from "../../components/dashboard/reservations-card/reservations-card.component";
 import { ReactiveFormsModule, Validators, FormControl, FormGroup } from '@angular/forms';
 import { ApiService } from '../../services/api.service';
-import { IUserResponse, IUserUpdate } from '../../interfaces/user.interfaces';
 import Swal from 'sweetalert2';
 import { ReviewsService } from '../../services/reviews.service';
 import { ReservationService } from '../../services/reservation.service';
