@@ -5,7 +5,7 @@
     background-size: cover;
     background-position: center;
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 1);
     pointer-events: none;
 }
 
@@ -15,7 +15,9 @@
         font-weight: 600;
         font-size: 40px;
         background-color: rgb(227, 203, 166, 0.2);
-        font-weight: bold;
+
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+        border: 2px solid rgba(0, 0, 0, 0.6);
     }
 
     p {
@@ -31,7 +33,7 @@
     font-weight: 600;
     font-size: 20px;
     border-radius: 15px;
-    background-color: rgb(227, 203, 166, 0.2);
+    background-color: rgba(7, 7, 7, 0.6);
     font-weight: bold;
 }
 
