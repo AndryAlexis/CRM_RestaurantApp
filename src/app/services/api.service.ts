@@ -8,7 +8,7 @@ import { firstValueFrom } from 'rxjs';
 })
 export class ApiService {
 
-  private rootUrl = 'http://localhost:3000/api';
+  private rootUrl = 'https://crm-restaurantapi-z9vj.onrender.com/api';
   private http = inject(HttpClient);
 
   /**

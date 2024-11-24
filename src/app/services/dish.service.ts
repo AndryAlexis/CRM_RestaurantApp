@@ -8,8 +8,8 @@ import { firstValueFrom } from 'rxjs';
 export class DishService {
   http = inject(HttpClient);
 
-  rootURL = 'http://localhost:3000/api';
-  getAllDishes() : Promise<any> { 
+  rootURL = 'https://crm-restaurantapi-z9vj.onrender.com/api';
+  getAllDishes(): Promise<any> {
     const token = localStorage.getItem('token') as string;
     const headers = { Authorization: token };
     const result = firstValueFrom(this.http.get<any>(`${this.rootURL}/admin/dish`, { headers }));

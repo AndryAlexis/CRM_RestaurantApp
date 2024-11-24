@@ -8,7 +8,7 @@ import { firstValueFrom } from 'rxjs';
 export class MenuService {
 
   private http = inject(HttpClient);
-  private rootUrl = 'http://localhost:3000/api/admin/menu';
+  private rootUrl = 'https://crm-restaurantapi-z9vj.onrender.com/api';
 
 
   async getAllMenus(order: string): Promise<any> {
@@ -37,8 +37,8 @@ export class MenuService {
 
 
   async getDailyMenu(date: string): Promise<any> {
-      const result = await firstValueFrom(this.http.get<any>(`http://localhost:3000/api/menu?date=${date}`));
-      return result;
+    const result = await firstValueFrom(this.http.get<any>(`http://localhost:3000/api/menu?date=${date}`));
+    return result;
   }
-  
+
 }

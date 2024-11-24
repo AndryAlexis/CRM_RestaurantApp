@@ -10,7 +10,7 @@ import { IReservationOptionalParameters } from '../interfaces/ireservation-optio
 export class ReservationService {
 
   private http = inject(HttpClient);
-  private rootUrl = 'http://localhost:3000/api';
+  private rootUrl = 'https://crm-restaurantapi-z9vj.onrender.com/api';
 
   createReservation(reservation: IReservation): Promise<any> {
     return firstValueFrom(
