@@ -32,7 +32,6 @@ export class ReservationsCardComponent {
   isUserAdmin() {
     const token = localStorage.getItem('token') as string;
     const decodedToken = jwtDecode(token) as { role: string }
-    console.log(decodedToken)
     const role = decodedToken.role
     return role === 'admin' ? true : false
   }

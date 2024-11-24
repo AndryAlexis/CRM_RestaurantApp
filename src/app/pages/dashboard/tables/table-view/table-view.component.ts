@@ -21,7 +21,6 @@ export class TableViewComponent {
 
   async loadTables() {
     this.tables = await this.tablesServices.getTables()
-    console.log(this.tables)
   }
 
   async reloadData() {

@@ -42,8 +42,6 @@ export class ViewUserDashboardComponent {
 
   async loadReservation() {
     this.reservations = await this.reservationService.getReservationByUserId(this.user?.id)
-    console.log(this.user)
-    console.log(this.reservations)
   }
 
   async loadData() {

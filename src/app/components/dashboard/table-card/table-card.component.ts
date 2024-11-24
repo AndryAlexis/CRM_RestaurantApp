@@ -27,7 +27,6 @@ export class TableCardComponent {
   async ngSubmit() {
     const id = this.table?.id
     const capacity = this.form.value.capacity
-    console.log(this.form.value)
 
     try {
       // Submit reservation and reset form

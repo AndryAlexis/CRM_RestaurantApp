@@ -33,14 +33,12 @@ export class EditUserComponent {
   async ngOnInit() {
     const params = await firstValueFrom(this.route.params);
     this.userId = params['id'];
-    console.log('User ID:', this.userId);
     await this.loadUserData();
   }
 
   async loadUserData(): Promise<void> {
     try {
       const userResponse: any = await this.apiService.getUserByIdAdmin(this.userId);
-      console.log('User Data:', userResponse);
       const userData = userResponse.data;
       this.userForm.patchValue({
         nombre: userData.name,
@@ -63,7 +61,6 @@ export class EditUserComponent {
       };
       try {
         const response = await this.apiService.updateUserAdmin(this.userId, userData); // Envía userData junto con userId
-        console.log('Usuario actualizado:', response);
         //Mensaje de éxito
         Swal.fire({
           icon: 'success',

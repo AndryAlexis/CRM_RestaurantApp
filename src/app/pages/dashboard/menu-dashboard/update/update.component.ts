@@ -29,7 +29,7 @@ export class UpdateMenuComponent {
       menuName: ['', Validators.required],
       date: ['', Validators.required],
       menuPrice: ['', [Validators.required, Validators.min(1)]],
-      dishes : this.fb.array([]),
+      dishes: this.fb.array([]),
     });
   }
 
@@ -42,9 +42,8 @@ export class UpdateMenuComponent {
 
     const menuId = this.route.snapshot.params['id'];
 
-    try {   
+    try {
       const menu = await this.menuService.getMenuById(menuId);
-      console.log(menu);
     } catch (error: any) {
       Swal.fire({
         title: 'Error al obtener el menú',
@@ -81,10 +80,10 @@ export class UpdateMenuComponent {
       // Handle error response
       const errorResponse = error.error as IUserResponse;
       const { status, title, message } = errorResponse;
-      
+
       console.error('Error actualizando menu:', {
         status,
-        title, 
+        title,
         message
       });
 

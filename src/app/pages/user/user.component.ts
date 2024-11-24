@@ -56,7 +56,6 @@ export class UserComponent {
         confirmButtonText: 'Aceptar'
       });
     } catch (error: any) {
-      console.log(error, 'error')
       Swal.fire({
         icon: 'error',
         title: error.error.message,

@@ -25,8 +25,6 @@ export class TableNewComponent {
   }
 
   async ngSubmit() {
-    console.log(this.form.valid)
-    console.log(this.form, this.form.value)
     const table = this.form.value
     try {
       // Submit reservation and reset form
