@@ -3,16 +3,23 @@
 
 <!-- Menu Cards Grid -->
 <section class="p-5 my-3 container">
-        <h3 >
-            {{ menu.name }} | {{ menu.date | onlyDate }} | {{ menu.price }}€
-        </h3>
-        <div class="row g-5 mt-1">
-            @for (dish of dishes; track dish.id) {
-            <article class="col-12 col-md-6 col-lg-4">
-                <app-menu-card2 [dish]="dish" />
-            </article>
-            }
-        </div>
+    <h3 class="mb-3">{{ menu.name }}</h3>
+    <span class="me-3">
+        <strong>Fecha</strong>: 
+        {{ menu.date | onlyDate }}
+    </span>
+    <span>
+        <strong>Precio</strong>: 
+        {{ menu.price }}€
+    </span>
+
+    <div class="row g-5 mt-1">
+        @for (dish of dishes; track dish.id) {
+        <article class="col-12 col-md-6 col-lg-4">
+            <app-menu-card2 [dish]="dish" />
+        </article>
+        }
+    </div>
 </section>
 
 <!-- Commented out sections for future use -->

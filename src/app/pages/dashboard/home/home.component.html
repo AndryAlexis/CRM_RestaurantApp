@@ -53,7 +53,7 @@
                 }
                 <div class="row">
                     @for(reservation of reservations; track reservation.id) {
-                    <div class="col-12 mb-2">
+                    <div class="col-12 col-lg-6 col-md-12 col-ms-12 mb-2"> <!-- Cambiado a col-md-6 para dos columnas en pantallas grandes y col-12 para pantallas medianas y pequeñas -->
                         <app-reservations-card [reservation]="reservation"></app-reservations-card>
                     </div>
                     }

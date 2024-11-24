@@ -1,7 +1,7 @@
 <app-header-dashboard />
 
-<div class="container gestion pt-3">
-    <h3 class="my-3">Gestión de Reservas</h3>
+<div class="container gestion pt-3 my-4 d-ms-4">
+    <h3 class=" my-3">Gestión de Reservas</h3>
     <p>Aquí encontrarás un listado de las reservas pendientes organizadas por fecha. Revisa los detalles,
         actualiza
         el
@@ -9,7 +9,7 @@
         realiza los ajustes necesarios para garantizar una experiencia impecable. ¡Gracias por tu dedicación!
     </p>
     @if (reservations.length === 0) {
-        <p class="mt-5">Cargando ...</p>
+    <p class="mt-5">Cargando ...</p>
     }
     <div class="row reservas">
         @for(reservation of reservations; track reservation.id) {

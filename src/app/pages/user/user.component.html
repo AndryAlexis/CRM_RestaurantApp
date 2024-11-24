@@ -59,20 +59,23 @@
         <div class="right-panel">
             <div>
                 <h2>Reservas</h2>
+                @if (reservations.length === 0) {
+                <p class="mt-4">No existe ninguna reserva.</p>
+                }
                 @for(reservation of reservations; track reservation.id){
                 <app-reservations-card [reservation]="reservation"></app-reservations-card>
                 }
             </div>
         </div>
     </div>
-    <div class="bottom-section">
+    <div class="bottom-section mb-5">
         <h2>Reseñas</h2>
-        <div class="button-container mb-4">
+        <div class="button-container mb-4 ">
             <button class="btn" [routerLink]="['/create-review']">Escribir una nueva reseña</button>
         </div>
         <div>
             @for(review of reviews; track review){
-            <app-review-card></app-review-card>
+            <app-review-card [rating]="review.rating" [comment]="review.comment"></app-review-card>
             }
         </div>
     </div>

@@ -6,20 +6,21 @@
             <!-- Usuario -->
             <div class="card" style="width: 100%;">
                 <div class="card-body p-4">
-                    <h5 class="card-title text-center border-bottom w-50 m-auto">{{ user?.name }} {{ user?.surname }}</h5>
-                    <p class="card-text mt-3"><strong>Email:</strong> {{ user?.email }}</p>
-                    <p class="card-text"><strong>Phone:</strong> {{ user?.phone }}</p>
-                    <p class="card-text"><strong>Role:</strong> {{ user?.role }}</p>
+                    <h5 class="card-title text-center border-bottom w-50 m-auto">Informacion del usuario
+                    </h5>
+                    <p class="card-text mt-3"><strong>Nombre</strong>: {{ user?.name }} {{ user?.surname }}</p>
+                    <p class="card-text mt-3"><strong>Email</strong>: {{ user?.email }}</p>
+                    <p class="card-text"><strong>Phone</strong>: {{ user?.phone }}</p>
+                    <p class="card-text"><strong>Role</strong>: {{ user?.role }}</p>
                 </div>
             </div>
             <!-- Reservas usuario -->
             <div class="card" style="width: 100%;">
                 <div class="card-body p-4">
                     <h5 class="card-title text-center mb-4 border-bottom w-50 m-auto">Historial de reservas</h5>
-                    <h6 class="card-subtitle mb-3">Date: 16/11/2024</h6>
-                    <p class="card-text">Time: Comida</p>
-                    <p class="card-text">Comensales: 2</p>
-                    <p class="card-text">Estado: Confirmada</p>
+                    @for (reservation of reservations; track reservation.id) {
+                    <app-reservations-card [reservation]="reservation"></app-reservations-card>
+                    }
                 </div>
             </div>
         </div>
