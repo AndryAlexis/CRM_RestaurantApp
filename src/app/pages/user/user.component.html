@@ -60,7 +60,7 @@
             <div>
                 <h2>Reservas</h2>
                 @if (reservations.length === 0) {
-                <p class="mt-4">No ha realizado ninguna reserva todavía</p>
+                <p class="mt-4">No existe ninguna reserva.</p>
                 }
                 @for(reservation of reservations; track reservation.id){
                 <app-reservations-card [reservation]="reservation"></app-reservations-card>
