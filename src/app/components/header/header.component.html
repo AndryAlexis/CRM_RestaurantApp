@@ -3,7 +3,7 @@
         <figure>
             <img src="./Logo.svg" lt="Logo">
         </figure>
-        <h1>Frontend Feast</h1>
+        <h1 class="title">Frontend Feast</h1>
     </a>
     <button class="navbar-toggler" type="button" (click)="toggleNavbar()" [attr.aria-expanded]="!isCollapsed"
         aria-label="Toggle navigation">
@@ -34,9 +34,11 @@
                 <button class="btn" [routerLink]="['/dashboard']" id="btn">Dashboard</button>
             </li>
             }
+            @if (!userRole) {
             <li class="nav-item">
                 <button class="btn" [routerLink]="['/login']" id="btn">Entrar</button>
             </li>
+            }
         </ul>
     </div>
 </nav>
