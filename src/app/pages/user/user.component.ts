@@ -67,8 +67,24 @@ export class UserComponent {
 
 
   ngOnInit() {
-    this.loadReviews()
-    this.loadReservations()
+    this.loadReviews();
+    this.loadReservations();
+    this.loadUserData();
+  }
+
+  async loadUserData() {
+    try {
+      const userData = await this.apiService.getUser();
+      const { name, surname, phone, email } = userData.data;
+      this.userForm.patchValue({ name, surname, phone, email });
+    } catch (error) {
+      console.error('Error al cargar los datos del usuario:', error);
+      Swal.fire({
+        icon: 'error',
+        title: 'No se pudieron cargar los datos del usuario.',
+        confirmButtonText: 'Aceptar'
+      });
+    }
   }
 
   async loadReviews() {
