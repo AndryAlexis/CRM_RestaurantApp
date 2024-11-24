@@ -51,7 +51,7 @@
     background-color: white;
 }
 
-@media (max-width: 62.5rem) {   
+@media (width <= 991px) {
     .navbar-collapse {
         text-align: center;
     }
@@ -67,5 +67,11 @@
 
         margin: 0 auto;
         border-bottom: 1px solid var(--color-tertiary);
+    }
+}
+
+@media (width <= 405px) {
+    .title {
+        display: none;
     }
 }
