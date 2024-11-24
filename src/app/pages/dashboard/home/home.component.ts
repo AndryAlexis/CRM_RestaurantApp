@@ -22,7 +22,7 @@ export class HomeComponent {
 
   private reviewService = inject(ReviewsService);
   private apiService = inject(ApiService);
-  reservationService = inject(ReservationService)
+  private reservationService = inject(ReservationService)
   reservationsToday: ICustomerReservationResponse[] = [];
   reservations: ICustomerReservationResponse[] = [];
   currentDate = new Date()

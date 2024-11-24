@@ -16,13 +16,18 @@ import Swal from 'sweetalert2';
 })
 export class ReservationsComponent {
 
+  // Formulario de reservas con validaciones
   form: FormGroup;
+  // Inyección del servicio de reservas
   reservationService = inject(ReservationService)
+  // Fecha actual para el formulario
   currentDate = new Date()
+  // Fecha de hoy formateada para el formulario
   today: string = this.currentDate.toLocaleDateString('en-CA')
 
 
   constructor() {
+    // Inicialización del formulario de reservas
     this.form = new FormGroup({
       date: new FormControl(this.today, [Validators.required]),
       time: new FormControl('', [Validators.required]),
@@ -32,12 +37,13 @@ export class ReservationsComponent {
   }
 
 
+  // Método para enviar el formulario de reservas
   ngSubmit() {
-    // Get form values and create reservation
+    // Obtener los valores del formulario y crear una reserva
     const reservation: IReservation = this.form.value;
     reservation.status = 'pending';
 
-    // Get and validate token
+    // Obtener y validar el token de autenticación
     const token = localStorage.getItem('token');
     if (!token) {
       Swal.fire({
@@ -48,13 +54,13 @@ export class ReservationsComponent {
       return;
     }
 
-    // Extract user ID from token and add to reservation
+    // Extraer el ID del usuario del token y agregarlo a la reserva
     const decodedToken = jwtDecode(token) as { id: number };
     reservation.user_id = decodedToken.id;
 
 
     try {
-      // Submit reservation and reset form
+      // Enviar la reserva y resetear el formulario
       this.reservationService.createReservation(reservation);
       this.form.reset({
         date: this.today,

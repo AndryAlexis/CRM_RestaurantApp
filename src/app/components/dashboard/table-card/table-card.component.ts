@@ -1,6 +1,5 @@
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterLink } from '@angular/router';
 import Swal from 'sweetalert2';
 import { TablesService } from '../../../services/tables.service';
 
@@ -12,18 +11,22 @@ import { TablesService } from '../../../services/tables.service';
   styleUrl: './table-card.component.css'
 })
 export class TableCardComponent {
+  // Propiedad de entrada que recibe la información de la mesa.
   @Input() table: any;
+  // Evento de salida que se emite al borrar una mesa.
   @Output() deleteEvent: EventEmitter<string> = new EventEmitter();
-    
+
   form: FormGroup;
   private tableService = inject(TablesService)
 
+  // Inicializar el formulario con la capacidad de la mesa y validaciones.
   constructor() {
     this.form = new FormGroup({
       capacity: new FormControl(this.table?.capacity, [Validators.required, Validators.min(1)]),
     }, [])
   }
 
+  // Método que se ejecuta al enviar el formulario para actualizar la capacidad de la mesa.
   async ngSubmit() {
     const id = this.table?.id
     const capacity = this.form.value.capacity
@@ -46,6 +49,7 @@ export class TableCardComponent {
     }
   }
 
+  // Método que se ejecuta al borrar la mesa.
   async borrar() {
     const id = this.table?.id
 
@@ -59,7 +63,7 @@ export class TableCardComponent {
       })
 
       this.deleteEvent.emit("true")
-      
+
     } catch (error: any) {
 
       Swal.fire({

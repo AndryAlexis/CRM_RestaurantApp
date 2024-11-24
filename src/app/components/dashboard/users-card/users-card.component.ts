@@ -13,13 +13,18 @@ import { IUserResponse } from '../../../interfaces/user.interfaces';
 })
 export class UsersCardComponent {
 
+  // Propiedad de entrada que recibe la información del usuario.
   @Input() user: any = {};
 
+  // Evento de salida que se emite al borrar un usuario.
   @Output() deleteUser = new EventEmitter<number>();
+
+  // Inyección del servicio de API.
   private userService = inject(ApiService);
 
+  // Método asincrónico para eliminar un usuario.
   async onDelete() {
-    // SweetAlert para confirmar la eliminación
+    // Confirmar la eliminación
     const confirmDelete = await Swal.fire({
       title: '¿Estás seguro de querer eliminar este usuario?',
       icon: 'warning',

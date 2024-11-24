@@ -15,16 +15,21 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./update.component.css']
 })
 export class UpdateMenuComponent {
+  // Formulario del menú para la actualización
   menuForm: FormGroup;
 
+  // Inyección de los servicios de menú y platos
   private menuService = inject(MenuService);
   private dishService = inject(DishService);
+  // Inyección de la ruta activada para obtener el parámetro 'id' del menú
   private route = inject(ActivatedRoute);
+  // Atributos para almacenar los platos según su tipo
   desserts?: any;
   mainDishes?: any;
   starters?: any;
 
   constructor(private fb: FormBuilder) {
+    // Inicialización del formulario del menú
     this.menuForm = this.fb.group({
       menuName: ['', Validators.required],
       date: ['', Validators.required],
@@ -33,6 +38,7 @@ export class UpdateMenuComponent {
     });
   }
 
+  // Método de inicialización del componente, carga los platos y el menú
   async ngOnInit() {
     const result = await this.dishService.getAllDishes();
     const dishes = result.data;
@@ -53,6 +59,7 @@ export class UpdateMenuComponent {
     }
   }
 
+  // Método para enviar el formulario de actualización del menú
   async onSubmit() {
     // Check if form is valid before proceeding
     if (!this.menuForm.valid) {
@@ -96,11 +103,13 @@ export class UpdateMenuComponent {
     this.menuForm.reset();
   }
 
+  // Método para verificar la validación de un control específico
   checkValidation(controlName: string): boolean {
     const control = this.menuForm.get(controlName);
     return control ? control.invalid && control.touched : false;
   }
 
+  // Método para manejar el cambio de estado de los checkboxes de los platos
   onCheckboxChange(event: any, dish: any) {
     const dishesArray = this.menuForm.get('dishes') as FormArray;
     if (event.target.checked) {

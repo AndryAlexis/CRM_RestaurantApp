@@ -17,15 +17,20 @@ import { IUserResponse } from '../../interfaces/user.interfaces';
 })
 export class HomeComponent {
 
+  // Inyección del servicio de reseñas
   private reviewsService = inject(ReviewsService);
 
+  // Arreglo de reseñas
   reviews: any[] = [];
 
+  // Método asincrónico para inicializar el componente
   async ngOnInit(): Promise<void> {
     try {
+      // Obtener algunas reseñas
       const response = await this.reviewsService.getSomeReviews(3, 'desc');
       this.reviews = response.data.reviews;
     } catch (error: any) {
+      // Manejo de errores
       console.error(error);
       const errorResponse = error as IUserResponse;
       const { status, title, message } = errorResponse;

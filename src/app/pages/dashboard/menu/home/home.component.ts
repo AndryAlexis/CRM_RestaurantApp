@@ -14,14 +14,19 @@ import { IUserResponse } from '../../../../interfaces/user.interfaces';
 })
 export class HomeComponent {
 
+  // Inyección del servicio de menú
   private menuService = inject(MenuService);
+  // Array para almacenar los menús
   menus: any[] = [];
 
 
+  // Método de inicialización del componente
   async ngOnInit() {
     try {
+      // Obtener todos los menús en orden ascendente
       const result = await this.menuService.getAllMenus('asc');
       this.menus = result.data;
+      // Almacenar la fecha del menú
       const date = result.data.date;
     } catch (error: any) {
       const errorResponse = error.error as IUserResponse;

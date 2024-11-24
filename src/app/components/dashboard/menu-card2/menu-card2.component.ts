@@ -9,6 +9,7 @@ import { Component, Input } from '@angular/core';
 })
 export class MenuCard2Component {
 
+  // Atributo para recibir el plato desde el componente padre
   @Input() dish: any = {};
 
 }

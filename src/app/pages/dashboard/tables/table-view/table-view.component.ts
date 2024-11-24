@@ -12,17 +12,22 @@ import { TablesService } from '../../../../services/tables.service';
   styleUrl: './table-view.component.css'
 })
 export class TableViewComponent {
+  // Atributo para almacenar las mesas
   tables: any[] = []
+  // Inyección del servicio de mesas
   private tablesServices = inject(TablesService)
 
+  // Método de inicialización del componente, carga las mesas
   constructor() {
     this.loadTables()
   }
 
+  // Método asincrónico para cargar las mesas
   async loadTables() {
     this.tables = await this.tablesServices.getTables()
   }
 
+  // Método asincrónico para recargar las mesas
   async reloadData() {
     await this.loadTables()
   }

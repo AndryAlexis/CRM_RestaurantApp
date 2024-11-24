@@ -16,11 +16,14 @@ import Swal from 'sweetalert2';
 })
 export class RegisterComponent {
 
+  // Inyección del servicio de API y del router
   private apiService = inject(ApiService);
   private router = inject(Router);
+  // Formulario de registro con validaciones
   registerForm: FormGroup;
 
   constructor() {
+    // Inicialización del formulario de registro con validaciones
     this.registerForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email, Validators.pattern('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$')]),
       password: new FormControl('', [Validators.required, Validators.minLength(8)]),
@@ -31,6 +34,7 @@ export class RegisterComponent {
     },);
   }
 
+  // Método para enviar el formulario de registro
   onSubmit() {
     if (this.registerForm.valid) {
       if (!this.passwordsMatch()) {
@@ -46,6 +50,7 @@ export class RegisterComponent {
   }
 
 
+  // Método asincrónico para registrar un usuario
   async registerUser() {
     try {
       const email = this.registerForm.get('email')?.value;
@@ -68,6 +73,7 @@ export class RegisterComponent {
     }
   }
 
+  // Método para obtener el mensaje de error del campo de contraseña
   getPasswordErrorMessage(): string {
     const passwordControl = this.registerForm.get('password');
     if (passwordControl?.errors?.['required']) {
@@ -76,10 +82,12 @@ export class RegisterComponent {
     return '';
   }
 
+  // Método para comprobar la validación de un campo
   checkValidation(field: string) {
     return this.registerForm.get(field)?.invalid && this.registerForm.get(field)?.touched;
   }
 
+  // Método para verificar si las contraseñas coinciden
   passwordsMatch(): boolean {
     const password = this.registerForm.get('password')?.value;
     const confirmPassword = this.registerForm.get('confirmPassword')?.value;

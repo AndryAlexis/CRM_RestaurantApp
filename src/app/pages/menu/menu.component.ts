@@ -1,11 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { HeaderComponent } from "../../components/header/header.component";
 import { FooterComponent } from "../../components/footer/footer.component";
-import { ReviewsService } from '../../services/reviews.service';
-import { Comment } from '@angular/compiler';
-import { IUserResponse } from '../../interfaces/user.interfaces';
 import { MenuService } from '../../services/menu.service';
-
 
 
 @Component({
@@ -17,14 +13,18 @@ import { MenuService } from '../../services/menu.service';
 })
 export class MenuComponent {
 
+  // Inyección del servicio de menú
   service = inject(MenuService);
+
+  // Atributos para almacenar los datos del menú
   data?: any;
   dishes?: any;
   desserts?: any[];
   mainDishes?: any[];
   starters?: any[];
 
-  async ngOnInit() { 
+  // Método de inicialización asincrónico
+  async ngOnInit() {
     const date = new Date().toISOString().split('T')[0];
     const result = await this.service.getDailyMenu(date);
     this.data = result;
@@ -36,8 +36,9 @@ export class MenuComponent {
 
   }
 
-  getDishByType( array: any[], type: string ) {
-  return array.filter((dish: any) => {
+  // Método para filtrar platos por tipo
+  getDishByType(array: any[], type: string) {
+    return array.filter((dish: any) => {
       return dish.type === type
     });
   }

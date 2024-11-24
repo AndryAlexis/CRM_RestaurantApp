@@ -13,17 +13,21 @@ import { ICustomerReservationResponse } from '../../../interfaces/icustomer-rese
 })
 export class ProximasReservasComponent {
 
+  // Inyección del servicio de reservaciones para obtener las reservaciones
   reservationService = inject(ReservationService)
+  // Atributo para almacenar las reservaciones del cliente
   reservations: ICustomerReservationResponse[] = []
 
+  // Método de inicialización del componente, carga los datos de las reservaciones
   ngOnInit() {
     this.loadData()
   }
 
+  // Método asincrónico para cargar los datos de las reservaciones
   async loadData() {
     this.reservations = await this.reservationService.getReservations({})
 
-    // Sorting by date
+    // Ordenamiento de las reservaciones por fecha
     this.reservations.sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
   }
 }

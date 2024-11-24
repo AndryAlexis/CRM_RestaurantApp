@@ -20,14 +20,19 @@ import { jwtDecode } from 'jwt-decode';
 })
 export class UserComponent {
 
+  // Array para almacenar las reseñas del usuario
   reviews: any[] = [];
+  // Array para almacenar las reservas del usuario
   reservations: any[] = [];
 
+  // Inyección del servicio de API
   private apiService = inject(ApiService);
+  // Inyección del servicio de reseñas
   private service = inject(ReviewsService);
+  // Inyección del servicio de reservas
   private reservationService = inject(ReservationService);
 
-
+  // Formulario de usuario con validaciones
   userForm: FormGroup = new FormGroup({
     name: new FormControl('', [Validators.required]),
     surname: new FormControl('', [Validators.required]),
@@ -36,7 +41,9 @@ export class UserComponent {
     password: new FormControl('', [Validators.required]),
   });
 
+  // Método para enviar el formulario de usuario
   async onSubmit() {
+    // Llamada a la función para actualizar el usuario
     const dataUser = [];
     const formValues = this.userForm.value;
     for (const key in formValues) {
@@ -64,13 +71,16 @@ export class UserComponent {
     }
   }
 
-
+  // Método de inicialización del componente
   ngOnInit() {
+    // Carga de reseñas y reservas del usuario
     this.loadReviews();
     this.loadReservations();
+    // Carga de los datos del usuario
     this.loadUserData();
   }
 
+  // Método para cargar los datos del usuario
   async loadUserData() {
     try {
       const userData = await this.apiService.getUser();
@@ -86,16 +96,19 @@ export class UserComponent {
     }
   }
 
+  // Método para cargar las reseñas del usuario
   async loadReviews() {
     const result = await this.service.getReviews()
     this.reviews = result.data;
   }
 
+  // Método para cargar las reservas del usuario
   async loadReservations() {
     const user_id = this.getUserId()
     this.reservations = await this.reservationService.getReservationByUserId(user_id);
   }
 
+  // Método para obtener el ID del usuario a partir del token
   getUserId() {
     const token = localStorage.getItem('token') as string;
     const decodedToken = jwtDecode(token) as { id: number };

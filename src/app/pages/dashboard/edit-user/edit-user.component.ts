@@ -15,12 +15,17 @@ import Swal from 'sweetalert2';
   styleUrl: './edit-user.component.css'
 })
 export class EditUserComponent {
+  // Formulario de usuario con validaciones
   userForm: FormGroup;
+  // Inyección del servicio de API
   private apiService = inject(ApiService);
+  // Inyección de la ruta activada
   private route = inject(ActivatedRoute);
+  // Identificador del usuario a editar
   userId: string = '';
 
   constructor(private fb: FormBuilder) {
+    // Inicialización del formulario de usuario
     this.userForm = this.fb.group({
       nombre: ['', Validators.required],
       apellido: ['', Validators.required],
@@ -30,12 +35,14 @@ export class EditUserComponent {
   }
 
 
+  // Método de inicialización del componente, carga los datos del usuario
   async ngOnInit() {
     const params = await firstValueFrom(this.route.params);
     this.userId = params['id'];
     await this.loadUserData();
   }
 
+  // Carga los datos del usuario por su identificador
   async loadUserData(): Promise<void> {
     try {
       const userResponse: any = await this.apiService.getUserByIdAdmin(this.userId);
@@ -51,6 +58,7 @@ export class EditUserComponent {
     }
   }
 
+  // Envía el formulario de edición de usuario
   async onSubmit(): Promise<void> {
     if (this.userForm.valid) {
       const userData: IUserUpdate = {
@@ -60,7 +68,7 @@ export class EditUserComponent {
         role: this.userForm.value.role
       };
       try {
-        const response = await this.apiService.updateUserAdmin(this.userId, userData); // Envía userData junto con userId
+        const response = await this.apiService.updateUserAdmin(this.userId, userData);
         //Mensaje de éxito
         Swal.fire({
           icon: 'success',

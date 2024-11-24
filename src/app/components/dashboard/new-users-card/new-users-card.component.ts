@@ -9,7 +9,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './new-users-card.component.css'
 })
 export class NewUsersCardComponent {
-
+  // Recibir array de usuarios
   @Input() user: any = {};
 
 }

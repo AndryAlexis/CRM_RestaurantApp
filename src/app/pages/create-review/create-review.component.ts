@@ -16,33 +16,39 @@ import { Router } from '@angular/router';
 export class CreateReviewComponent {
 
   reviewForm: FormGroup;
+
+  // Inyección del servicio de reseñas y router para la navegación
   private reviewsService = inject(ReviewsService);
   private router = inject(Router);
 
   constructor() {
+    // Inicialización del formulario de reseña con validaciones.
     this.reviewForm = new FormGroup({
       rating: new FormControl(5, [Validators.required]),
       comment: new FormControl('', [Validators.required]),
     });
   }
 
+  // Método para enviar el formulario de reseña.
   onSubmit() {
     if (this.reviewForm.valid) {
       this.createReview();
     }
   }
 
-
-  // TODO: Avisar al usuario si la reseña no se ha creado correctamente con sweetalert2
+  // Método para crear una reseña.
   async createReview() {
     try {
       if (this.reviewForm.valid) {
+        // Actualización del formulario con los valores actuales.
         this.reviewForm.patchValue({
           rating: this.reviewForm.get('rating')?.value,
           comment: this.reviewForm.get('comment')?.value
         });
+        // Obtención de los valores del formulario.
         const rating = this.reviewForm.get('rating')?.value;
         const comment = this.reviewForm.get('comment')?.value;
+        // Creación de la reseña.
         const reviews = await this.reviewsService.createReview({
           comment: comment,
           rating: rating
@@ -54,16 +60,20 @@ export class CreateReviewComponent {
             this.router.navigate(['/user']);
           }
         });
+
         this.reviewForm.reset();
       }
     } catch (error: any) {
+      // Manejo de errores.
       const errorResponse = error.error as IUserResponse;
       const { status, title, message } = errorResponse;
       console.error('Error:', 'Status:', status, 'Title:', title, 'Message:', message);
 
+      // Traducción del mensaje de error específico.
       if (error.error.message === 'Need a completed reservation before making a review')
         error.error.message = 'Se necesita al menos una reserva completada para hacer reviews'
 
+      // Mensaje de error con SweetAlert2.
       Swal.fire({
         title: "Error",
         text: error.error.message,
@@ -71,32 +81,5 @@ export class CreateReviewComponent {
       });
     }
   }
-
-  // He comentado esto porque no entiendo por qué en la página de crear nueva review están las funciones de obtener y borrar?????
-
-  // async getReviews() {
-  //   try {
-  //     const reviews = await this.reviewsService.getReviews();
-  //     console.log(reviews);
-  //   }
-  //   catch (error: any) {
-  //     const errorResponse = error.error as IUserResponse;
-  //     const { status, title, message } = errorResponse;
-  //     console.error('Error:', 'Status:', status, 'Title:', title, 'Message:', message);
-  //   }
-  // }
-
-  // async deleteReview(id: string) {
-  //   try {
-  //     const reviews = await this.reviewsService.deleteReview(id);
-  //     console.log(reviews);
-  //   }
-  //   catch (error: any) {
-  //     const errorResponse = error.error as IUserResponse;
-  //     const { status, title, message } = errorResponse;
-  //     console.error('Error:', 'Status:', status, 'Title:', title, 'Message:', message);
-  //   }
-  // }
-
 
 }

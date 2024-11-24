@@ -13,13 +13,17 @@ import { IUserResponse } from '../../../interfaces/user.interfaces';
 })
 export class UsuariosRegistradosComponent {
 
+  // Inyección del servicio de usuarios para interactuar con la API
   private usersService = inject(ApiService);
+  // Atributo para almacenar los usuarios cargados
   users: any[] = [];
 
+  // Método de inicialización del componente, carga los usuarios al iniciar
   async ngOnInit(): Promise<any> {
-    await this.loadUsers(); // Cargar usuarios al iniciar
+    await this.loadUsers();
   }
 
+  // Método asincrónico para cargar los usuarios
   async loadUsers() {
     try {
       const users = await this.usersService.getAllUsersAdmin();
@@ -31,10 +35,12 @@ export class UsuariosRegistradosComponent {
     }
   }
 
+  // Método asincrónico para recargar los usuarios después de eliminar uno
   async onDeleteUser() {
     await this.loadUsers();
   }
 
+  // Método para desplazarse al principio de la página
   scrollToTop() {
     window.scrollTo({
       top: 0,

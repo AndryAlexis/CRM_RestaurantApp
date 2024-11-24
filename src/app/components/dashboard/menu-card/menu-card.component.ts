@@ -11,6 +11,7 @@ import { RouterLink } from '@angular/router';
 })
 export class MenuCardComponent {
 
+  // Recibir el menú desde el componente padre
   @Input() menu: any = {};
 
 }

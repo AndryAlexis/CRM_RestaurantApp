@@ -14,11 +14,16 @@ import { OnlyDatePipe } from '../../../../pipes/only-date.pipe';
 })
 export class ViewMenuComponent {
 
+  // Inyección del servicio de menú para obtener los datos del menú
   private menuService = inject(MenuService);
+  // Inyección de la ruta activada para obtener el parámetro 'id' del menú
   private route = inject(ActivatedRoute);
+  // Atributo para almacenar el menú seleccionado
   menu: any = {};
+  // Atributo para almacenar los platos del menú
   dishes: any[] = [];
 
+  // Método de inicialización del componente, carga los datos del menú y sus platos
   async ngOnInit() {
     const result = await this.menuService.getMenuById(this.route.snapshot.params['id']);
     this.menu = result.data[0];

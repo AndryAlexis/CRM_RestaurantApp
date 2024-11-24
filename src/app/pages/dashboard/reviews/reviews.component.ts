@@ -14,25 +14,28 @@ import { ApiService } from '../../../services/api.service'
 })
 export class ReviewsComponent {
 
+  // Inyección del servicio de reviews para obtener las reseñas y servicio de usuarios
   private service = inject(ReviewsService);
   private userService = inject(ApiService)
+  // Atributo para almacenar las reseñas
   reviews: IReviews[] = [];
+  // Atributo para almacenar los usuarios
   users: any[] = [];
-  
 
 
 
-
+  // Método de inicialización del componente, carga las reseñas
   async ngOnInit() {
     await this.loadReviews();
   }
 
+  // Método asincrónico para cargar las reseñas
   async loadReviews() {
     try {
       const response = await this.service.getReviewsAll();
       if (response) {
         this.reviews = response.data.reviews;
-       
+
       }
     } catch (error: any) {
       const errorResponse = error.error as any;
@@ -41,8 +44,7 @@ export class ReviewsComponent {
     }
   }
 
-
-
+  // Método para desplazarse al principio de la página
   scrollToTop() {
     window.scrollTo({
       top: 0,
