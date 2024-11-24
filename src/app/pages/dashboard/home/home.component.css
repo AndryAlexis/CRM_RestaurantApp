@@ -12,6 +12,13 @@ h2 {
     border: 1px solid #00000010;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+
 .btn:hover {
     background-color: var(--color-tertiary);
     color: white;

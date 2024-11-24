@@ -1,25 +1,24 @@
 <ul class="list-unstyled">
-    <div class="user-info">
-        <li class=" fs-5">{{reservation.name + " " + reservation.surname}}</li>
-        <li class=""><strong>{{reservation.date | date: 'dd/MM/yyyy'}}</strong></li>
-        <li class=" "><strong>{{reservation.time | traductor}}</strong></li>
-    </div>
-    <div class="reservation-info">
-        <div>
-            <li class=" ">Mesa{{reservation.tables | tables}}</li>
-            <li class=" ">Comensales {{reservation.guests}}</li>
-            <li>Estado: {{reservation.status | traductor}}</li>
+    <div class="info-container">
+        <div class="user-info">
+            <li class=" fs-5">{{reservation.name + " " + reservation.surname}}</li>
+            <li><strong>{{reservation.date | date: 'dd/MM/yyyy'}}</strong></li>
+            <li><strong>{{reservation.time | traductor}}</strong></li>
+        </div>
+        <div class="reservation-info">
+            <div>
+                <li class=" ">Mesa{{reservation.tables | tables}}</li>
+                <li class=" ">Comensales {{reservation.guests}}</li>
+                <li>Estado: {{reservation.status | traductor}}</li>
+            </div>
         </div>
         <div class="buttons">
-            <button (click)="changeStatus($event)" class="btn cancelar" value="cancelled"
-                [disabled]="reservation.status === 'cancelled'">Cancelar
+            <button (click)="changeStatus($event)" class="btn cancelar" value="cancelled" [disabled]="reservation.status === 'cancelled'">Cancelar
             </button>
-            <button (click)="changeStatus($event)" class="btn confirmar" value="confirmed"
-                [disabled]="reservation.status === 'confirmed'">Confirmar
+            <button (click)="changeStatus($event)" class="btn confirmar" value="confirmed" [disabled]="reservation.status === 'confirmed'">Confirmar
             </button>
             @if( isUserAdmin() ) {
-            <button (click)="changeStatus($event)" class="btn completar" value="completed"
-                [disabled]="reservation.status === 'completed'">Completar
+            <button (click)="changeStatus($event)" class="btn completar" value="completed" [disabled]="reservation.status === 'completed'">Completar
             </button>
             }
         </div>
