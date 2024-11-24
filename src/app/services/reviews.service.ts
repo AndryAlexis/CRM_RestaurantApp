@@ -9,7 +9,8 @@ import { IReviews } from '../interfaces/ireviews.interface';
 export class ReviewsService {
 
   private http = inject(HttpClient);
-  private rootUrl = 'http://localhost:3000/api';
+  // private rootUrl = 'http://localhost:3000/api';
+  private rootUrl = 'https://crm-restaurantapi-z9vj.onrender.com/api';
 
   // Solo lo puede hacer el usuario para si mismo
   getReviews(): Promise<any> {
