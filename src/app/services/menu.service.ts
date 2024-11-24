@@ -8,7 +8,7 @@ import { firstValueFrom } from 'rxjs';
 export class MenuService {
 
   private http = inject(HttpClient);
-  private rootUrl = 'https://crm-restaurantapi-z9vj.onrender.com/api';
+  private rootUrl = 'https://crm-restaurantapi-z9vj.onrender.com/api/admin/menu';
 
 
   async getAllMenus(order: string): Promise<any> {
