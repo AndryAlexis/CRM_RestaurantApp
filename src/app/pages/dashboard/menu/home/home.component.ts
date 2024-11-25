@@ -4,6 +4,7 @@ import { HeaderDashboardComponent } from '../../../../components/dashboard/heade
 import { MenuCardComponent } from '../../../../components/dashboard/menu-card/menu-card.component';
 import { MenuService } from '../../../../services/menu.service';
 import { IUserResponse } from '../../../../interfaces/user.interfaces';
+import swal from 'sweetalert';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,6 @@ export class HomeComponent {
   // Array para almacenar los menús
   menus: any[] = [];
 
-
   // Método de inicialización del componente
   async ngOnInit() {
     try {
@@ -33,6 +33,12 @@ export class HomeComponent {
       const { status, title, message } = errorResponse;
       console.error('Error:', 'Status:', status, 'Title:', title, 'Message:', message);
     }
-
   }
+
+  // Método para recargar los datos
+  reloadData() {
+    this.ngOnInit();
+  }
+
+
 }

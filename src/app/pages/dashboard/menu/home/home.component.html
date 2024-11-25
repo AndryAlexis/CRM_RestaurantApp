@@ -21,12 +21,12 @@
             <!-- Lista de tarjetas de menús organizadas en una columna con espacio entre ellas -->
             <div class="d-flex flex-column gap-3 px-3">
                 @for (menu of menus; track menu.id) {
-                <!-- Componente para cada tarjeta de menú -->
-                <app-menu-card [menu]="menu" />
+                    <!-- Componente para cada tarjeta de menú -->
+                    <app-menu-card [menu]="menu" (deletedMenu)="reloadData()" />
                 }
                 @empty {
-                <!-- Mensaje que se muestra si no hay menús cargados -->
-                <p class="text-center">Cargando menús...</p>
+                    <!-- Mensaje que se muestra si no hay menús cargados -->
+                    <p class="text-center">Cargando menús...</p>
                 }
             </div>
         </div>

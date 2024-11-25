@@ -15,7 +15,7 @@
             <ul class="list-unstyled d-flex gap-2 justify-content-end align-items-center h-100">
                 <li><a class="btn" [routerLink]="['view', menu.id]">Ver</a></li>
                 <li><a class="btn" [routerLink]="['update', menu.id]">Actualizar</a></li>
-                <li><a class="btn" [routerLink]="['delete', menu.id]">Borrar</a></li>
+                <li><a class="btn" (click)="deleteMenu(menu.id)">Borrar</a></li>
             </ul>
         </div>
     </div>
