@@ -36,7 +36,7 @@ export class MenuService {
   }
 
   async getDailyMenu(date: string): Promise<any> {
-    const result = await firstValueFrom(this.http.get<any>(`${this.rootUrl}?date=${date}`));
+    const result = await firstValueFrom(this.http.get<any>(`https://crm-restaurantapi-z9vj.onrender.com/api/menu?date=${date}`));
     return result;
   }
 
