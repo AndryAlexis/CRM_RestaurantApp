@@ -1,27 +1,68 @@
-# CRMRestaurant
+# 🍽️ Restaurant CRM System
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
 
-## Development server
+> 🌐 **Live Demo:** [https://andryalexis.github.io/CRM_RestaurantApp/](https://andryalexis.github.io/CRM_RestaurantApp/)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 📋 Overview
+This is a Restaurant Customer Relationship Management (CRM) system built with Angular. The application helps restaurant managers handle daily menus, dishes, and administrative tasks efficiently.
 
-## Code scaffolding
+## 📱 Pages & Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### 🌐 Public Pages
 
-## Build
+#### 🏠 Home Page
+- 📜 View today's menu
+- 🏢 See restaurant information
+- ⭐ Check daily specials
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+#### 🍽️ Menu Page
+- 📖 Browse the daily menu
+- 💰 View dish details and prices
+- 🔍 Filter menu items by category
 
-## Running unit tests
+#### 📞 Contact Page
+- 📍 Find restaurant location
+- ✉️ Contact information
+- ⏰ Operating hours
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### 🔒 Admin Pages
 
-## Running end-to-end tests
+#### 📊 Dashboard
+- 📈 Overview of daily operations
+- ⚡ Quick access to key functions
+- 📊 Statistics and metrics
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+#### 🍳 Menu Management
+- ➕ Create new menus for specific dates
+- ✏️ Edit existing menus
+- 🗑️ Delete outdated menus
+- 💲 Set menu prices
+- 🔄 Manage dish combinations
+- 📅 Order menus by date or name
 
-## Further help
+#### 🍲 Dish Management
+- ➕ Add new dishes
+- ✏️ Edit dish details
+- 🗑️ Remove dishes
+- 📑 Categorize dishes
+- 💰 Set dish prices
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+#### 👥 User Management
+- 👤 Manage staff accounts
+- 🔑 Set user permissions
+- 📋 View user activity
+
+## 🛠️ Technical Stack
+
+- 🅰️ **Frontend**: Angular
+- 🔌 **Backend**: RESTful API with Node.js, Express and MySQL
+- 🔐 **Authentication**: JWT Token-based authentication
+
+## ⚙️ Setup
+
+### 📥 Installation
+
+1. Clone the repository
+2. Install dependencies
+3. Run `ng serve` for the frontend
+
