@@ -1,5 +1,8 @@
 # 🍽️ Restaurant CRM System
 
+## ⚠️ Important Notice
+
+> **Warning**: The server may occasionally be down due to maintenance or unexpected issues.
 
 > 🌐 **Live Demo:** [https://andryalexis.github.io/CRM_RestaurantApp/](https://andryalexis.github.io/CRM_RestaurantApp/)
 
